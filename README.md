@@ -96,16 +96,37 @@ See also the list of [contributors](https://github.com/your/project/contributors
 ## 課題や今後実装したい機能
 
 ## DB設計
- Qiita DB設計
 ### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
-|username|string|null: false|
+|nickname|string|null: false,unique: true|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|birthday|date|null: false|
+|image|text|null: false|
+|email|string|null: false,default: "", unique: true|
+|password|string|null: false,default: ""|
+
 #### Association
-- has_many :posts
-- has_many :comments
+- has_one :address
+
+
+### addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|zipcode|integer|null: false|
+|prefecture_code|integer|null: false|
+|city|string|null: false|
+|district|string|null: false|
+|building|string| |
+|room|date| |
+|user|references| foreign_key: true|
+
+#### Association
+- belongs_to :user, optional: true
+
 
 ### postsテーブル
 |Column|Type|Options|
