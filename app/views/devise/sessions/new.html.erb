@@ -1,0 +1,45 @@
+<div class="wrap">
+<div class="login">
+  <div class="login__top">
+    <div class="login__top__side">
+      <div class="login__top__side__box">
+      <%= link_to root_path do %>
+        <div class="login__top__side__box__icon">
+          <i class="fas fa-gift"></i><br>
+        </div>
+        <div class="login__top__side__box__name">
+          <p>Secret</p>
+          <p>Santa</p>
+          <p>365</p>
+        </div>
+         <% end %>
+      </div>
+    </div>
+    <div class="login__top__main">
+      <div class="login__top__main__contents">
+         <h1>LOG IN</h1>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="login__top__main__contents__email">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
+          </div>
+          <div class="login__top__main__contents__password">
+            <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="login__top__main__contents__remember">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+            <%= f.submit "Log in", class:"login__top__main__contents__login"%>
+        <% end %>
+
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "Sign up?", new_registration_path(resource_name), class:"registrations" %><br />
+            <% end %>
+
+
+  
+</div>
+</div>

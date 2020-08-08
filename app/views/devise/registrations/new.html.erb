@@ -1,0 +1,101 @@
+<div class="wrap">
+  <div class="signup">
+    <div class="signup__top">
+      <div class="signup__top__side">
+        <div class="signup__top__side__box">
+        <%= link_to root_path do %>
+          <div class="signup__top__side__box__icon">
+            <i class="fas fa-gift"></i><br>
+          </div>
+          <div class="signup__top__side__box__name">
+            <p>Secret</p>
+            <p>Santa</p>
+            <p>365</p>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="signup__top__main">
+        <div class="signup__top__main__contents">
+          <h1>User's Information</h1>
+          <div class="header__contents__right">
+            <div class="step1 selected">Basic Info</div>
+            <div class="step2">Address Info</div>
+            <div class="step3">Completed</div>
+            <ol class="header__contents__right__stepbar">
+                <li class="done">
+                  <span></span>
+                </li>
+                <li>
+                  <span></span>
+                </li>
+                <li>
+                  <span></span>
+                </li>
+            </ol>
+          </div>
+          <%= form_for(@user, url: user_registration_path) do |f| %>
+          <div class="signup__top__main__contents__images">
+            <div class="signup__top__main__contents__images__show">
+              <% if @user.image.present? %>
+                <%= image_tag @user.image, id: :img_prev %>
+              <% else %>
+                <%= image_tag "/assets/empty.png", id: :img_prev %>
+              <% end %>
+              </div>
+            <%= f.label :image, class: 'signup__top__main__contents__images__image' do %>
+              <div class="signup__top__main__contents__images__image__img">
+                <%= icon('fas', 'image') %>
+                Select image
+              </div>
+              <%= f.file_field :image, class: 'signup__top__main__contents__images__image__file' %>
+              <% end %>
+          </div>
+              <div class="signup__top__main__contents__field">
+                <div class="signup__top__main__contents__field__username">
+                  <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder:"Nickname" %>
+                </div>
+                <div class="signup__top__main__contents__fields">
+                  <div class="signup__top__main__contents__fields__field left">
+                    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"Firstname" %>
+                  </div>
+                  <div class="signup__top__main__contents__fields__field right">
+                    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"Lastname" %>
+                  </div>
+                </div>
+                <div class="signup__top__main__contents__fields">
+                  <div class="signup__top__main__contents__fields__field left">
+                    <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder:"Firstname Kana" %>
+                  </div>
+                  <div class="signup__top__main__contents__fields__field right">
+                    <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder:"Lastname Kana" %>
+                  </div>
+                </div>
+                <div class="signup__top__main__contents__field__birthday">
+                  <%= f.date_field :birthday,:value => "Birthday" %>
+                </div>
+                <div class="signup__top__main__contents__field__email">
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
+                </div>
+                <div class="signup__top__main__contents__field__password">
+                  <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password (6 characters minimum)" %>
+                </div>
+                <div class="signup__top__main__contents__field__password">
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password confirmation" %>
+                </div>
+              </div>
+
+
+              <div class="actions">
+                <%= f.submit "Next", class:"signup__top__main__contents__signup"%>
+              </div>
+              <% end %>
+
+          <%- if controller_name != 'sessions' %>
+            <%= link_to "Log in?", new_user_session_path, class:"registrations" %><br />
+          <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
