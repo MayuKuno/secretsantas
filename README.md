@@ -111,6 +111,11 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 #### Association
 - has_one :address
+- has_many :posts
+- has_many :groups,  through:  :groups_users
+- has_many :groups_users
+- has_many :messages
+
 
 
 ### addressテーブル
@@ -131,41 +136,69 @@ See also the list of [contributors](https://github.com/your/project/contributors
 ### postsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text|null: false|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|description|text|null: false|
+|image|text|null: false|
+|user|references| foreign_key: true|
+|category|references| foreign_key: true|
+|user|references| foreign_key: true|
+
 #### Association
 - belongs_to :user
-- has_many :comments
-- has_many :posts_tags
-- has_many  :tags,  through:  :posts_tags
+- has_many :posts_categories
+- has_many :categoreis,  through: :posts_categories
 
-### tagsテーブル
+### categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|name|text|null: false|
 #### Association
-- has_many :posts_tags
-- has_many  :posts,  through:  :posts_tags
+- has_many :posts_categories
+- has_many  :posts,  through:  :posts_categories
 
-### posts_tagsテーブル
+### groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|post_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
-#### Association
-- belongs_to :post
-- belongs_to :tag
+|name|text|null: false|
+|budget|integer|null: false|
+|exchange_date|date|null: false|
 
-### commentsテーブル
+#### Association
+- has_many :groups_users
+- has_many  :users,  through:  :groups_users
+- has_many :messages
+
+### messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|content|text|null: false|
+|image|text|null: false｜
+|user|references| foreign_key: true|
+|group|references| foreign_key: true|
+
 #### Association
-- belongs_to :post
 - belongs_to :user
+- belongs_to :group
+
+<!-- ーーーーーーーーー -->
+### posts_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post|references| foreign_key: true|
+|category|references| foreign_key: true|
+
+#### Association
+- belongs_to :post
+- belongs_to :category
+
+### groups_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group|references| foreign_key: true|
+|user|references| foreign_key: true|
+#### Association
+- belongs_to :user
+- belongs_to :group
+
 
 ## License
 
