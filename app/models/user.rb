@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :nickname,:first_name,:last_name, :first_name_kana, :last_name_kana,:birthday,:image ,presence: true
   has_one :address
-
+  has_many :group_users
+  has_many :groups, through: :group_users
+  
   include JpPrefecture
   jp_prefecture :prefecture_code
 
