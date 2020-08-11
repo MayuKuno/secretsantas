@@ -1,0 +1,2 @@
+class PostUser < ApplicationRecord
+end

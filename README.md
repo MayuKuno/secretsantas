@@ -138,9 +138,6 @@ See also the list of [contributors](https://github.com/your/project/contributors
 |------|----|-------|
 |description|text|null: false|
 |image|text|null: false|
-|user|references| foreign_key: true|
-|category|references| foreign_key: true|
-|user|references| foreign_key: true|
 
 #### Association
 - belongs_to :user
@@ -158,7 +155,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 ### groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 |budget|integer|null: false|
 |exchange_date|date|null: false|
 
@@ -199,6 +196,15 @@ See also the list of [contributors](https://github.com/your/project/contributors
 - belongs_to :user
 - belongs_to :group
 
+### posts_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|references| foreign_key: true|
+|category|references| foreign_key: true|
+
+#### Association
+- belongs_to :user
+- belongs_to :group
 
 ## License
 
