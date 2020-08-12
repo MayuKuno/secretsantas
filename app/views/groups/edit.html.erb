@@ -1,0 +1,29 @@
+  <%= render 'layouts/header'%>
+
+        <div class ="postsnew__containers">
+      <div class ="postsnew__containers__container">
+        <div class="postsnew__containers__container__title">
+          Edit Group
+        </div>
+        <div class="postsnew__containers__container__form">
+          <%= form_for (@group), class: :form, local: true do |form| %>
+            <div class="postsnew__containers__container__form__item">Group Name</div>
+            <%= form.text_area :name, class: :postsnew__containers__container__form__description %>
+
+            <div class="postsnew__containers__container__form__item">参加者を追加</div>
+            <div class="postsnew__containers__container__form__category">
+            <%= form.collection_check_boxes :user_ids, User.all, :id, :name %>
+            </div>
+
+        
+
+            <div class="postsnew__containers__container__form__item">Period</div>
+            <%= form.text_area :period, class: :postsnew__containers__container__form__description %>
+            <div class="postsnew__containers__container__form__item">Budget</div>
+            <%= form.text_area :budget, class: :postsnew__containers__container__form__description %>
+            <%= form.submit 'Create', class: :postsnew__containers__container__form__btn %>
+            <%= link_to "Dashboard", posts_path, class: "postsnew__containers__container__form__back" %>
+          <% end %>
+        </div>
+      </div>
+    </div>

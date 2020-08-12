@@ -10,29 +10,51 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    @user = User.new(sign_up_params)
-    unless @user.valid?
+  ##Createアクションでやることは
+    #・1ページ目で入力した情報のバリデーションチェック
+    #・1ページで入力した情報をsessionに保持させること
+    #・次の住所情報登録で使用するインスタンスを生成、当該ページへ遷移すること
+    @user = User.new(sign_up_params) #Userモデルのインスタンスを生成し、1ページ目から送られてきたパラメータをインスタンス変数@userに代入
+    unless @user.valid? #そのインスタンス変数に対してvalid?メソッドを適用することで送られてきたパラメータが指定されたバリデーションに違反しないかどうかチェック
       flash.now[:alert] = @user.errors.full_messages
-      render :new and return
+      render :new and return #falseになった場合は、エラーメッセージとともにnewアクションへrender
+
     end
-    session["devise.regist_data"] = {user: @user.attributes}
-    session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    @address = @user.build_address
-    render :new_address
+    # if !@user.image.present?
+    #   @user.image.retrieve_from_cache! @user.image_cache
+    # end
+    # session["devise.regist_data"] = @user.image.cache_name
+
+    #最後のページまで遷移した後に保存するという機能を達成するために、sessionという機能を用いる。sessionとは、ページが遷移しても情報が消えることが無いように、クライアント側で保持をさせておく機能
+    session["devise.regist_data"] = {user: @user.attributes} #1ページ目で入力した情報のバリデーションチェックが完了したら、session["devise.regist_data"]に値を代入。この時、sessionにハッシュオブジェクトの形で情報を保持させるために、attributesメソッドを用いてデータを整形
+    session["devise.regist_data"][:user]["password"] = params[:user][:password] #paramsの中にはパスワードの情報は含まれているが、attributesメソッドでデータ整形をした際にパスワードの情報は含まれていない。そこで、パスワードを再度sessionに代入する必要がある
+
+    @address = @user.build_address #次のページで、このユーザーモデルに紐づく住所情報を入力させるため、該当するインスタンスを生成しておく必要がある。そのために、build_addressで今回生成したインスタンス@userに紐づくAddressモデルのインスタンスを生成し、@addressというインスタンス変数に代入
+    render :new_address #住所情報を登録させるページを表示するnew_addressアクションのビューへrender
   end
   
   def create_address
+  ##Create_addressアクションでやることは
+    #2ページ目で入力した住所情報のバリデーションチェック
+    #バリデーションチェックが完了した情報と、sessionで保持していた情報とあわせ、ユーザー情報として保存すること
+    #sessionを削除すること
+    #ログインをすること
+
     @user = User.new(session["devise.regist_data"]["user"])
+
     @address = Address.new(address_params)
-    unless @address.valid?
+
+    unless @address.valid? #createアクションと同様に、valid?メソッドを用いて、バリデーションチェックを行う
       flash.now[:alert] = @address.errors.full_messages
       render :new_address and return
     end
-    @user.build_address(@address.attributes)
-    @user.save
-    session["devise.regist_data"]["user"].clear
-    sign_in(:user, @user)
+
+    @user.build_address(@address.attributes) #build_addressを用いて送られてきたparamsを、保持していたsessionが含まれる@userに代入
+    @user.save #saveメソッドを用いてテーブルに保存します。
+    session["devise.regist_data"]["user"].clear #clearメソッドを用いて明示的にsessionを削除
+    sign_in(:user, @user) #ユーザーの新規登録ができても、ログインができているわけではありません。それをsign_inメソッドを利用してログイン作業を行う
   end
+
   # GET /resource/edit
   # def edit
   #   super

@@ -1,138 +1,132 @@
-    <header>
-      <div class="container">
-        <div class="container__logo">
-          <a class="container__logo__content" href="/posts">Secret Santa<br>365</a>
-        </div>
-        <ul class="navigation">
-          <li class="navigation__list-item post">
-            <%= link_to new_post_path do %>
-              <i class="far fa-plus-square"></i>
-            <% end %>
-          </li>
-          <li class="navigation__list-item message">
-            <%= link_to  do %>
-              <i class="fas fa-users"></i>
-            <% end %>
-          </li>
-          <li class="navigation__list-item photo">
-            <%= link_to  user_path(current_user.id)  do %>
-              aa<%#= image_tag current_user.image %>
-            <% end %>
-          </li>
-        </ul>
+<header>
+  <div class="container">
+    <div class="container__logo">
+      <a class="container__logo__content" href="/posts">Secret Santa<br>365</a>
+    </div>
+    <ul class="navigation">
+      <li class="navigation__list-item post">
+        <%= link_to new_post_path do %>
+          <i class="far fa-plus-square"></i>
+        <% end %>
+      </li>
+      <li class="navigation__list-item message">
+        <%= link_to  do %>
+          <i class="fas fa-users"></i>
+        <% end %>
+      </li>
+      <li class="navigation__list-item photo">
+      <% if current_user.image.present? %>
+        <%= link_to  user_path(current_user.id)  do %>
+          <%= image_tag current_user.image %>
+        <% end %>
+      <% else %>
+        <%= link_to  user_path(current_user.id)  do %>
+         <%= image_tag "/assets/empty.png" %>
+        <% end %>
+      <% end %>
+
+      </li>
+    </ul>
+  </div>
+</header>
+
+<div class ="posts__containers">
+  <%= link_to "仮置き）ログアウト", destroy_user_session_path, method: :delete %>
+  <div class="posts__containers__container"> 
+    <div class="posts__containers__container__left"> 
+      <div class="posts__containers__container__left__title"> 
+        <h1>How <span><b>Secret Santa</b> </span>works</h1>
       </div>
-    </header>
-
-    <div class ="posts__containers">
-      <%= link_to "仮置き）ログアウト", destroy_user_session_path, method: :delete %>
-
-      <div class="posts__containers__container"> 
-        <div class="posts__containers__container__left"> 
-          <div class="posts__containers__container__left__title"> 
-            <h1>How <span><b>Secret Santa</b> </span>works</h1>
+      <ul class='posts__containers__container__left__timeline'>
+        <li>
+          <div>
+            <p class='posts__containers__container__left__timeline__title'>Create group</p>
+            <p class='posts__containers__container__left__timeline__circle'></p>
+            <p class='posts__containers__container__left__timeline__description'>The organizer creates a group and decide group name, the participents, the budget, the exchange date.</p>
+            <div class="posts__containers__container__left__description"> 
+            <%= link_to new_group_path do %>
+              <div class="posts__containers__container__left__description__icon">
+                <i class="fas fa-user-plus"></i>
+              </div>
+              <div class="posts__containers__container__left__description__word">
+                <h1>Secret Santa<br>を集める</h1>
+              </div>
+            <% end %>
+            </div>
           </div>
-          <ul class='posts__containers__container__left__timeline'>
-            <li>
-              <div>
-                <p class='posts__containers__container__left__timeline__title'>Create group</p>
-                <p class='posts__containers__container__left__timeline__circle'></p>
-                <p class='posts__containers__container__left__timeline__description'>The organizer creates a group and decide group name, the participents, the budget, the exchange date.</p>
-                <div class="posts__containers__container__left__description"> 
-                <%= link_to new_group_path do %>
-                  <div class="posts__containers__container__left__description__icon">
-                    <i class="fas fa-user-plus"></i>
-                  </div>
-                  <div class="posts__containers__container__left__description__word">
-                    <h1>Secret Santa<br>を集める</h1>
-                  </div>
-                <% end %>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div>
-                <p class='posts__containers__container__left__timeline__title'>Check your drawing</p>
-                <p class='posts__containers__container__left__timeline__circle'></p>
-                <p class='posts__containers__container__left__timeline__description'>Draw a name and decide who you are giving a gift to</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <p class='posts__containers__container__left__timeline__title'>Say Hi to other elves</p>
-                <p class='posts__containers__container__left__timeline__circle'></p>
-                <p class='posts__containers__container__left__timeline__description'>After organizer created a group, the chat group will be created. With the conversation, members can change the setting if needed. You can also check your drawing name as well.</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <p class='posts__containers__container__left__timeline__title'>Send the Gift</p>
-                <p class='posts__containers__container__left__timeline__circle'></p>
-                <p class='posts__containers__container__left__timeline__description'>Send your gift to your counterpart. When sending a gift by mail, don't forget to not to write your name as sender.</p>
-              </div>
-            </li>
-          </ul>
-        </div>
+        </li>
+        <li>
+          <div>
+            <p class='posts__containers__container__left__timeline__title'>Check your drawing</p>
+            <p class='posts__containers__container__left__timeline__circle'></p>
+            <p class='posts__containers__container__left__timeline__description'>Draw a name and decide who you are giving a gift to</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class='posts__containers__container__left__timeline__title'>Say Hi to other elves</p>
+            <p class='posts__containers__container__left__timeline__circle'></p>
+            <p class='posts__containers__container__left__timeline__description'>After organizer created a group, the chat group will be created. With the conversation, members can change the setting if needed. You can also check your drawing name as well.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <p class='posts__containers__container__left__timeline__title'>Send the Gift</p>
+            <p class='posts__containers__container__left__timeline__circle'></p>
+            <p class='posts__containers__container__left__timeline__description'>Send your gift to your counterpart. When sending a gift by mail, don't forget to not to write your name as sender.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
     <div class="posts__containers__container__right"> 
-        <h1>　</h1>
-
-        <%#= form_tag(search_posts_path,:method => 'get') do %>
-        <i class="fas fa-search"></i>
-          <%= text_field_tag :keyword, nil, placeholder: 'カテゴリで検索'%>
-         <%# <%= submit_tag 'Search', :name => nil %>
-        <%# end %>
-          <div class="posts__containers__container__right__posts"> 
-            <div class="posts__containers__container__right__posts__post">
-              <div class="posts__containers__container__right__posts__post__top"> 
-                  <div class="posts__containers__container__right__posts__post__top__account">
-                      <%#= link_to user_path(post.user.id) do %>
-                        <%#= image_tag post.user.image %>
-                      <%# end %>
-                  </div>
-
-                    <div class="posts__containers__container__right__posts__post__top__name">
-                      <a href="####">
-                        <%#= post.user.name %>
-                      </a>
-                    </div>
-                  <div class="posts__containers__container__right__posts__post__top__manage">
-                      <%# if user_signed_in? && current_user.id == post.user_id %>
-                      <ul class="posts__containers__container__right__posts__post__top__manage__lists">
-                      <li>
-                        <%= link_to '編集', "###", method: :get %>
-                      </li>
-                      <li>
-                        <%= link_to '削除', "###", method: :delete %>
-                      </li>
-                      </ul>
-                      <%# end %>
-                  </div>
-  
-              </div> 
-              <div class="posts__containers__container__right__posts__post__bottom"> 
-                <%#= image_tag post.image %>
-                <div class="posts__containers__container__right__posts__post__bottom__caption">
-                  <div class="posts__containers__container__right__posts__post__bottom__caption__top">
-                  <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
-
-                  </div>
-                  <div class="posts__containers__container__right__posts__post__bottom__caption__top__giver">
-                      <%# post.givers.each do |giver| %>
-                      <%# <a href="/givers/<%= giver.id %>
-                        <%#= giver.name %>
-                    <%# </a>さんからのプレゼント
-                       <% end #%>
-                  </div>
-                  </div>
-                  <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
-                    <%#= post.text%>
-                  </div>
-                </div>
-              </div> 
-              
-            </div> 
+     <h1>　</h1>
+     <%#= form_tag(search_posts_path,:method => 'get') do %>
+     <i class="fas fa-search"></i>
+     <%= text_field_tag :keyword, nil, placeholder: 'カテゴリで検索'%>
+     <%# <%= submit_tag 'Search', :name => nil %>
+     <%# end %>
+      <div class="posts__containers__container__right__posts"> 
+      <% @posts.each do |post| %>
+        <div class="posts__containers__container__right__posts__post">
+          <div class="posts__containers__container__right__posts__post__top"> 
+            <div class="posts__containers__container__right__posts__post__top__account">
+                <%= link_to user_path(post.user.id) do %>
+                  <%= image_tag post.user.image %>
+                <% end %>
+            </div>
+            <div class="posts__containers__container__right__posts__post__top__name">
+              <a href="/users/<%= post.user.id %>">
+                <%= post.user.nickname %>
+              </a>
+            </div>
+            <div class="posts__containers__container__right__posts__post__top__manage">
+            <% if user_signed_in? && current_user.id == post.user_id %>
+              <ul class="posts__containers__container__right__posts__post__top__manage__lists">
+                <li>
+                  <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+                </li>
+                <li>
+                  <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+                </li>
+              </ul>
+            <% end %>
+            </div>
           </div> 
-        </div>
+          <div class="posts__containers__container__right__posts__post__bottom"> 
+          <%= image_tag post.image %>
+            <div class="posts__containers__container__right__posts__post__bottom__caption">
+              <div class="posts__containers__container__right__posts__post__bottom__caption__top">
+                <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
+                </div>
 
-    </div>
-
-    </div>
+            </div>
+            <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
+              <%= post.description%>
+            </div>
+          </div>
+        </div> 
+      <% end %>  
+      </div>    
+    </div>  
+  </div>
+</div>

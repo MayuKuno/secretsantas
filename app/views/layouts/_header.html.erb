@@ -1,0 +1,24 @@
+    <header>
+      <div class="container">
+        <div class="container__logo">
+          <a class="container__logo__content" href="/posts">Secret Santa<br>365</a>
+        </div>
+        <ul class="navigation">
+          <li class="navigation__list-item search">
+            <%= link_to new_post_path do %>
+              <i class="far fa-plus-square"></i>
+            <% end %>
+          </li>
+          <li class="navigation__list-item message">
+            <%= link_to groups_path do %>
+              <i class="fas fa-users"></i>
+            <% end %>
+          </li>
+          <li class="navigation__list-item photo">
+            <%= link_to user_path(current_user.id) do %>
+              <%= image_tag current_user.image %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </header>

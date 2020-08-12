@@ -1,0 +1,13 @@
+  <%= render 'layouts/header'%>
+
+
+<div class ="postsnew__containers">
+  <div class ="postsnew__containers__container">
+    <div class="postsnew__containers__container__title">
+      <div class="postsnew__containers__container__title__content">
+      Create New Post
+      </div>
+    </div>
+   <%= render partial: 'form', locals: { post: @post } %>
+  </div>
+</div>

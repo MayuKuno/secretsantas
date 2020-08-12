@@ -36,6 +36,7 @@
           </div>
           <%= form_for @address do |f| %>
           <%= render "devise/shared/error_messages", resource: @address %>
+
           <div class="address__top__main__contents__field__address">
             <%= f.text_field :zipcode, autofocus: true, autocomplete: "zipcode", placeholder:"zipcode", class: "postal_code", id: "address_zipcode" %>
           </div>

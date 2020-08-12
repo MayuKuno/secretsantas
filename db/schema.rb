@@ -72,8 +72,10 @@ ActiveRecord::Schema.define(version: 20200811095115) do
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "description", limit: 65535, null: false
     t.text     "image",       limit: 65535, null: false
+    t.integer  "user_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -83,7 +85,7 @@ ActiveRecord::Schema.define(version: 20200811095115) do
     t.string   "first_name_kana",                                   null: false
     t.string   "last_name_kana",                                    null: false
     t.date     "birthday",                                          null: false
-    t.text     "image",                  limit: 65535,              null: false
+    t.text     "image",                  limit: 65535
     t.string   "email",                                default: "", null: false
     t.string   "encrypted_password",                   default: "", null: false
     t.string   "reset_password_token"
@@ -103,4 +105,5 @@ ActiveRecord::Schema.define(version: 20200811095115) do
   add_foreign_key "messages", "users"
   add_foreign_key "post_categories", "categories"
   add_foreign_key "post_categories", "posts"
+  add_foreign_key "posts", "users"
 end

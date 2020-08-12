@@ -35,22 +35,24 @@
             </ol>
           </div>
           <%= form_for(@user, url: user_registration_path) do |f| %>
-          <div class="signup__top__main__contents__images">
+        <%#   <div class="signup__top__main__contents__images">
             <div class="signup__top__main__contents__images__show">
               <% if @user.image.present? %>
-                <%= image_tag @user.image, id: :img_prev %>
-              <% else %>
-                <%= image_tag "/assets/empty.png", id: :img_prev %>
-              <% end %>
-              </div>
+              <%#  <%= image_tag @user.image, id: :img_prev %>
+            <%#  <% else %>
+            <%#    <%= image_tag "/assets/empty.png", id: :img_prev %>
+           <%#   <% end %>
+           <%# </div>
             <%= f.label :image, class: 'signup__top__main__contents__images__image' do %>
-              <div class="signup__top__main__contents__images__image__img">
+          <%#      <div class="signup__top__main__contents__images__image__img">
                 <%= icon('fas', 'image') %>
-                Select image
-              </div>
+          <%#        Select image
+          <%#    </div>
               <%= f.file_field :image, class: 'signup__top__main__contents__images__image__file' %>
-              <% end %>
-          </div>
+              <%#= f.hidden_field :image_cache %>
+
+           <%#     <% end %>
+        <%#   </div> %>
               <div class="signup__top__main__contents__field">
                 <div class="signup__top__main__contents__field__username">
                   <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder:"Nickname" %>
