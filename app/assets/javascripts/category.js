@@ -12,7 +12,7 @@ $(function(){
   function addNoCategory() {
     let html = `
     <div class="chat-post-category clearfix">
-      <p class="chat-post-category__name">ユーザーが見つかりません</p>
+      <p class="chat-post-category__name">タグが見つかりません</p>
     </div>
   `;
   $("#category-search-result").append(html);
@@ -55,7 +55,7 @@ $(function(){
         }
         })
     .fail(function() {
-        alert("通信エラーです。ユーザーが表示できません。");
+        alert("通信エラーです。タグが表示できません。");
     });
   });
 

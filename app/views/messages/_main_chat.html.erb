@@ -1,0 +1,77 @@
+<div class ="message__containers__main">
+      <div class ="message__containers__main__top">
+        <div class ="message__containers__main__top__content">
+          <div class ="message__containers__main__top__content__left">
+            <div class="message__containers__main__top__content__left__groupname">
+             <%= @group.name %>
+            </div>
+            <div class="message__containers__main__top__content__left__budget">
+              Budget：<%= @group.budget %>
+            </div>
+            <div class="message__containers__main__top__content__left__date">
+              Exchange Date：<%= @group.exchange_date %>
+            </div>
+            <div class="message__containers__main__top__content__left__participants">
+              Participants：
+              <% @group.users.each do |user| %>
+                <a href="/users/<%= user.id %>">
+                  <%= user.nickname %>
+                </a>
+              <% end %>
+            </div>  
+            <div class="message__containers__main__top__content__left__receiver">
+             My drawn name：</span>
+
+            </div>
+          </div> 
+          <div class ="message__containers__main__top__content__right">
+          <%= link_to "Edit", edit_group_path(@group.id) %>
+          </div>  
+        </div>     
+    </div>
+
+      <div class ="message__containers__main__middle">
+        <div class ="message__containers__main__middle__talk">
+        <% @messages.each do |message| %>
+        <% if message.user_id == current_user.id %>
+          <div class="message__containers__main__middle__talk__right">
+          <div class ="message__containers__main__middle__talk__right__bottom">
+            <%= message.content %> 
+          </div>
+           <div class ="message__containers__main__middle__talk__right__time">
+             <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
+          </div> 
+          </div>
+        <% else %>
+          <div class="message__containers__main__middle__talk__left">
+          <div class ="message__containers__main__middle__talk__left__top">
+            <div class ="message__containers__main__middle__talk__left__top__name">
+              <a href="/users/<%= message.user.id %>">
+                <%= message.user.nickname %> 
+             </a>
+            </div>
+          </div>
+          <div class ="message__containers__main__middle__talk__left__bottom">
+            <%= message.content %> 
+          </div>
+           <div class ="message__containers__main__middle__talk__left__time">
+             <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
+          </div> 
+          </div>
+        <% end %>
+        <% end %>
+        </div>
+      </div>
+      <div class ="message__containers__main__bottom">
+        <%= form_for [@group, @message] do |f| %>
+          <%= f.text_field :content, class: 'message__containers__main__bottom__left', placeholder: 'type a message' %>
+          <div class="message__containers__main__bottom__middle">
+            <%= f.label :image, class: 'message__containers__main__bottom__middle__box' do %>
+              <%= icon('fas', 'image', class: 'message__containers__main__bottom__middle__box__img') %>
+            <% end %>
+          </div>
+          <%= f.submit 'Send', class: 'message__containers__main__bottom__right' %>
+        <% end %>
+      </div>
+  
+    </div>

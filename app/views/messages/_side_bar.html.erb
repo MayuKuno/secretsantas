@@ -1,0 +1,20 @@
+    <div class ="message__containers__side">
+    <div class ="message__containers__side__title">
+      Your Santa Groups
+    </div>
+      <div class ="message__containers__side__posts">
+        <% current_user.groups.each do |group| %>
+        <%= link_to group_messages_path(group) do %>
+         <div class="message__containers__side__posts__post">
+          <div class="message__containers__side__posts__post__title">
+           <%= group.name %>
+          </div>
+          <div class="message__containers__side__posts__post__message">
+            <%= group.show_last_message %>
+          </div>
+         </div>
+         <% end %>
+        <% end %>
+      </div>
+    </div>
+

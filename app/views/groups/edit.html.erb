@@ -1,28 +1,79 @@
-  <%= render 'layouts/header'%>
+<%= render 'layouts/header'%>
 
-        <div class ="postsnew__containers">
-      <div class ="postsnew__containers__container">
-        <div class="postsnew__containers__container__title">
+        <div class ="groupsnew__containers">
+      <div class ="groupsnew__containers__container">
+        <div class="groupsnew__containers__container__title">
+          <div class="postsnew__containers__container__title__content">
           Edit Group
+           </div>
         </div>
-        <div class="postsnew__containers__container__form">
+        <div class="groupsnew__containers__container__form">
           <%= form_for (@group), class: :form, local: true do |form| %>
-            <div class="postsnew__containers__container__form__item">Group Name</div>
-            <%= form.text_area :name, class: :postsnew__containers__container__form__description %>
-
-            <div class="postsnew__containers__container__form__item">参加者を追加</div>
-            <div class="postsnew__containers__container__form__category">
-            <%= form.collection_check_boxes :user_ids, User.all, :id, :name %>
+            <div class="groupsnew__containers__container__form__error">
+            <% if @group.errors.any? %>
+              <h3>入力した内容にエラーが<%= @group.errors.count %>件あります</h3>
+                  <ul>
+                    <% @group.errors.full_messages.each do |group| %>
+                      <li><%= group %></li>
+                    <% end %>
+                  </ul>
+            <% end %>
             </div>
 
-        
+          <div class="groupsnew__containers__container__form__item">
+            Group Name
+            <%= form.text_field :name, class: :groupsnew__containers__container__form__description %>
+          </div>
 
-            <div class="postsnew__containers__container__form__item">Period</div>
-            <%= form.text_area :period, class: :postsnew__containers__container__form__description %>
-            <div class="postsnew__containers__container__form__item">Budget</div>
-            <%= form.text_area :budget, class: :postsnew__containers__container__form__description %>
-            <%= form.submit 'Create', class: :postsnew__containers__container__form__btn %>
-            <%= link_to "Dashboard", posts_path, class: "postsnew__containers__container__form__back" %>
+          <div class="chat-group-form__field clearfix">
+              <label class="chat-group-form__label" for="chat_group_addmember">Add group members</label>
+            <div class="chat-group-form__field--right">
+              <div class="chat-group-form__search clearfix">
+                <input class="chat-group-form__input" id="participantssearch" type="text">
+              </div>
+              <div id="participantssearchresult"></div>
+            </div>
+          </div>
+
+<div class="chat-group-form__field clearfix">
+  <div class="chat-group-form__field--left">
+    <label class="chat-group-form__label" for="chat_group_chatmember">Group members</label>
+  </div>
+  <div class="chat-group-form__field--right">
+    <div class="js-add-participant" id="chat-group-users">
+      <div class="chat-group-user clearfix js-chat-member">
+        <input name="group[user_ids][]" type="hidden" value="<%= current_user.id %>">
+        <p class="chat-group-user__nickname">
+          <%= current_user.nickname %>
+        </p>
+      </div>
+      <% @group.users.each do |user| %>
+        <% if current_user.nickname != user.nickname %>
+          <div class="chat-group-user clearfix js-chat-member">
+            <input name="group[user_ids][]" type="hidden" value="<%= user.id %>">
+            <p class="chat-group-user__nickname">
+              <%= user.nickname  %>
+            </p>
+            <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn"></a>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+            <div class="groupsnew__containers__container__form__item">
+            Exchange date
+            <%= raw sprintf(form.date_select(:exchange_date, include_blank: true, use_month_numbers: true,start_year: Time.now.year, end_year: (Time.now.year + 1), date_separator: '%s'),'年 ', '月')+'日' %>
+
+            </div>
+            <div class="groupsnew__containers__container__form__item">
+            Budget
+            <%= form.select :budget, [["2000円", "2000円"], ["3000円", "3000円"], ["5000円", "5000円"], ["10000円", "10000円"]], class: :groupsnew__containers__container__form__description %>
+            </div>
+          
+            <%= form.submit 'Create', class: :groupsnew__containers__container__form__create %>
+            <%= link_to "Back", posts_path, class: "groupsnew__containers__container__form__back" %>
           <% end %>
         </div>
       </div>

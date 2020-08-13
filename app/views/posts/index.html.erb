@@ -1,35 +1,4 @@
-<header>
-  <div class="container">
-    <div class="container__logo">
-      <a class="container__logo__content" href="/posts">Secret Santa<br>365</a>
-    </div>
-    <ul class="navigation">
-      <li class="navigation__list-item post">
-        <%= link_to new_post_path do %>
-          <i class="far fa-plus-square"></i>
-        <% end %>
-      </li>
-      <li class="navigation__list-item message">
-        <%= link_to  do %>
-          <i class="fas fa-users"></i>
-        <% end %>
-      </li>
-      <li class="navigation__list-item photo">
-      <% if current_user.image.present? %>
-        <%= link_to  user_path(current_user.id)  do %>
-          <%= image_tag current_user.image %>
-        <% end %>
-      <% else %>
-        <%= link_to  user_path(current_user.id)  do %>
-         <%= image_tag "/assets/empty.png" %>
-        <% end %>
-      <% end %>
-
-      </li>
-    </ul>
-  </div>
-</header>
-
+<%= render 'layouts/header'%>
 <div class ="posts__containers">
   <%= link_to "仮置き）ログアウト", destroy_user_session_path, method: :delete %>
   <div class="posts__containers__container"> 
@@ -80,11 +49,12 @@
     </div>
     <div class="posts__containers__container__right"> 
      <h1>　</h1>
-     <%#= form_tag(search_posts_path,:method => 'get') do %>
+     <%= form_tag(search_posts_path,:method => 'get') do %>
      <i class="fas fa-search"></i>
      <%= text_field_tag :keyword, nil, placeholder: 'カテゴリで検索'%>
-     <%# <%= submit_tag 'Search', :name => nil %>
-     <%# end %>
+       <%#= submit_tag 'Search', :name => nil %>
+     <% end %>
+
       <div class="posts__containers__container__right__posts"> 
       <% @posts.each do |post| %>
         <div class="posts__containers__container__right__posts__post">
@@ -117,8 +87,12 @@
             <div class="posts__containers__container__right__posts__post__bottom__caption">
               <div class="posts__containers__container__right__posts__post__bottom__caption__top">
                 <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
+                  <% post.categories.each do |category| %>
+                    <li>
+                      <%= link_to category.name, category_path(category.id), class: "posts__containers__container__right__posts__post__bottom__caption__top__category__link" %>
+                    </li>
+                  <% end %>
                 </div>
-
             </div>
             <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
               <%= post.description%>

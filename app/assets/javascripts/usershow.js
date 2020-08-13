@@ -13,16 +13,16 @@ $(function(){
         }
       });
     });
-  });
+
   
-  
+
 // ========
 
     function addparticipants(user) {
       let html = `
         <div class="chat-group-user clearfix">
-          <p class="chat-group-user__name">${user.name}</p>
-          <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
+          <p class="chat-group-user__nickname">${user.nickname}</p>
+          <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-nickname="${user.nickname}">追加</div>
         </div>
       `;
       $("#participantssearchresult").append(html);
@@ -31,16 +31,16 @@ $(function(){
     function addNoparticipants() {
       let html = `
         <div class="chat-group-user clearfix">
-          <p class="chat-group-user__name">ユーザーが見つかりません</p>
+          <p class="chat-group-user__nickname">ユーザーが見つかりません</p>
         </div>
       `;
       $("#participantssearchresult").append(html);
     }
-    function addDeleteUser(name, id) {
+    function addDeleteUser(nickname, id) {
       let html = `
       <div class="chat-group-user clearfix" id="${id}">
-        <p class="chat-group-user__name">${name}</p>
-        <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-name="${name}">削除</div>
+        <p class="chat-group-user__nickname">${nickname}</p>
+        <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-nickname="${nickname}">削除</div>
       </div>`;
       $(".js-add-participant").append(html);
     }
@@ -59,7 +59,6 @@ $(function(){
       })
       .done(function(users) {
         $("#participantssearchresult").empty();
-
         if (users.length !== 0) {
           users.forEach(function(user) {
             addparticipants(user);
@@ -75,12 +74,12 @@ $(function(){
       });
     });
     $(document).on("click", ".chat-group-user__btn--add", function() {
-      const userName = $(this).attr("data-user-name");
+      const userNickname = $(this).attr("data-user-nickname");
       const userId = $(this).attr("data-user-id");
       $(this)
         .parent()
         .remove();
-      addDeleteUser(userName, userId);
+      addDeleteUser(userNickname, userId);
       addMember(userId);
     });
     $(document).on("click", ".chat-group-user__btn--remove", function() {
@@ -90,7 +89,7 @@ $(function(){
     });
 
 
-
+  });
 
 
   

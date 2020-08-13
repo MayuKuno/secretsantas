@@ -1,4 +1,4 @@
-  <%= render 'layouts/header'%>
+<%= render 'layouts/header'%>
 
 <div class="usershow__containers">
   <div class="usershow__containers__container">
@@ -9,26 +9,23 @@
       </div>
       <div class="usershow__containers__container__top__right">
         <div class="usershow__containers__container__top__right__name">
-        <%= @user.name %>
+        <%= @user.nickname %>
         </div>
-        <div class="usershow__containers__container__top__right__description">
-        <%= @user.description %>
-        </div>
-        <% @user ||= current_user %>
-        <div class="stats">
-          <a href="<%= following_user_path(@user) %>">
-            <strong id="following" class="stat">
+        <%# <% @user ||= current_user %>
+        <%# <div class="stats">
+          <a href="<%= following_user_path(@user) %>
+            <%# <strong id="following" class="stat">
               <%= @user.following.count %>
-            </strong>
-            following
-          </a>
-          <a href="<%= followers_user_path(@user) %>">
-            <strong id="followers" class="stat">
+            <%# </strong>
+            following 
+          </a>  %>
+          <%# <a href="<%= followers_user_path(@user) %>
+            <%# <strong id="followers" class="stat">
               <%= @user.followers.count %>
-            </strong>
+            <%# </strong>
             followers
-          </a>
-        </div>
+          </a>   %>
+        <%# </div>  %>
         <% if user_signed_in? && current_user.id.to_s == params[:id]%>
         <div class ="usershow__containers__container__top__right__edit">
           <%= link_to "Edit", edit_user_registration_path %>
@@ -40,26 +37,25 @@
           <%= link_to "Delete", user_registration_path, method: :delete %>
         </div> 
         <div class ="usershow__containers__container__top__right__address">
-          
-          <%= @user.zipcode %>
-          <%= @user.prefecture %>
-          <%= @user.city %>
-          <%= @user.district %>
+          <%= @user.address.zipcode %>
+          <%= @user.address.prefecture_code %>
+          <%= @user.address.city %>
+          <%= @user.address.district %>
         </div>
 
         <% else %>
-        <div id="follow_form">
+        <%# <div id="follow_form">
           <% if current_user.following?(@user) %>
-            <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %>
-              <%= f.submit "Unfollow", class: "btn" %>
-            <% end %>
-          <% else %>
-            <%= form_for(current_user.active_relationships.build) do |f| %>
-              <div><%= hidden_field_tag :followed_id, @user.id %></div>
-              <%= f.submit "Follow", class: "btn btn-primary" %>
-            <% end %>
-          <% end %>
-        </div>
+            <%# <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %> 
+              <%# <%= f.submit "Unfollow", class: "btn" %> 
+            <%# <% end %>
+          <%# <% else %>
+            <%# <%= form_for(current_user.active_relationships.build) do |f| %> 
+              <%# <div><%= hidden_field_tag :followed_id, @user.id</div>  %>
+              <%# <%= f.submit "Follow", class: "btn btn-primary" %> 
+            <%# <% end %>
+          <%# <% end %>
+         <%# </div> %>
 
         <% end %> 
       </div>
@@ -102,7 +98,7 @@
                   </div>
                   </div>
                   <div class="usershow__containers__container__bottom__tab-content__list__details__caption__comment">
-                    <%= post.text%>
+                    <%= post.description%>
                   </div>
                 </div>
               </div> 

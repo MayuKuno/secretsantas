@@ -54,8 +54,8 @@ class PostsController < ApplicationController
   def search
     @categories = Post.all.search(params[:keyword])
     @posts = Post.all
-  
   end
+  
   private
   def post_params
     params.require(:post).permit(:description, :image, category_ids: []).merge(user_id: current_user.id)

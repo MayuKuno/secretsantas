@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :messages, dependent: :destroy
 
-  has_many :group_users, dependent: :destroy, dependent: :destroy
-  has_many :groups, through: :group_users, dependent: :destroy, dependent: :destroy
+  has_many :group_users, dependent: :destroy
+  has_many :groups, through: :group_users, dependent: :destroy
   #dependent: :destroyを追加することで、「親モデルを削除する際に、その親モデルに紐づく「子モデル」も一緒に削除できる」ようになります。
   include JpPrefecture
   jp_prefecture :prefecture_code

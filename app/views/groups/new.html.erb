@@ -43,16 +43,16 @@
     <div class="js-add-participant" id="chat-group-users">
       <div class="chat-group-user clearfix js-chat-member">
         <input name="group[user_ids][]" type="hidden" value="<%= current_user.id %>">
-        <p class="chat-group-user__name">
-          <%= current_user.name %>
+        <p class="chat-group-user__nickname">
+          <%= current_user.nickname %>
         </p>
       </div>
       <% @group.users.each do |user| %>
-        <% if current_user.name != user.name %>
+        <% if current_user.nickname != user.nickname %>
           <div class="chat-group-user clearfix js-chat-member">
             <input name="group[user_ids][]" type="hidden" value="<%= user.id %>">
-            <p class="chat-group-user__name">
-              <%= user.name  %>
+            <p class="chat-group-user__nickname">
+              <%= user.nickname  %>
             </p>
             <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn"></a>
           </div>
@@ -64,7 +64,8 @@
 
             <div class="groupsnew__containers__container__form__item">
             Exchange date
-            <%= form.date_field :period, class: :groupsnew__containers__container__form__description %>
+            <%= raw sprintf(form.date_select(:exchange_date, include_blank: true, use_month_numbers: true,start_year: Time.now.year, end_year: (Time.now.year + 1), date_separator: '%s'),'年 ', '月')+'日' %>
+
             </div>
             <div class="groupsnew__containers__container__form__item">
             Budget

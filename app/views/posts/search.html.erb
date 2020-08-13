@@ -1,8 +1,7 @@
-
   <%= render 'layouts/header'%>
     <div class ="posts__containers">
       <div class="posts__containers__container"> 
-              <div class="posts__containers__container__left"> 
+        <div class="posts__containers__container__left"> 
           <div class="posts__containers__container__left__title"> 
             <h1>How <span><b>Secret Santa</b> </span>works</h1>
           </div>
@@ -47,18 +46,19 @@
             </li>
           </ul>
         </div>
-    <div class="posts__containers__container__right">
-       <h1> <%= @category.name %>の投稿</h1>
+        <div class="posts__containers__container__right">
+        <% @categories.each do |category| %>
+        <h1> <%= category.name %>の投稿</h1>
+
         <div class="posts__containers__container__right__condition"> 
-        <%= link_to "Back", posts_path %>
+        <%= link_to "検索解除", posts_path %>
         </div>
         <%= form_tag(search_posts_path,:method => 'get') do %>
         <i class="fas fa-search"></i>
           <%= text_field_tag :keyword, nil, placeholder: 'カテゴリで検索'%>
-         <%# <%= submit_tag 'Search', :name => nil %>
         <% end %>
           <div class="posts__containers__container__right__posts"> 
-          <% @category.posts.each do |post| %>
+          <% category.posts.each do |post| %>
             <div class="posts__containers__container__right__posts__post">
               <div class="posts__containers__container__right__posts__post__top"> 
                   <div class="posts__containers__container__right__posts__post__top__account">
@@ -66,56 +66,48 @@
                         <%= image_tag post.user.image %>
                       <% end %>
                   </div>
-
-                    <div class="posts__containers__container__right__posts__post__top__name">
-                      <a href="/users/<%= post.user.id %>">
-                        <%= post.user.nickname %>
-                      </a>
-                    </div>
+                  <div class="posts__containers__container__right__posts__post__top__name">
+                    <a href="/users/<%= post.user.id %>">
+                      <%= post.user.nickname %>
+                    </a>
+                  </div>
                   <div class="posts__containers__container__right__posts__post__top__manage">
-                      <% if user_signed_in? && current_user.id == post.user_id %>
-                      <ul class="posts__containers__container__right__posts__post__top__manage__lists">
+                  <% if user_signed_in? && current_user.id == post.user_id %>
+                    <ul class="posts__containers__container__right__posts__post__top__manage__lists">
                       <li>
                         <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
                       </li>
                       <li>
                         <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
                       </li>
-                      </ul>
-                      <% end %>
+                    </ul>
+                  <% end %>
                   </div>
-  
               </div> 
-              <div class="posts__containers__container__right__posts__post__bottom"> 
-                <%= image_tag post.image %>
-                <div class="posts__containers__container__right__posts__post__bottom__caption">
-                  <div class="posts__containers__container__right__posts__post__bottom__caption__top">
+            <div class="posts__containers__container__right__posts__post__bottom"> 
+            <%= image_tag post.image %>
+              <div class="posts__containers__container__right__posts__post__bottom__caption">
+                <div class="posts__containers__container__right__posts__post__bottom__caption__top">
                   <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
-                    <% post.categories.each do |category| %>
-
+                  <% post.categories.each do |category| %>
                     <li>
-                        <%= link_to category.name, category_path(category.id), class: "posts__containers__container__right__posts__post__bottom__caption__top__category__link" %>
+                      <%= link_to category.name, category_path(category.id), class: "posts__containers__container__right__posts__post__bottom__caption__top__category__link" %>
                     </li>
-                    <% end %>
+                  <% end %>
                   </div>
-                  <div class="posts__containers__container__right__posts__post__bottom__caption__top__giver">
-                      <%# post.givers.each do |giver| %>
-                      <%# <a href="/givers/<%= giver.id %>
-                        <%#= giver.name %>
-                    <%# </a>さんからのプレゼント
-                       <% end #%>
-                  </div>
-                  </div>
-                  <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
-                    <%= post.description%>
-                  </div>
-                </div>
-              </div> 
-              
-            </div> 
-<% end %> 
+              </div>
+              <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
+                <%= post.description%>
+              </div>
+            </div>
+          </div>    
+        </div> 
+          <% end %>
+          <% end %>
+ 
           </div> 
         </div>
-        </div>
+
     </div>
 
+    </div>

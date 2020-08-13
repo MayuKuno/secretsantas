@@ -1,35 +1,4 @@
-<header>
-  <div class="container">
-    <div class="container__logo">
-      <a class="container__logo__content" href="/posts">Secret Santa<br>365</a>
-    </div>
-    <ul class="navigation">
-      <li class="navigation__list-item post">
-        <%= link_to new_post_path do %>
-          <i class="far fa-plus-square"></i>
-        <% end %>
-      </li>
-      <li class="navigation__list-item message">
-        <%= link_to  do %>
-          <i class="fas fa-users"></i>
-        <% end %>
-      </li>
-      <li class="navigation__list-item photo">
-      <% if current_user.image.present? %>
-        <%= link_to  user_path(current_user.id)  do %>
-          <%= image_tag current_user.image %>
-        <% end %>
-      <% else %>
-        <%= link_to  user_path(current_user.id)  do %>
-         <%= image_tag "/assets/empty.png" %>
-        <% end %>
-      <% end %>
-
-      </li>
-    </ul>
-  </div>
-</header>
-
+<%= render 'layouts/header'%>
 <div class ="postsnew__containers">
   <div class ="postsnew__containers__container">
     <div class="postsnew__containers__container__title">

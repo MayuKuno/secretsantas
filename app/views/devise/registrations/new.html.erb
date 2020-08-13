@@ -74,7 +74,8 @@
                   </div>
                 </div>
                 <div class="signup__top__main__contents__field__birthday">
-                  <%= f.date_field :birthday,:value => "Birthday" %>
+                  <%= raw sprintf(f.date_select(:birthday, include_blank: true, use_month_numbers: true,start_year: 1920, end_year: (Time.now.year - 10), date_separator: '%s'),'年 ', '月')+'日' %>
+
                 </div>
                 <div class="signup__top__main__contents__field__email">
                   <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
