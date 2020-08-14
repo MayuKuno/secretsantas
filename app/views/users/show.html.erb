@@ -4,8 +4,15 @@
   <div class="usershow__containers__container">
     <div class="usershow__containers__container__top">
       <div class="usershow__containers__container__top__left">
-      <img src="<%= "#{@user.image}" %>" >
-
+      <% if current_user.image.present? %>
+        <%= link_to  user_path(current_user.id)  do %>
+          <%= image_tag @user.image %>
+        <% end %>
+      <% else %>
+        <%= link_to  user_path(current_user.id)  do %>
+         <%= image_tag "/assets/account.png" %>
+        <% end %>
+      <% end %>
       </div>
       <div class="usershow__containers__container__top__right">
         <div class="usershow__containers__container__top__right__name">
@@ -36,9 +43,10 @@
         <div class ="usershow__containers__container__top__right__delete">
           <%= link_to "Delete", user_registration_path, method: :delete %>
         </div> 
+
         <div class ="usershow__containers__container__top__right__address">
-          <%= @user.address.zipcode %>
-          <%= @user.address.prefecture_code %>
+          〒<%= @user.address.zipcode.to_s.insert(3, "-") %>
+          <%= t('address.state')[@user.address.prefecture_code - 1] %>
           <%= @user.address.city %>
           <%= @user.address.district %>
         </div>

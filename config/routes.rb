@@ -8,27 +8,25 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
+
   resources :posts do
     collection do
       get 'search'
     end 
   end
   resources :posts
+  resources :categories
+
+  resources :users, only: :show
+
+  resources :messages
   resources :groups do
     resources :messages, only: [:index, :create]
     namespace :api do
       resources :messages, only: :index, defaults: { format: 'json' }
     end
   end
-  
-  resources :categories
-  resources :users
-  resources :messages
-
-
-
 end
-
 
 
 

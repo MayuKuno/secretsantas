@@ -38,20 +38,20 @@
           <%= render "devise/shared/error_messages", resource: @address %>
 
           <div class="address__top__main__contents__field__address">
-            <%= f.text_field :zipcode, autofocus: true, autocomplete: "zipcode", placeholder:"zipcode", class: "postal_code", id: "address_zipcode" %>
+            <%= f.text_field :zipcode, autofocus: true, autocomplete: "zipcode", placeholder:"zipcode", class: "zipcode", id: "address_zipcode" %>
           </div>
 
           <div class="address__top__main__contents__field__address">
-            <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, class: "address" %>
+            <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %>
 
           </div>
 
           <div class="address__top__main__contents__field__address">
-            <%= f.text_field :city, autofocus: true, autocomplete: "city", placeholder:"city", class: "address", id:"address_city"%>
+            <%= f.text_field :city, autofocus: true, autocomplete: "city", placeholder:"city", id:"address_city"%>
           </div>
 
           <div class="address__top__main__contents__field__address">
-            <%= f.text_field :district, autofocus: true, autocomplete: "district", placeholder:"district", class: "address", id: "address_street" %>
+            <%= f.text_field :district, autofocus: true, autocomplete: "district", placeholder:"district", id: "address_district" %>
           </div>
 
           <div class="address__top__main__contents__field__address">

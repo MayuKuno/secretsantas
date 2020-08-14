@@ -7,6 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def new
     @user = User.new
+
   end
 
   def create
@@ -20,11 +21,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new and return #falseになった場合は、エラーメッセージとともにnewアクションへrender
 
     end
-    # if !@user.image.present?
-    #   @user.image.retrieve_from_cache! @user.image_cache
-    # end
-    # session["devise.regist_data"] = @user.image.cache_name
-
     #最後のページまで遷移した後に保存するという機能を達成するために、sessionという機能を用いる。sessionとは、ページが遷移しても情報が消えることが無いように、クライアント側で保持をさせておく機能
     session["devise.regist_data"] = {user: @user.attributes} #1ページ目で入力した情報のバリデーションチェックが完了したら、session["devise.regist_data"]に値を代入。この時、sessionにハッシュオブジェクトの形で情報を保持させるために、attributesメソッドを用いてデータを整形
     session["devise.regist_data"][:user]["password"] = params[:user][:password] #paramsの中にはパスワードの情報は含まれているが、attributesメソッドでデータ整形をした際にパスワードの情報は含まれていない。そこで、パスワードを再度sessionに代入する必要がある
@@ -55,15 +51,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user) #ユーザーの新規登録ができても、ログインができているわけではありません。それをsign_inメソッドを利用してログイン作業を行う
   end
 
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+   super
+  #  @user = User.find(params[:id])
 
-  # PUT /resource
-  # def update
-  #   super
-  # end
+  end
+
+  def update
+    @user.update(update_user_params)
+    posts_path 
+    super
+   
+  end
 
   # DELETE /resource
   # def destroy
@@ -105,4 +104,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def address_params
     params.require(:address).permit(:zipcode, :prefecture_code, :city,:district, :building, :room)
   end
+  def update_user_params
+    params.require(:user).permit(:nickname, :first_name,:last_name, :first_name_kana, :last_name_kana,:birthday,:image, group_ids: [],post_ids: [], address_attributes: [:zipcode, :prefecture_code, :city,:district, :building, :room, :_destroy, :id])
+  end
+  def after_update_path_for(resource)
+    posts_path
+  end
+
 end

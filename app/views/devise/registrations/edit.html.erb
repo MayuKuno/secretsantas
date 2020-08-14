@@ -1,9 +1,11 @@
   <div class="wrap">
+
   <div class="useredit">
     <div class="useredit__top">
       <div class="useredit__top__side">
         <div class="useredit__top__side__box">
-        <%= link_to root_path do %>
+
+        <%= link_to posts_path do %>
           <div class="useredit__top__side__box__icon">
             <i class="fas fa-gift"></i><br>
           </div>
@@ -18,74 +20,105 @@
       <div class="useredit__top__main">
         <div class="useredit__top__main__contents">
           <h1>Edit User's Information</h1>
-          <%= form_for @user  do |f| %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put })  do |f| %>
 
-              <%= render "devise/shared/error_messages", resource: resource %>
-
-           <div class="useredit__top__main__contents__images">
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="useredit__top__main__contents__images">
             <div class="useredit__top__main__contents__images__show">
               <% if @user.image.present? %>
                 <%= image_tag @user.image, id: :img_prev %>
               <% else %>
-               <%= image_tag "/assets/empty.png", id: :img_prev %>
+              <%= image_tag "/assets/account.png", id: :img_prev %>
               <% end %>
             </div>
             <%= f.label :image, class: 'useredit__top__main__contents__images__image' do %>
-                <div class="useredit__top__main__contents__images__image__img">
-                <%= icon('fas', 'image') %>
-                  Select image
+              <div class="useredit__top__main__contents__images__image__img">
+               <%= icon('fas', 'image') %>
+                Select image
               </div>
-              <%= f.file_field :image, class: 'signup__top__main__contents__images__image__file' %>
-              <%= f.hidden_field :image_cache %>
+            <%= f.file_field :image, class: 'signup__top__main__contents__images__image__file' %>
+            <% end %>
+           </div>
+          <div class="useredit__top__main__contents__field">
+            <div class="useredit__top__main__contents__field__left">
+              <div class="useredit__top__main__contents__field__left__username">
+                <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder:"Nickname" %>
+              </div>
 
-                <% end %>
-          </div>
-              <div class="useredit__top__main__contents__field">
-                <div class="useredit__top__main__contents__field__username">
-                  <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder:"Nickname" %>
+              <div class="useredit__top__main__contents__field__left__fields">
+                <div class="useredit__top__main__contents__field__left__fields__field left">
+                  <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"Firstname" %>
                 </div>
-                <div class="useredit__top__main__contents__fields">
-                  <div class="useredit__top__main__contents__fields__field left">
-                    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder:"Firstname" %>
-                  </div>
-                  <div class="useredit__top__main__contents__fields__field right">
-                    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"Lastname" %>
-                  </div>
-                </div>
-                <div class="useredit__top__main__contents__fields">
-                  <div class="useredit__top__main__contents__fields__field left">
-                    <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder:"Firstname Kana" %>
-                  </div>
-                  <div class="useredit__top__main__contents__fields__field right">
-                    <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder:"Lastname Kana" %>
-                  </div>
-                </div>
-                <div class="useredit__top__main__contents__field__birthday">
-                  <%= raw sprintf(f.date_select(:birthday, include_blank: true, use_month_numbers: true,start_year: 1920, end_year: (Time.now.year - 10), date_separator: '%s'),'年 ', '月')+'日' %>
-
-                </div>
-                <div class="useredit__top__main__contents__field__email">
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
-                </div>
-                <div class="useredit__top__main__contents__field__password">
-                  <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"Current password" %>
-                </div>
-                <div class="useredit__top__main__contents__field__password">
-                  <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password (6 characters minimum)" %>
-                </div>
-                <div class="useredit__top__main__contents__field__password">
-                  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password confirmation" %>
+                <div class="useredit__top__main__contents__field__left__fields__field right">
+                  <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"Lastname" %>
                 </div>
               </div>
 
-
-              <div class="actions">
-                <%= f.submit "Next", class:"useredit__top__main__contents__signup"%>
+              <div class="useredit__top__main__contents__field__left__fields">
+                <div class="useredit__top__main__contents__field__left__fields__field left">
+                  <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder:"Firstname Kana" %>
+                </div>
+                <div class="useredit__top__main__contents__field__left__fields__field right">
+                  <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder:"Lastname Kana" %>
+                </div>
               </div>
-              <% end %>
-          <%#= "mypageに戻る", :back, class:"registrations" %>
-      </div>
+
+              <div class="useredit__top__main__contents__field__left__birthday">
+                <%= raw sprintf(f.date_select(:birthday, include_blank: true, use_month_numbers: true,start_year: 1920, end_year: (Time.now.year - 10), date_separator: '%s'),'年 ', '月')+'日' %>
+              </div>
+
+              <div class="useredit__top__main__contents__field__left__email">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" %>
+              </div>
+
+              <div class="useredit__top__main__contents__field__left__password">
+                <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password (6 characters minimum)" %>
+              </div>
+
+              <div class="useredit__top__main__contents__field__left__password">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password confirmation" %>
+              </div>
+              <div class="useredit__top__main__contents__field__left__password">
+                <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"Current Password" %>
+              </div>
+
+            </div>
+
+            <div class="useredit__top__main__contents__field__right">
+            <%= f.fields_for :address do |address| %> 
+              <div class="useredit__top__main__contents__field__right__address">
+                <%= address.text_field :zipcode, autofocus: true, autocomplete: "zipcode", placeholder:"zipcode", class: "zipcode", id: "address_zipcode" %>
+              </div>
+
+              <div class="useredit__top__main__contents__field__right__address">
+                <%= address.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name %>
+              </div>
+                    
+              <div class="useredit__top__main__contents__field__right__address">
+                <%= address.text_field :city, autofocus: true, autocomplete: "city", placeholder:"city", id:"address_city"%>
+              </div>
+                    
+              <div class="useredit__top__main__contents__field__right__address">
+                <%= address.text_field :district, autofocus: true, autocomplete: "district", placeholder:"district", id: "address_district" %>
+              </div>
+                    
+              <div class="useredit__top__main__contents__field__right__address">
+                <%= address.text_field :building, autofocus: true, autocomplete: "building", placeholder:"building"%>
+              </div>
+                    
+              <div class="useredit__top__main__contents__field__right__address">
+                <%= address.text_field :room, autofocus: true, autocomplete: "room", placeholder:"room"  %>
+              </div>    
+             <% end %>
+            </div>
+
+
+        </div>
+            <div class="actions">
+              <%= f.submit "Next", class:"useredit__top__main__contents__signup"%>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>
-  </div>
+</div>
