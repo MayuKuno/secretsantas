@@ -151,14 +151,15 @@
       height: calc(100vh - 90px - 170px);
       padding: 30px 40px;
       overflow: scroll;
+      position: relative;
       &__talk{
         // margin-bottom: 25px;  
-        position: relative;
         // display: flex;
+        min-height: 88px;
+        position: relative;
+        margin-bottom: 46px;
         &__left{
-          position: relative;
-          min-height: 88px;
-          margin-bottom: 46px;
+
   
         &__top{
           margin-bottom: 12px;
@@ -200,9 +201,6 @@
         }
       }
       &__right{
-        position: relative;
-        min-height: 88px;
-        margin-bottom: 46px;
 
       &__top{
         margin-bottom: 12px;

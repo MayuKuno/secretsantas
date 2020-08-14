@@ -31,10 +31,10 @@
     </div>
 
       <div class ="message__containers__main__middle">
-        <div class ="message__containers__main__middle__talk">
         <% @messages.each do |message| %>
         <% if message.user_id == current_user.id %>
-          <div class="message__containers__main__middle__talk__right" {data: {message: {id: message.id}}}>
+        <div class ="message__containers__main__middle__talk" data-message-id = <%= message.id %>>
+          <div class="message__containers__main__middle__talk__right" >
           <div class ="message__containers__main__middle__talk__right__bottom">
             <%= message.content %> 
           </div>
@@ -42,25 +42,28 @@
              <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
           </div> 
           </div>
+          </div>
         <% else %>
-          <div class="message__containers__main__middle__talk__left" {data: {message: {id: message.id}}}>
-          <div class ="message__containers__main__middle__talk__left__top">
-            <div class ="message__containers__main__middle__talk__left__top__name">
-              <a href="/users/<%= message.user.id %>">
-                <%= message.user.nickname %> 
-             </a>
+        <div class ="message__containers__main__middle__talk" data-message-id = <%= message.id %>>
+          <div class="message__containers__main__middle__talk__left" >
+            <div class ="message__containers__main__middle__talk__left__top">
+              <div class ="message__containers__main__middle__talk__left__top__name">
+                <a href="/users/<%= message.user.id %>">
+                  <%= message.user.nickname %> 
+              </a>
+              </div>
             </div>
+            <div class ="message__containers__main__middle__talk__left__bottom">
+              <%= message.content %> 
+            </div>
+            <div class ="message__containers__main__middle__talk__left__time">
+              <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
+            </div> 
           </div>
-          <div class ="message__containers__main__middle__talk__left__bottom">
-            <%= message.content %> 
-          </div>
-           <div class ="message__containers__main__middle__talk__left__time">
-             <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
-          </div> 
-          </div>
-        <% end %>
-        <% end %>
         </div>
+        <% end %>
+        <% end %>
+        
       </div>
       <div class ="message__containers__main__bottom">
         <%= form_for [@group, @message] do |f| %>

@@ -6,3 +6,5 @@ json.content @message.content
 json.image @message.image_url
 
 json.id @message.id
+
+

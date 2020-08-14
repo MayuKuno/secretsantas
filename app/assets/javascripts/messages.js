@@ -3,7 +3,8 @@ $(function(){
     if ( message.user_id ) {
       var html =
       `
-      <div class="message__containers__main__middle__talk__right" data-message-id=${message.id}>
+      <div class ="message__containers__main__middle__talk" data-message-id=${message.id}>
+      <div class="message__containers__main__middle__talk__right" >
       <div class ="message__containers__main__middle__talk__right__bottom">
          ${message.content} 
       </div>
@@ -11,12 +12,14 @@ $(function(){
         ${message.created_at}
       </div> 
       </div>
+      </div>
       `
       return html;
     } else {
       var html =
        `
-       <div class="message__containers__main__middle__talk__left" data-message-id=${message.id}>
+       <div class ="message__containers__main__middle__talk" data-message-id=${message.id}>
+       <div class="message__containers__main__middle__talk__left">
         <div class ="message__containers__main__middle__talk__left__top">
           <div class ="message__containers__main__middle__talk__left__top__name">
             <a href="/users/<%= message.user.id %>">
@@ -30,6 +33,7 @@ $(function(){
          <div class ="message__containers__main__middle__talk__left__time">
          ${message.created_at} 
         </div> 
+        </div>
         </div>
         `
       return html;
@@ -64,13 +68,9 @@ $(function(){
   })
 
 
-
-
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    var last_message_id = $('.message__containers__main__middle__talk__left:last').data("message-id");
-    // var last_message_id = $('.message__containers__main__middle__talk__right:last').data("message-id");
-
+    var last_message_id = $('.message__containers__main__middle__talk:last').data("message-id");
     $.ajax({
       //ルーティングで設定した通りのURLを指定
       url: "api/messages",
@@ -100,5 +100,6 @@ $(function(){
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
   }
+
 
 });
