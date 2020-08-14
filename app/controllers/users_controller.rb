@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
     return nil if params[:keyword] == ""
     @users = User.where(['nickname LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
@@ -30,7 +31,19 @@ class UsersController < ApplicationController
     
 
   # end
- 
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_following'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follower'
+  end
   private
 
 

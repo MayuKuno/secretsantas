@@ -18,21 +18,9 @@
         <div class="usershow__containers__container__top__right__name">
         <%= @user.nickname %>
         </div>
-        <%# <% @user ||= current_user %>
-        <%# <div class="stats">
-          <a href="<%= following_user_path(@user) %>
-            <%# <strong id="following" class="stat">
-              <%= @user.following.count %>
-            <%# </strong>
-            following 
-          </a>  %>
-          <%# <a href="<%= followers_user_path(@user) %>
-            <%# <strong id="followers" class="stat">
-              <%= @user.followers.count %>
-            <%# </strong>
-            followers
-          </a>   %>
-        <%# </div>  %>
+          <%= render 'layouts/stats' %>
+
+        
         <% if user_signed_in? && current_user.id.to_s == params[:id]%>
         <div class ="usershow__containers__container__top__right__edit">
           <%= link_to "Edit", edit_user_registration_path %>
@@ -44,68 +32,59 @@
           <%= link_to "Delete", user_registration_path, method: :delete %>
         </div> 
 
-        <div class ="usershow__containers__container__top__right__address">
+        <%# <div class ="usershow__containers__container__top__right__address">
           〒<%= @user.address.zipcode.to_s.insert(3, "-") %>
-          <%= t('address.state')[@user.address.prefecture_code - 1] %>
-          <%= @user.address.city %>
-          <%= @user.address.district %>
-        </div>
+          <%# <%= t('address.state')[@user.address.prefecture_code - 1] %>
+          <%# <%= @user.address.city %>
+          <%# <%= @user.address.district %>
+        <%# </div> %> 
 
         <% else %>
-        <%# <div id="follow_form">
+        <div id="follow_form">
           <% if current_user.following?(@user) %>
-            <%# <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %> 
-              <%# <%= f.submit "Unfollow", class: "btn" %> 
-            <%# <% end %>
-          <%# <% else %>
-            <%# <%= form_for(current_user.active_relationships.build) do |f| %> 
-              <%# <div><%= hidden_field_tag :followed_id, @user.id</div>  %>
-              <%# <%= f.submit "Follow", class: "btn btn-primary" %> 
-            <%# <% end %>
-          <%# <% end %>
-         <%# </div> %>
+            <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %> 
+              <%= f.submit "Unfollow", class: "btn" %> 
+            <% end %>
+          <% else %>
+            <%= form_for(current_user.active_relationships.build) do |f| %> 
+               <div><%= hidden_field_tag :followed_id, @user.id %></div> 
+              <%= f.submit "Follow", class: "btn btn-primary" %> 
+             <% end %>
+           <% end %>
+          </div>
 
-        <% end %> 
+        <% end %>
       </div>
     </div>
     <div class="usershow__containers__container__bottom">
-      <div class='usershow__containers__container__bottom__tabs'>
-        <div class='usershow__containers__container__bottom__tabs__tab-buttons'>
-          <span class='content1'>友達からのプレゼント</span>
-          <span class='content2'>友達へのプレゼント</span>
-          <div id='lamp' class='content1'></div>
+      <div class='usershow__containers__container__bottom__tabs1'>
+        <div class='usershow__containers__container__bottom__tabs1__tab-buttons'>
+          <span class='content1'>My posts</span>
         </div>
       </div>
-      <div class="usershow__containers__container__bottom__tab-contents">
+      <div class="usershow__containers__container__bottom__tab-contents1">
 
-      <div class="usershow__containers__container__bottom__tab-content content1">
+      <div class="usershow__containers__container__bottom__tab-content1 content1">
           <% @user.posts.each do |post| %>
-          <div class="usershow__containers__container__bottom__tab-content__list">
-            <div class="usershow__containers__container__bottom__tab-content__list__img">
+          <div class="usershow__containers__container__bottom__tab-content1__list">
+            <div class="usershow__containers__container__bottom__tab-content1__list__img">
                 <img src="<%= "#{post.image}" %>"> 
             </div>
 
 
-            <div class="usershow__containers__container__bottom__tab-content__list__details">
-                <div class="usershow__containers__container__bottom__tab-content__list__details__caption">
-                  <div class="usershow__containers__container__bottom__tab-content__list__details__caption__top">
+            <div class="usershow__containers__container__bottom__tab-content1__list__details">
+                <div class="usershow__containers__container__bottom__tab-content1__list__details__caption">
+                  <div class="usershow__containers__container__bottom__tab-content1__list__details__caption__top">
 
-                  <div class="usershow__containers__container__bottom__tab-content__list__details__caption__top__category">
+                  <div class="usershow__containers__container__bottom__tab-content1__list__details__caption__top__category">
                     <% post.categories.each do |category| %>
                     <li>
-                        <%= link_to category.name, category_path(category.id), class: "usershow__containers__container__bottom__tab-content__list__details__caption__top__category__link" %>
+                        <%= link_to category.name, category_path(category.id), class: "usershow__containers__container__bottom__tab-content1__list__details__caption__top__category__link" %>
                     </li>
                     <% end %>
                   </div>
-                  <div class="usershow__containers__container__bottom__tab-content__list__details__caption__top__giver">
-                      <%# post.givers.each do |giver| %>
-                      <%# <a href="/givers/<%= giver.id %>
-                        <%#= giver.name %>
-                    <%#  </a>さんからのプレゼント
-                       <% end %>
                   </div>
-                  </div>
-                  <div class="usershow__containers__container__bottom__tab-content__list__details__caption__comment">
+                  <div class="usershow__containers__container__bottom__tab-content1__list__details__caption__comment">
                     <%= post.description%>
                   </div>
                 </div>
@@ -113,12 +92,6 @@
           </div>
           <% end %> 
         </div>
-        <!-- ======================================== -->
-        <div class="usershow__containers__container__bottom__tab-content content2">
-
-        </div>
-
-        <!-- ======================================== -->
 
     </div>
     </div>
