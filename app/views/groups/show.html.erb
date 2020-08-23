@@ -1,0 +1,14 @@
+グループ詳細ページ
+<%= @group.name %><br>
+Budget：<%= @group.budget %><br>
+Exchange Date：<%= @group.exchange_date %><br>
+Participants：
+<% @group.users.each do |user| %>
+  <a href="/users/<%= user.id %>">
+    <%= user.nickname %>
+  </a>
+<% end %><br>
+My drawn name：<%= @switched %><br>
+<%= link_to "Edit", edit_group_path(@group.id) %>
+
+<div id="button">?</div>

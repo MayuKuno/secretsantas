@@ -12,6 +12,7 @@
           <div class="message__containers__side__posts__post__message">
             <%= group.show_last_message %>
           </div>
+          <%= link_to "グループ詳細へ", group_path(group.id) %>
          </div>
          <% end %>
         <% end %>
