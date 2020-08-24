@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
   end
   def new
     @group = Group.new
-    @group.users << current_user
+    @group.participant << current_user
 
   end
 
@@ -43,7 +43,7 @@ def destroy
 end
   private
   def group_params
-    params.require(:group).permit(:name, :budget, :exchange_date, user_ids: [])
+    params.require(:group).permit(:name, :budget, :exchange_date, participant_ids: [])
   end
 
   def message_params

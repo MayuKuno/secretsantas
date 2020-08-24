@@ -23,8 +23,7 @@
 // だけ表示する
 
 $(function(){
-  const button = document.getElementById('button');
-  button.addEventListener('click',() =>{
+    $('#button').one('click', function(){
     var original = ["九野","森","佐藤","堀","小森","よう"];
     var switched = original.slice();
     var i = switched.length, j, temp;
@@ -36,32 +35,24 @@ $(function(){
       switched[j] = switched[i]; 
       switched[i] = temp; 
     }
-    button.textContent = switched[j];
+    this.textContent = switched[0];
+    console.log(switched[0])
+    console.log(switched[1])
+    console.log(switched[2])
+    console.log(switched[3])
+    console.log(switched[4])
+    console.log(switched[5])
+
+
+    // original[0].name == current_user.name
+    // switched[0];
+    // original[1] = switched[0];
+    // original[2] = switched[0];
+    // original[3] = switched[0];
+    // original[4] = switched[0];
+    // original[5] = switched[0];
+
   
     })
-    // const n = Math.floor(Math.random() * retults.length);
-  
-  // var original = [];
-  // var original = Group.where('id <= 1').pluck(user_id);
-  // console.log (original)
 
-//   var switched = original.slice();
-//   var i = switched.length, j, temp;
-//   while (--i > 0){
-//     do{
-//       var j = Math.floor(Math.random() * (i + 1)); 
-//     } while (j == i);
-//     var temp = switched[j];
-//     switched[j] = switched[i]; 
-//     switched[i] = temp; 
-//   }
-//   console.log (original)
-//   console.log (switched)
-//   $.each(switched, function(index, person) {
-//     $('.message__containers__main__top__content__left__receiver').append(index + ':' + person + '<br>');
-// });
 });
-
-
-
-
