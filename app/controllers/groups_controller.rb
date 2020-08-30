@@ -4,13 +4,14 @@ class GroupsController < ApplicationController
     @groups = Group.all
 
   end
+
   def show
     @group = Group.find(params[:id])
-
   end
+  
   def new
     @group = Group.new
-    @group.participant << current_user
+    # @group.participant << current_user
 
   end
 

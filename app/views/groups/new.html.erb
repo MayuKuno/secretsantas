@@ -47,10 +47,10 @@
           <%= current_user.nickname %>
         </p>
       </div>
-      <% @group.participant.each do |user| %>
+      <% @group.participants.each do |user| %>
         <% if current_user.nickname != user.nickname %>
           <div class="chat-group-user clearfix js-chat-member">
-            <input name="group[user_ids][]" type="hidden" value="<%= user.id %>">
+            <input name="group[participant_ids][]" type="hidden" value="<%= user.id %>">
             <p class="chat-group-user__nickname">
               <%= user.nickname  %>
             </p>

@@ -12,15 +12,15 @@ class User < ApplicationRecord
   has_many :group_users, dependent: :destroy
   has_many :groups, through: :group_users, dependent: :destroy
 
-  has_many :paticipant, class_name:  "GroupUser",
+  has_many :paticipants, class_name:  "GroupUser",
                         foreign_key: "participant_id",
                         dependent:   :destroy
-  has_many :paticipant, through: :paticipant,  source: :drawn
+  has_many :paticipants, through: :paticipant,  source: :drawn
 
-  has_many :drawn, class_name:  "GroupUser",
+  has_many :drawns, class_name:  "GroupUser",
                   foreign_key: "drawn_id",
                   dependent:   :destroy
-  has_many :drawn, through: :drawn, source: :paticipant
+  has_many :drawns, through: :drawn, source: :paticipant
   
   #dependent: :destroyを追加することで、「親モデルを削除する際に、その親モデルに紐づく「子モデル」も一緒に削除できる」ようになります。
   has_many :active_relationships, class_name:  "Relationship",

@@ -1,9 +1,9 @@
 class Group < ApplicationRecord
   has_many :group_users, dependent: :destroy
-  has_many :participant, through: :group_users, dependent: :destroy
-  has_many :drawn, through: :group_users, dependent: :destroy
+  has_many :users, through: :group_users, dependent: :destroy
 
-
+  has_many :participants, through: :group_users, dependent: :destroy
+  has_many :drawns, through: :group_users, dependent: :destroy
 
   has_many :messages, dependent: :destroy
   # mount_uploader :image, ImageUploader
