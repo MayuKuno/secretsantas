@@ -1,9 +1,21 @@
 
 # Project Title
-
-One Paragraph of project description goes here
+Secret Santa 365
 
 ## Project Overview
+This app was created based on Secret Santa, a gift exchange game that originally takes place during the Christmas season.
+
+What is Secret Santa?
+It's a gift exchange game where you randomly exchange gifts that you bring at a Christmas party. It is said to be a secret Santa with the meaning that the sender of the gift equivalent to Santa Claus is unknown (secret).
+It's fun to be able to predict who will give a gift until you open it.
+
+このアプリは、シークレットサンタと言う本来クリスマスシーズンに行われるギフト交換ゲームを元に作成されました。
+
+シークレットサンタとは？
+クリスマスのパーティにおいて、持ち寄ったプレゼントを無作為に交換し合うというプレゼント交換の遊びです。サンタクロースに相当するプレゼントの贈り主が不明（シークレット）である、という意味を込めてシークレットサンタと言われています。
+プレゼントが誰から何を贈られるかはプレゼントを開封するまで予測できないという楽しみがあります。
+
+
 
 ## 本番環境(デプロイ先　テストアカウント＆ID)
 
