@@ -105,7 +105,8 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## 使用技術(開発環境)
 
-## 課題や今後実装したい機能
+## Function/features to implement later 課題や今後実装したい機能
+
 ・Amazon APIやRakuten APIを使った商品表示と欲しいものリストページ
 
 ## DB設計
