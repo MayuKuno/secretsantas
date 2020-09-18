@@ -303,7 +303,31 @@
             text-align: center;
 
            }
-          
+          &__content{
+            &__description{
+              margin-top: 150px;
+              span{
+                font-weight: bold;
+                font-size: 32px;
+              }
+              &__link{
+                width: 300px;
+                background-color: #eaa696;
+                height: 60px;
+                line-height: 60px;
+                margin:50px auto;
+                a{
+                  text-decoration: none;
+                  color: #0d5769;
+                }
+              }
+              &__link:hover {
+                position: relative;
+                top: 1px;
+                left: 1px;
+              }
+            }
+          }
         }
       }
 
@@ -786,7 +810,10 @@ text-align: center;
           }
           &__description{
             margin: 40px 0px;
-            width: 500px;
+            span{
+              font-weight: bold;
+              font-size: 32px;
+            }
             input[type='text']{
               box-sizing: border-box;
               width: 100%;
@@ -802,6 +829,8 @@ text-align: center;
               border-bottom: 2px solid #eaa696;
               outline: none;
             }
+
+    
           }
       
           &__password{
@@ -910,6 +939,7 @@ text-align: center;
             width: 500px;
             margin-top: 10px;
             font-size: 20px;
+
   
           }
           &__edit{
