@@ -95,9 +95,16 @@
                 font-style : italic;
                 display: flex;
                 align-items: center;
+                position: relative;
                 &__left{
                  font-size: 40px;
                  margin-left: -10px;
+                 
+                }
+                #three{
+                  position: absolute;
+                  top: -3px;
+                  left: 0;
                 }
                 &__right{
                   font-size:12px ;
