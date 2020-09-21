@@ -11,6 +11,9 @@ class Post < ApplicationRecord
       Category.all
     end
   end
+
+
+  
 end
 
 

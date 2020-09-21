@@ -16,10 +16,10 @@ class GroupsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @group = Group.create(group_params)    
     if @group.save
-      redirect_to posts_path
+      redirect_to group_messages_path(@group)
+
     else
       render action: :new
     end
@@ -44,7 +44,7 @@ def destroy
 end
   private
   def group_params
-    params.require(:group).permit(:name, :budget, :exchange_date, participant_ids: [])
+    params.require(:group).permit(:name, :budget, :exchange_date, user_ids: [])
   end
 
   def message_params

@@ -149,11 +149,15 @@
               }
             }
             &__birthday{
-              margin: 30px 0px;  
+              span{
+                font-size: 15px;
+                color: #aaaaaa;
+                margin-right: 20px;
+              }
               #user_birthday_1i{
-                margin-right: 10px;
+                margin-right: 30px;
                 box-sizing: border-box;
-                width: 120px;
+                width: 90px;
                 padding: 10px;
                 transition: 0.3s;
                 letter-spacing: 1px;
@@ -167,11 +171,10 @@
                 outline: none;
               }
               #user_birthday_2i{
-                margin-right: 10px;
-
-                margin-left: 30px;
+                margin-right: 33px;
+                margin-left: 25px;
                 box-sizing: border-box;
-                width: 100px;
+                width: 60px;
                 padding: 10px;
                 transition: 0.3s;
                 letter-spacing: 1px;
@@ -186,10 +189,10 @@
               }
               #user_birthday_3i{
                 margin-left: 30px;
-                margin-right: 10px;
+                margin-right: -9px;
 
                 box-sizing: border-box;
-                width: 100px;
+                width: 60px;
                 padding: 10px;
                 transition: 0.3s;
                 letter-spacing: 1px;
