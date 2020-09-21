@@ -41,7 +41,7 @@
       height: 100%;
       width: 70%;
       background-image: url("/assets/gift.jpg");
-      background-color:rgba(255,255,255,0.3);
+      background-color:rgba(255,255,255,0.6);
       background-blend-mode:lighten;
       background-size:  cover;     
       display: flex;
@@ -50,23 +50,79 @@
       align-items: center;
 
       &__contents{
-        height: 60%;
-        width: 80%;
-        text-align: center;
         font-family: 'Vollkorn', serif;
-
+        text-align: center;
+        width: 95%;
+        margin-top: 60px;
         h1{
           font-weight: bold;
           color:#0d5769;
           font-size: 40px;
+          span{
+            font-family: 'Lato', sans-serif;
+          }
         }
         p{
-          font-size: 25px;
-          margin-top: 60px;
+          font-family: 'Vollkorn', serif;
+          font-size: 17px;
+          margin-top: 30px;
         }
+        &__description{
+          border: 1px solid #0d5769;
+          width: 100%;
+          margin-top: 10px;
+          padding: 0 40px;
+          margin-top: 50px;
+          height: 250px;
+
+          h1{
+            margin-top: 10px;
+            font-size: 30px;
+            span{
+              font-family: 'Lato', sans-serif;
+            }
+          }
+          &__steps{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            &__step{
+              border-radius: 50%;
+              width: 135px;
+              height:135px;
+              background-color: #eaa696;
+              &__top{
+                font-style : italic;
+                display: flex;
+                align-items: center;
+                &__left{
+                 font-size: 40px;
+                 margin-left: -10px;
+                }
+                &__right{
+                  font-size:12px ;
+                  width: 90%;
+                  margin: 7px auto;
+                  height: 100%;
+                }
+              }
+              &__bottom{
+                i{
+                  font-size: 50px;
+                  color: #0d5769;
+                }
+              }
+
+            }
+          }
+        }
+
       }
 
+
+
     }
+
   }
   &__bottom{
     height: 20%;
