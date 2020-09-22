@@ -7,21 +7,21 @@
       </div>
       <ul class='posts__containers__container__left__timeline'>
         <li>
-          <div>
+         <div>
             <p class='posts__containers__container__left__timeline__title'>Create a group with friends</p>
             <p class='posts__containers__container__left__timeline__circle'></p>
             <p class='posts__containers__container__left__timeline__description'>The organizer creates a group and decide the group name, the group members, the exchange date and the budget.</p>
-            <div class="posts__containers__container__left__description"> 
-            <%= link_to new_group_path do %>
-              <div class="posts__containers__container__left__description__icon">
-                <i class="fas fa-user-plus"></i>
-              </div>
-              <div class="posts__containers__container__left__description__word">
-                <h1>Create a Group</h1>
-              </div>
-            <% end %>
+          <div class="posts__containers__container__left__description"> 
+          <%= link_to new_group_path do %>
+            <div class="posts__containers__container__left__description__icon">
+              <i class="fas fa-user-plus"></i>
             </div>
+            <div class="posts__containers__container__left__description__word">
+              <h1>Create a Group</h1>
+            </div>
+          <% end %>
           </div>
+         </div>
         </li>
         <li>
           <div>
@@ -54,26 +54,33 @@
         </li>
       </ul>
     </div>
-        <div class="posts__containers__container__right">
-        <% @categories.each do |category| %>
-        <h1> <%= category.name %>の投稿</h1>
+    <div class="posts__containers__container__right">
+      <% if @categories.any? %>
 
+      <% @categories.each do |category| %>
+        <h1> Results for <span><%= category.name %></span></h1>
         <div class="posts__containers__container__right__condition"> 
-        <%= link_to "検索解除", posts_path %>
+          <%= link_to "Clear", posts_path %>
         </div>
         <%= form_tag(search_posts_path,:method => 'get') do %>
         <i class="fas fa-search"></i>
-          <%= text_field_tag :keyword, nil, placeholder: 'カテゴリで検索'%>
+        <%= text_field_tag :keyword, nil, placeholder: 'Search by tag'%>
         <% end %>
           <div class="posts__containers__container__right__posts"> 
           <% category.posts.each do |post| %>
             <div class="posts__containers__container__right__posts__post">
               <div class="posts__containers__container__right__posts__post__top"> 
-                  <div class="posts__containers__container__right__posts__post__top__account">
-                      <%= link_to user_path(current_user.id) do %>
-                        <%= image_tag post.user.image %>
-                      <% end %>
-                  </div>
+               <div class="posts__containers__container__right__posts__post__top__account">
+                <% if current_user.image.present? %>
+                  <%= link_to user_path(post.user.id) do %>
+                    <%= image_tag post.user.image %>
+                  <% end %>
+                <% else %>
+                  <%= link_to  user_path(current_user.id)  do %>
+                  <%= image_tag "/assets/account.png" %>
+                  <% end %>
+                <% end %>
+              </div>
                   <div class="posts__containers__container__right__posts__post__top__name">
                     <a href="/users/<%= post.user.id %>">
                       <%= post.user.nickname %>
@@ -81,14 +88,18 @@
                   </div>
                   <div class="posts__containers__container__right__posts__post__top__manage">
                   <% if user_signed_in? && current_user.id == post.user_id %>
-                    <ul class="posts__containers__container__right__posts__post__top__manage__lists">
-                      <li>
-                        <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
-                      </li>
-                      <li>
-                        <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
-                      </li>
-                    </ul>
+              <ul class="posts__containers__container__right__posts__post__top__manage__lists">
+                <li>
+                  <%= link_to "/posts/#{post.id}/edit", method: :get do %>
+                  <i class="fas fa-edit"></i> Edit
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to  "/posts/#{post.id}", method: :delete do %>
+                    <i class="fas fa-trash-alt"></i> Delete
+                  <% end %>
+                </li>
+              </ul>
                   <% end %>
                   </div>
               </div> 
@@ -110,12 +121,23 @@
             </div>
           </div>    
         </div> 
+
+
           <% end %>
           <% end %>
- 
+            <% else %>
+            <h1>　</h1>
+            <%= form_tag(search_posts_path,:method => 'get') do %>
+            <i class="fas fa-search"></i>
+            <%= text_field_tag :keyword, nil, placeholder: 'Search by tag'%>
+              <%#= submit_tag 'Search', :name => nil %>
+            <% end %>
+            <div class="posts__containers__container__right__posts__nothing"> 
+              <i class="fas fa-camera-retro"></i><br>
+              No results<br>Let's share what you got!
+            </div>
+          <% end %>
           </div> 
         </div>
-
     </div>
-
-    </div>
+  </div>

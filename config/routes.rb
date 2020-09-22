@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :posts do
     collection do
       get 'search'
+      get 'sns'
     end 
   end
   resources :posts

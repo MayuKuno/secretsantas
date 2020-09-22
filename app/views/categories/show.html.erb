@@ -55,24 +55,30 @@
       </ul>
     </div>
     <div class="posts__containers__container__right">
-       <h1> <%= @category.name %>の投稿</h1>
+        <h1> Results for <span><%= @category.name %></span></h1>
         <div class="posts__containers__container__right__condition"> 
         <%= link_to "Back", posts_path %>
         </div>
         <%= form_tag(search_posts_path,:method => 'get') do %>
         <i class="fas fa-search"></i>
-          <%= text_field_tag :keyword, nil, placeholder: 'カテゴリで検索'%>
+          <%= text_field_tag :keyword, nil, placeholder: 'Search by tag'%>
          <%# <%= submit_tag 'Search', :name => nil %>
         <% end %>
           <div class="posts__containers__container__right__posts"> 
           <% @category.posts.each do |post| %>
             <div class="posts__containers__container__right__posts__post">
               <div class="posts__containers__container__right__posts__post__top"> 
-                  <div class="posts__containers__container__right__posts__post__top__account">
-                      <%= link_to user_path(current_user.id) do %>
-                        <%= image_tag post.user.image %>
-                      <% end %>
-                  </div>
+            <div class="posts__containers__container__right__posts__post__top__account">
+                <% if current_user.image.present? %>
+                  <%= link_to user_path(post.user.id) do %>
+                    <%= image_tag post.user.image %>
+                  <% end %>
+                <% else %>
+                  <%= link_to  user_path(current_user.id)  do %>
+                  <%= image_tag "/assets/account.png" %>
+                  <% end %>
+                <% end %>
+            </div>
 
                     <div class="posts__containers__container__right__posts__post__top__name">
                       <a href="/users/<%= post.user.id %>">
@@ -81,14 +87,18 @@
                     </div>
                   <div class="posts__containers__container__right__posts__post__top__manage">
                       <% if user_signed_in? && current_user.id == post.user_id %>
-                      <ul class="posts__containers__container__right__posts__post__top__manage__lists">
-                      <li>
-                        <%= link_to 'Edit', "/posts/#{post.id}/edit", method: :get %>
-                      </li>
-                      <li>
-                        <%= link_to 'Delete', "/posts/#{post.id}", method: :delete %>
-                      </li>
-                      </ul>
+              <ul class="posts__containers__container__right__posts__post__top__manage__lists">
+                <li>
+                  <%= link_to "/posts/#{post.id}/edit", method: :get do %>
+                  <i class="fas fa-edit"></i> Edit
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to  "/posts/#{post.id}", method: :delete do %>
+                    <i class="fas fa-trash-alt"></i> Delete
+                  <% end %>
+                </li>
+              </ul>
                       <% end %>
                   </div>
   

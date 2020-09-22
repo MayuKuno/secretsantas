@@ -58,11 +58,12 @@
      <h1>　</h1>
      <%= form_tag(search_posts_path,:method => 'get') do %>
      <i class="fas fa-search"></i>
-     <%= text_field_tag :keyword, nil, placeholder: 'カテゴリで検索'%>
+     <%= text_field_tag :keyword, nil, placeholder: 'Search by tag'%>
        <%#= submit_tag 'Search', :name => nil %>
      <% end %>
 
       <div class="posts__containers__container__right__posts"> 
+      <% if Post.any? %>
       <% @posts.each do |post| %>
         <div class="posts__containers__container__right__posts__post">
           <div class="posts__containers__container__right__posts__post__top"> 
@@ -86,10 +87,14 @@
             <% if user_signed_in? && current_user.id == post.user_id %>
               <ul class="posts__containers__container__right__posts__post__top__manage__lists">
                 <li>
-                  <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+                  <%= link_to "/posts/#{post.id}/edit", method: :get do %>
+                  <i class="fas fa-edit"></i> Edit
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to '削除', "/posts/#{post.id}", method: :delete %>
+                  <%= link_to  "/posts/#{post.id}", method: :delete do %>
+                    <i class="fas fa-trash-alt"></i> Delete
+                  <% end %>
                 </li>
               </ul>
             <% end %>
@@ -113,6 +118,12 @@
           </div>
         </div> 
       <% end %>  
+      <% else %>
+        <div class="posts__containers__container__right__posts__nothing"> 
+          <i class="fas fa-camera-retro"></i><br>
+          No posts so far<br>Let's share what you got!
+        </div>
+      <% end %>
       </div>    
     </div>  
   </div>

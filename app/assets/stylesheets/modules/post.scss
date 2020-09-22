@@ -130,12 +130,20 @@
       position: relative;
       h1{
         text-align: center;
+        font-size: 18px;
+        color: #ca9a8f;
+        span{
+          font-weight: bold;
+          color: #0d5769;
+          font-size: 20px;
+
+        }
       }
       &__condition{
         float: right;
         display: inline;
         position: absolute;
-        top:117px;
+        top:130px;
         right: 120px;
         a{
           text-decoration: none;
@@ -143,9 +151,9 @@
         }
       }
       
-    i{
+    .fa-search{
       position: absolute;
-      top: 75px;
+      top: 80px;
       left: 120px;
       font-size: 30px;
       color: #0d5769;
@@ -177,7 +185,16 @@
         margin: 0 auto;
         overflow: scroll;
         height: 100vh;
-
+        &__nothing{
+          text-align: center;
+          font-size: 25px;
+          font-weight: bold;
+          margin-top: 200px;
+          .fa-camera-retro{
+            text-align: center;
+            font-size: 40px;
+          }
+        }
         &__title{
         font-size: 30px;
         text-align: center;
@@ -202,9 +219,9 @@
                 
                 li{
                   display: block;
-
+                  margin-top: 4px;
                   a{
-                    // text-decoration: none;
+                    text-decoration: none;
                     color: #eaa696;
                     font-weight: bold;
                   }
@@ -604,6 +621,73 @@
       }
       &--remove {
         color: #f05050;
+      }
+    }
+  }
+
+  .sns__containers{
+    background-color: #ca9a8f;
+    margin-top: 120px;
+    padding:40px;
+    min-height: 100vh;
+    &__container{
+      width: 60%;
+      height: 600px;
+      margin: 0 auto;
+      &__top{
+        background-color: #0d5769;
+        height: 15%;
+        h1{
+          font-size: 35px;
+          font-weight: bold;
+          text-align: center;
+          line-height: 90px;
+          color: #eaa696;
+          letter-spacing: 3px;
+        }
+      }
+      &__bottom{
+        height: 70%;
+        padding: 60px;
+        background-color: #eaa696;
+        a{
+          text-decoration: none;
+
+        }
+        &__option{
+          margin: 0 auto;
+          border-radius: 4px;
+          width: 50%;
+          line-height: 60px;
+          font-size: 16px;
+          text-align: center;
+          position: relative;
+          margin-bottom: 40px;
+          background-color: floralwhite;
+          i{
+            font-size: 30px;
+            position: absolute;
+            left: 20px;
+            top:15px;
+          }
+          span{
+            font-weight: bold;
+            font-size: 18px;
+
+          }
+        }
+        .secretsanta{
+          background-color: #0d5769;
+          color:#eaa696 ;
+        }
+        .twitter{
+          background-color: #008DDE;
+          color:white ;
+        }
+        .facebook{
+          background-color: #354F84;
+          color:white ;
+        }
       }
     }
   }
