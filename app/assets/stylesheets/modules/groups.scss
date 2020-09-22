@@ -730,13 +730,12 @@
 }
 
 #button{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background-color: #0d5769;
   border-radius: 50%;
-  margin: 30px auto;
   text-align: center;
-  line-height: 200px;
+  line-height: 150px;
   color:#eaa696 ;
   font-weight: bold;
   font-size: 42px;
@@ -750,4 +749,89 @@
 #button:active{
   box-shadow: 0 5px 0 #0c4958;
   margin-top: 35px;
+}
+.Groupshow__containers{
+  background-color: #ca9a8f;
+  margin-top: 120px;
+  padding:40px;
+  min-height: 100vh;
+  &__container{
+    width: 60%;
+    height: 600px;
+    margin: 0 auto;
+    &__top{
+      background-color: #0d5769;
+      height: 15%;
+      h1{
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 90px;
+        color: #eaa696;
+        letter-spacing: 3px;
+      }
+    }
+    &__bottom{
+      height: 100%;
+      padding: 50px;
+      background-color: #eaa696;
+      position: relative;
+      &__edit{
+        color: #0d5769;
+        text-decoration: none;
+        font-size: 20px;
+        position: absolute;
+        top: 20px;
+        right: 50px;
+      }
+      &__info{
+        display: flex;
+        justify-content: space-around;
+        font-size: 20px;
+        height: 40px;
+        line-height: 40px;
+        margin-bottom: 50px;
+        &__title{
+          width: 30%;
+          text-align: right;
+          border-right: 7px solid #0d5769 ;
+          padding-right: 30px;
+          font-weight: bold;
+        }
+        &__content{
+          margin-left: 150px;
+          width: 70%;
+          a{
+            text-decoration: none;
+            color: #494c4e;
+            margin-right: 10px;
+          }
+        }
+      }
+      .draw{
+        display: flex;
+        justify-content: space-around;
+        font-size: 20px;
+        height: 150px;
+        line-height: 150px;
+        margin-bottom: 20px;
+        &__title{
+          width: 40%;
+          text-align: right;
+          border-right: 4px solid #0d5769 ;
+          padding-right: 30px;
+          font-weight: bold;
+        }
+        &__content{
+          margin-left: 50px;
+          width: 60%;
+          a{
+            text-decoration: none;
+            color: #494c4e;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
 }

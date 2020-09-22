@@ -1,14 +1,59 @@
-グループ詳細ページ
-<%= @group.name %><br>
-Budget：<%= @group.budget %><br>
-Exchange Date：<%= @group.exchange_date %><br>
-Participants：
-<% @group.users.each do |user| %>
-  <a href="/users/<%= user.id %>">
-    <%= user.nickname %>
-  </a>
-<% end %><br>
-My drawn name：<%= @switched %><br>
-<%= link_to "Edit", edit_group_path(@group.id) %>
+<%= render 'layouts/header'%>
+<div class ="Groupshow__containers">
+<div class ="Groupshow__containers__container">
+  <div class ="Groupshow__containers__container__top">
+   <h1>Group Details</h1>
+  </div>
+  <div class ="Groupshow__containers__container__bottom">
+      <%= link_to edit_group_path(@group.id), method: :get, class:"Groupshow__containers__container__bottom__edit" do %>
+      <i class="fas fa-edit"></i> Edit
+      <% end %>
+    <div class ="Groupshow__containers__container__bottom__info">
+      <div class ="Groupshow__containers__container__bottom__info__title">
+      Group Name
+      </div>
+      <div class ="Groupshow__containers__container__bottom__info__content">
+        <%= @group.name %>
+      </div>
+    </div>
 
-<div id="button">?</div>
+    <div class ="Groupshow__containers__container__bottom__info">
+      <div class ="Groupshow__containers__container__bottom__info__title">
+       Budget
+      </div>
+      <div class ="Groupshow__containers__container__bottom__info__content">
+       ¥<%= @group.budget %>
+      </div>
+    </div>
+    <div class ="Groupshow__containers__container__bottom__info">
+      <div class ="Groupshow__containers__container__bottom__info__title">
+       Exchange Date
+      </div>
+      <div class ="Groupshow__containers__container__bottom__info__content">
+       <%= @group.exchange_date %>
+      </div>
+    </div>
+
+    <div class ="Groupshow__containers__container__bottom__info">
+      <div class ="Groupshow__containers__container__bottom__info__title">
+       Participants
+      </div>
+      <div class ="Groupshow__containers__container__bottom__info__content">
+       <% @group.users.each do |user| %>
+        <a href="/users/<%= user.id %>">
+          <%= user.nickname %>
+        </a>
+       <% end %>
+      </div>
+    </div>
+
+    <div class ="Groupshow__containers__container__bottom__info draw">
+      <div class ="Groupshow__containers__container__bottom__info__title">
+       My draws
+      </div>
+      <div class ="Groupshow__containers__container__bottom__info__content">
+       <div id="button">?</div>
+      </div>
+    </div>
+
+</div>
