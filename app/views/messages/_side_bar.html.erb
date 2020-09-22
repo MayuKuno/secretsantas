@@ -10,9 +10,9 @@
            <%= group.name %>
           </div>
           <div class="message__containers__side__posts__post__message">
-            <%= group.show_last_message %>
+            <span><%= group.show_last_message %></span>
           </div>
-          <%= link_to "グループ詳細へ", group_path(group.id) %>
+          <%= link_to "Show Group Details", group_path(group.id), class: 'message__containers__side__posts__post__link' %>
          </div>
          <% end %>
         <% end %>

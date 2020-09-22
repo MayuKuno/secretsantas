@@ -2,30 +2,8 @@
       <div class ="message__containers__main__top">
         <div class ="message__containers__main__top__content">
           <div class ="message__containers__main__top__content__left">
-            <div class="message__containers__main__top__content__left__groupname">
              <%= @group.name %>           
-             <%= link_to "グループ詳細へ", group_path(@group.id) %>
-            </div>
-           <%# <div class="message__containers__main__top__content__left__budget">
-              Budget：<%= @group.budget %>
-           <%#  </div>
-            <div class="message__containers__main__top__content__left__date">
-              Exchange Date：<%= @group.exchange_date %>
-          <%#   </div>
-            <div class="message__containers__main__top__content__left__participants">
-              Participants：
-              <% @group.users.each do |user| %>
-           <%#      <a href="/users/<%= user.id %>">
-          <%#         <%= user.nickname %>
-          <%#       </a>
-              <% end %>
-          <%#   </div>  
-            <div class="message__containers__main__top__content__left__receiver">
-             My drawn name：<%= @switched %>
-          <%#   </div>
-          </div> 
-          <div class ="message__containers__main__top__content__right">
-          <%= link_to "Edit", edit_group_path(@group.id) %>
+            <%= link_to "Show Group Details", group_path(@group.id), class: 'message__containers__main__top__content__left__link' %>
           </div>  
         </div>     
     </div>

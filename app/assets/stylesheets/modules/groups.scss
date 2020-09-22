@@ -29,26 +29,49 @@
       height: calc(100vh - 40px);
       margin: 0px auto;
 
-      a{
-        text-decoration: none;
-      }
       &__post{
         width: 100%;
         height: 100px;
         font-weight: bold;
         padding: 10px 30px;
+        position: relative;
+        a{
+          text-decoration: none;
+          // color:#ca9a8f;
+        }
         &__title{
-          font-size: 15px;
+          font-size: 20px;
           color: #ca9a8f;
 
         }
         
         &__message{
           // text-align: center;
-          font-size: 11px;
-          color: white;
+          span{
+            font-size: 11px;
+            color: #8b8482;
+          }
+
+        }
+        &__link{
+          
+            background: rgba(139, 132, 130,0.3);
+            padding: 5px 10px;
+            font-size: 10px;
+            display: block;
+            // margin-left: 100px;
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+            color:#ca9a8f;
+        
+          
+        }   
+        &__link:hover{
+          background: rgba(139, 132, 130,0.6);
         }
       }
+      
       &__post:hover{
         background-color: #0c4958;
       }
@@ -76,20 +99,39 @@
     &__top{
       background-color: #0d5769;
       border-radius: 0 10px 0 0;
-      height: 170px;
+      height: 100px;
       padding: 6px 6px 6px 0;
 
       &__content{
         justify-content: space-between;
         border: 1px dashed #eaa696; 
         border-radius: 5px;
-        padding: 8px 20px;
+        padding: 4px 20px;
+        height: 88px;
         display: flex;
+        position: relative;
         &__left{
+          font-size: 36px;
+          color: #eaa696;
+          font-weight: bold;
+          margin-top: 15px;
           &__groupname{
-            font-size: 40px;
-            color: #eaa696;
-            font-weight: bold;
+
+          }
+          &__link{
+            background: rgba(139, 132, 130,0.3);
+            padding: 5px 10px;
+            font-size: 18px;
+            display: block;
+            // margin-left: 100px;
+            position: absolute;
+            top: 28px;
+            right: 30px;
+            color:#ca9a8f;
+            text-decoration: none;
+          }
+          &__link:hover{
+            background: rgba(139, 132, 130,0.6);
           }
           &__budget{
             font-size: 15px;
@@ -149,7 +191,7 @@
     }
     &__middle{
       background-color:#0c4958;
-      height: calc(100vh - 90px - 170px);
+      height: calc(100vh - 90px - 100px);
       padding: 30px 40px;
       overflow: scroll;
       position: relative;
