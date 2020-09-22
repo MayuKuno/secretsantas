@@ -55,13 +55,23 @@
       </ul>
     </div>
     <div class="posts__containers__container__right"> 
-     <h1>　</h1>
-     <%= form_tag(search_posts_path,:method => 'get') do %>
-     <i class="fas fa-search"></i>
-     <%= text_field_tag :keyword, nil, placeholder: 'Search by tag'%>
-       <%#= submit_tag 'Search', :name => nil %>
-     <% end %>
-
+      <div class="posts__containers__container__right__top"> 
+        <div class="posts__containers__container__right__top__tag"> 
+          <h1>Trending Tags</h1>
+          <% @tags.each do |tag|%>
+            <li>
+              <%= link_to "##{tag.name}(#{tag.taggings_count})", tag_path(tag.name), class: "posts__containers__container__right__posts__post__bottom__caption__top__category__link" %>
+            </li>
+          <% end %>
+        </div>
+        <div class="posts__containers__container__right__top__search"> 
+          <%= form_tag(search_posts_path,:method => 'get') do %>
+          <i class="fas fa-search"></i>
+          <%= text_field_tag :keyword, nil, placeholder: 'Search by tag'%>
+            <%#= submit_tag 'Search', :name => nil %>
+          <% end %>
+          </div>
+      </div>
       <div class="posts__containers__container__right__posts"> 
       <% if Post.any? %>
       <% @posts.each do |post| %>
@@ -105,10 +115,10 @@
             <div class="posts__containers__container__right__posts__post__bottom__caption">
               <div class="posts__containers__container__right__posts__post__bottom__caption__top">
                 <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
-                  <% post.categories.each do |category| %>
-                    <li>
-                      <%= link_to category.name, category_path(category.id), class: "posts__containers__container__right__posts__post__bottom__caption__top__category__link" %>
-                    </li>
+                  <% post.tags.each do |tag| %>
+                  <li>
+                  <%= link_to "##{tag.name}", "/tags/#{tag.name}", class: "posts__containers__container__right__posts__post__bottom__caption__top__category__link" %>
+                  </li>
                   <% end %>
                 </div>
             </div>

@@ -8,12 +8,19 @@ class PostsController < ApplicationController
     #   format.html
     #   format.json
     # end
-  end
-  def show
-    @category = Category.find(params[:id])
-    @giver = Giver.find(params[:id])
+    @tags = Post.tag_counts_on(:tags).most_used(5)    # タグ一覧表示
+
 
   end
+  def show
+
+    @tags = Post.tag_counts_on(:tags).order('count DESC')     # 全タグ(Postモデルからtagsカラムを降順で取得)
+    if @tag = params[:tag]   # タグ検索用
+      @post = Post.tagged_with(params[:tag])   # タグに紐付く投稿
+    end
+
+  end
+
   def new
     @category = Category.new
     @post = Post.new
@@ -53,8 +60,9 @@ class PostsController < ApplicationController
 
   end
   def search
-    @categories = Post.all.search(params[:keyword])
+    @tags =  Post.all.search(params[:keyword])
     @posts = Post.all
+
   end
   
   private

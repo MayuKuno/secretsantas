@@ -128,16 +128,44 @@
       border-radius: 10px;
       min-height: 100vh;
       position: relative;
-      h1{
-        text-align: center;
-        font-size: 18px;
-        color: #ca9a8f;
-        span{
-          font-weight: bold;
-          color: #0d5769;
-          font-size: 20px;
-
+      &__top{
+        height: 15%;
+        h1{
+          text-align: center;
+          font-size: 18px;
+          color: #ca9a8f;
+          span{
+            font-weight: bold;
+            color: #0d5769;
+            font-size: 20px;
+          }
         }
+          &__tag{
+            height: 40%;
+            background: rgba(13, 87, 105, 0.1);
+            text-align: center;
+            border-radius: 10px;
+            width: 90%;
+            font-weight: bold;
+            margin: 0 auto;
+            h1{
+              font-weight: bold;
+              color: #0d5769;
+            }
+            li{
+              background-color: #0d5769;
+              padding: 0.35em 0.7em;
+              border-radius: 10rem;
+              display: inline-block;
+              font-size: 10px;
+              margin-right: 10px;
+              margin-top: 5px;
+            }
+          }
+          &__search{
+            height: 60%;
+          }
+        
       }
       &__condition{
         float: right;
@@ -153,7 +181,7 @@
       
     .fa-search{
       position: absolute;
-      top: 80px;
+      top: 111px;
       left: 120px;
       font-size: 30px;
       color: #0d5769;

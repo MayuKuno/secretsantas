@@ -55,16 +55,75 @@
       </ul>
     </div>
     <div class="posts__containers__container__right">
-        <h1><%@tag%> に関連する投稿</h1>  
-        <% if @post.present? %>
-         <% @post.each do |post|%>
-          <%= post.user.nickname %>
-          <%= post.description%>
-         <% end %>
-        <% else %>
-          No Post
-        <% end %>
-        </div>
+       <div class="posts__containers__container__right__top"> 
+          <h1>Trending Tags</h1>
+
+        <div class="posts__containers__container__right__top__search"> 
+          <%= form_tag(search_posts_path,:method => 'get') do %>
+          <i class="fas fa-search"></i>
+          <%= text_field_tag :keyword, nil, placeholder: 'Search by tag'%>
+            <%#= submit_tag 'Search', :name => nil %>
+          <% end %>
+          </div>
+      </div>
+      <div class="posts__containers__container__right__posts"> 
+
+      <% if Post.any? %>
+        <div class="posts__containers__container__right__posts__post">
+          <div class="posts__containers__container__right__posts__post__top"> 
+            <div class="posts__containers__container__right__posts__post__top__account">
+                <% if current_user.image.present? %>
+                  <%= link_to "#" do %>
+                    <%= image_tag "#" %>
+                  <% end %>
+                <% else %>
+                  <%= link_to  "#"  do %>
+                  <%= image_tag "/assets/account.png" %>
+                  <% end %>
+                <% end %>
+            </div>
+            <div class="posts__containers__container__right__posts__post__top__name">
+              <a href="#">
+                <%  %>
+              </a>
+            </div>
+            <div class="posts__containers__container__right__posts__post__top__manage">
+              <ul class="posts__containers__container__right__posts__post__top__manage__lists">
+                <li>
+                  <%= link_to "#", method: :get do %>
+                  <i class="fas fa-edit"></i> Edit
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to  "#", method: :delete do %>
+                    <i class="fas fa-trash-alt"></i> Delete
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div> 
+          <div class="posts__containers__container__right__posts__post__bottom"> 
+          <%= image_tag "" %>
+            <div class="posts__containers__container__right__posts__post__bottom__caption">
+              <div class="posts__containers__container__right__posts__post__bottom__caption__top">
+                <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
+                  <li>
+                  </li>
+                </div>
+            </div>
+            <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
+            </div>
+          </div>
         </div> 
+      <% else %>
+        <div class="posts__containers__container__right__posts__nothing"> 
+          <i class="fas fa-camera-retro"></i><br>
+          No posts so far<br>Let's share what you got!
+        </div>
+      <% end %>
+      </div>    
+
+        </div>
+        </div>
     </div>
 

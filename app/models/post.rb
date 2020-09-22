@@ -6,9 +6,10 @@ class Post < ApplicationRecord
   acts_as_taggable
   def self.search(search)
     if search
-      Category.where('name LIKE(?)', "%#{search}%")
+      Post.tag_counts_on(:tags).where('name LIKE(?)', "%#{search}%")
+
     else
-      Category.all
+      Post.all
     end
   end
 
