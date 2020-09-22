@@ -11,34 +11,65 @@
       <div class ="message__containers__main__middle">
         <% @messages.each do |message| %>
         <% if message.user_id == current_user.id %>
+          <% if message.image.present? %>
+          <div class ="message__containers__main__middle__talk" data-message-id = <%= message.id %>>
+            <div class="message__containers__main__middle__talk__rightImage" >
+              <div class ="message__containers__main__middle__talk__right__bottom">
+                <%= message.content %>
+                <%= image_tag message.image.url %> 
+              </div>
+            <div class ="message__containers__main__middle__talk__right__time">
+              <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
+            </div> 
+            </div>
+            </div>
+          <% else %>
+            <div class ="message__containers__main__middle__talk" data-message-id = <%= message.id %>>
+            <div class="message__containers__main__middle__talk__right" >
+              <div class ="message__containers__main__middle__talk__right__bottom">
+                <%= message.content %>
+              </div>
+            <div class ="message__containers__main__middle__talk__right__time">
+              <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
+            </div> 
+            </div>
+            </div>
+          <% end %>
+        <% else %>
+         <% if message.image.present? %>
         <div class ="message__containers__main__middle__talk" data-message-id = <%= message.id %>>
-          <div class="message__containers__main__middle__talk__right" >
-          <div class ="message__containers__main__middle__talk__right__bottom">
-            <%= message.content %> 
+          <div class="message__containers__main__middle__talk__leftImage" >
+
+            <div class ="message__containers__main__middle__talk__left__bottom">
+                  <%= message.content %>
+                <%= image_tag message.image.url %> 
+            </div>
+            <div class ="message__containers__main__middle__talk__left__time">
+              <a href="/users/<%= message.user.id %>">
+                <%= message.user.nickname %> 
+              </a>
+              <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
+            </div> 
+
           </div>
-           <div class ="message__containers__main__middle__talk__right__time">
-             <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
-          </div> 
-          </div>
-          </div>
+        </div>
         <% else %>
         <div class ="message__containers__main__middle__talk" data-message-id = <%= message.id %>>
           <div class="message__containers__main__middle__talk__left" >
-            <div class ="message__containers__main__middle__talk__left__top">
-              <div class ="message__containers__main__middle__talk__left__top__name">
-                <a href="/users/<%= message.user.id %>">
-                  <%= message.user.nickname %> 
-              </a>
-              </div>
-            </div>
+
             <div class ="message__containers__main__middle__talk__left__bottom">
-              <%= message.content %> 
+                  <%= message.content %>
             </div>
             <div class ="message__containers__main__middle__talk__left__time">
+              <a href="/users/<%= message.user.id %>">
+                <%= message.user.nickname %> 
+              </a>
               <%= message.created_at.strftime("%Y/%m/%d/ %H:%M")%> 
             </div> 
+
           </div>
         </div>
+       <% end %>
         <% end %>
         <% end %>
         
@@ -49,6 +80,7 @@
           <div class="message__containers__main__bottom__middle">
             <%= f.label :image, class: 'message__containers__main__bottom__middle__box' do %>
               <%= icon('fas', 'image', class: 'message__containers__main__bottom__middle__box__img') %>
+              <%= f.file_field :image, style: "visibility: hidden"%>
             <% end %>
           </div>
           <%= f.submit 'Send', class: 'message__containers__main__bottom__right' %>

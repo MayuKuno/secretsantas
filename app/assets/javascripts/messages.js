@@ -1,42 +1,89 @@
 $(function(){
   function buildHTML(message){
+    
     if ( message.user_id ) {
-      var html =
-      `
-      <div class ="message__containers__main__middle__talk" data-message-id=${message.id}>
-      <div class="message__containers__main__middle__talk__right" >
-      <div class ="message__containers__main__middle__talk__right__bottom">
-         ${message.content} 
-      </div>
-       <div class ="message__containers__main__middle__talk__right__time">
-        ${message.created_at}
-      </div> 
-      </div>
-      </div>
-      `
-      return html;
+      if ( message.image ) {
+          var html =
+          `
+          <div class ="message__containers__main__middle__talk" data-message-id=${message.id}>
+          <div class="message__containers__main__middle__talk__rightImage" >
+          <div class ="message__containers__main__middle__talk__right__bottom">
+            ${message.content}
+            <img src=${message.image} >
+          </div>
+          <div class ="message__containers__main__middle__talk__right__time">
+            ${message.created_at}
+          </div> 
+          </div>
+          </div>
+          `
+          return html;
+
+      }else{
+        var html =
+        `
+        <div class ="message__containers__main__middle__talk" data-message-id=${message.id}>
+        <div class="message__containers__main__middle__talk__right" >
+        <div class ="message__containers__main__middle__talk__right__bottom">
+           ${message.content} 
+        </div>
+         <div class ="message__containers__main__middle__talk__right__time">
+          ${message.created_at}
+        </div> 
+        </div>
+        </div>
+        `
+        return html;
+      }
+      
     } else {
+      if ( message.image ) {
+        var html =
+        `
+        <div class ="message__containers__main__middle__talk" data-message-id=${message.id}>
+        <div class="message__containers__main__middle__talk__leftImage">
+         <div class ="message__containers__main__middle__talk__left__top">
+
+         </div>
+         <div class ="message__containers__main__middle__talk__left__bottom">
+          <%= イメージ${message.content}%>
+          <img src=${message.image} >
+
+         </div>
+          <div class ="message__containers__main__middle__talk__left__time">
+          <a href="/users/<%= message.user.id %>">
+          <%= message.user.nickname %> 
+          </a>
+          ${message.created_at} 
+         </div> 
+
+         </div>
+         </div>
+         `
+
+
+      }else{
       var html =
        `
        <div class ="message__containers__main__middle__talk" data-message-id=${message.id}>
        <div class="message__containers__main__middle__talk__left">
         <div class ="message__containers__main__middle__talk__left__top">
-          <div class ="message__containers__main__middle__talk__left__top__name">
-            <a href="/users/<%= message.user.id %>">
-              ${message.user_nickname}
-           </a>
-          </div>
+
         </div>
         <div class ="message__containers__main__middle__talk__left__bottom">
          ${message.content}
         </div>
          <div class ="message__containers__main__middle__talk__left__time">
+         <a href="/users/<%= message.user.id %>">
+         <%= message.user.nickname %> 
+         </a>
          ${message.created_at} 
         </div> 
         </div>
         </div>
         `
       return html;
+      };
     };
   }
 

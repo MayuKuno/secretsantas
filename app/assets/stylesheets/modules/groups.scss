@@ -114,7 +114,7 @@
           font-size: 36px;
           color: #eaa696;
           font-weight: bold;
-          margin-top: 15px;
+          margin-top: 20px;
           &__groupname{
 
           }
@@ -195,38 +195,30 @@
       padding: 30px 40px;
       overflow: scroll;
       position: relative;
+
       &__talk{
         // margin-bottom: 25px;  
         // display: flex;
-        min-height: 88px;
+        // min-height: 88px;
+        // position: relative;
+        // margin-bottom: 46px;
+      
+        &__left{
+          min-height: 88px;
         position: relative;
         margin-bottom: 46px;
-        &__left{
-
-  
+        position: relative;
         &__top{
           margin-bottom: 12px;
           position: absolute;
           left: 0px;
-  
-          &__name{
-
-            font-size: 20px;
-            font-weight: bold;
-            a{
-              text-decoration: none;
-              color: #eaa696;
-            }
-          }
-  
         }
         &__bottom{
           font-size: 16px;
           color: #434A54;
           background-color: #8b8482;
-          border-radius: 0px 10px 10px 10px;
+          border-radius: 10px 10px 10px 0px;
           padding: 7px 15px;
-
           position: absolute;
           bottom: 20px;
           left: 0;
@@ -236,22 +228,36 @@
         &__time{
           font-size: 12px;
           color: #eaa696;
-          margin-left: 10px;
-          padding-top: 6px;
+
           position: absolute;
   
-          bottom: 0;
+          bottom: -10px;
           left: 0;
+
+            a{
+              text-decoration: none;
+              color: #eaa696;
+              font-size: 20px;
+              font-weight: bold;
+              margin-bottom: 46px;
+            }
+
         }
+
+      }
+      &__leftImage{
+        height: 450px;
+        position: relative;
+        // margin-bottom: 46px;
       }
       &__right{
-
+        min-height: 88px;
+        position: relative;
+        margin-bottom: 46px;
       &__top{
         margin-bottom: 12px;
         position: absolute;
         right: 0px;
-
-
       }
       &__bottom{
         font-size: 16px;
@@ -263,8 +269,6 @@
         position: absolute;
         bottom: 20px;
         right: 0;
-        // width: 300px;
-        // height: 200px;
       }
       &__time{
         font-size: 12px;
@@ -277,8 +281,14 @@
         right: 0;
       }
     }
+    &__rightImage{
+      height: 450px;
+      position: relative;
+      margin-bottom: 46px;
+    }
     
     }
+
     }
     &__bottom{
       background-color:#0d5769;
