@@ -246,9 +246,11 @@
 
       }
       &__leftImage{
-        height: 450px;
+
+        height: 400px;
         position: relative;
-        // margin-bottom: 46px;
+        margin-bottom: 100px;
+    
       }
       &__right{
         min-height: 88px;
@@ -282,9 +284,9 @@
       }
     }
     &__rightImage{
-      height: 450px;
+      height: 400px;
       position: relative;
-      margin-bottom: 46px;
+      margin-bottom: 100px;
     }
     
     }
