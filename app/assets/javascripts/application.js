@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
+//= require tag-it
 //= require jquery_ujs
 //= require jquery.jpostal
 //= require_tree .

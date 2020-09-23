@@ -1,5 +1,5 @@
-<%= render 'layouts/header'%>
-<div class ="posts__containers">
+<%#= render 'layouts/header'%>
+<%#<div class ="posts__containers">
   <div class="posts__containers__container"> 
     <div class="posts__containers__container__left"> 
       <div class="posts__containers__container__left__title"> 
@@ -13,14 +13,14 @@
             <p class='posts__containers__container__left__timeline__description'>The organizer creates a group and decide the group name, the group members, the exchange date and the budget.</p>
             <div class="posts__containers__container__left__description"> 
             <%= link_to new_group_path do %>
-              <div class="posts__containers__container__left__description__icon">
+            <%#  <div class="posts__containers__container__left__description__icon">
                 <i class="fas fa-user-plus"></i>
               </div>
               <div class="posts__containers__container__left__description__word">
                 <h1>Create a Group</h1>
               </div>
             <% end %>
-            </div>
+          <%#  </div>
           </div>
         </li>
         <li>
@@ -60,68 +60,23 @@
 
         <div class="posts__containers__container__right__top__search"> 
           <%= form_tag(search_posts_path,:method => 'get') do %>
-          <i class="fas fa-search"></i>
+         <%# <i class="fas fa-search"></i>
           <%= text_field_tag :keyword, nil, placeholder: 'Search by tag'%>
             <%#= submit_tag 'Search', :name => nil %>
-          <% end %>
-          </div>
+      <%#    <% end %>
+     <%#     </div>
       </div>
       <div class="posts__containers__container__right__posts"> 
 
       <% if Post.any? %>
-        <div class="posts__containers__container__right__posts__post">
-          <div class="posts__containers__container__right__posts__post__top"> 
-            <div class="posts__containers__container__right__posts__post__top__account">
-                <% if current_user.image.present? %>
-                  <%= link_to "#" do %>
-                    <%= image_tag "#" %>
-                  <% end %>
-                <% else %>
-                  <%= link_to  "#"  do %>
-                  <%= image_tag "/assets/account.png" %>
-                  <% end %>
-                <% end %>
-            </div>
-            <div class="posts__containers__container__right__posts__post__top__name">
-              <a href="#">
-                <%  %>
-              </a>
-            </div>
-            <div class="posts__containers__container__right__posts__post__top__manage">
-              <ul class="posts__containers__container__right__posts__post__top__manage__lists">
-                <li>
-                  <%= link_to "#", method: :get do %>
-                  <i class="fas fa-edit"></i> Edit
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to  "#", method: :delete do %>
-                    <i class="fas fa-trash-alt"></i> Delete
-                  <% end %>
-                </li>
-              </ul>
-            </div>
-          </div> 
-          <div class="posts__containers__container__right__posts__post__bottom"> 
-          <%= image_tag "" %>
-            <div class="posts__containers__container__right__posts__post__bottom__caption">
-              <div class="posts__containers__container__right__posts__post__bottom__caption__top">
-                <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
-                  <li>
-                  </li>
-                </div>
-            </div>
-            <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
-            </div>
-          </div>
-        </div> 
-      <% else %>
-        <div class="posts__containers__container__right__posts__nothing"> 
+  
+    <%#  <% else %>
+      <%#  <div class="posts__containers__container__right__posts__nothing"> 
           <i class="fas fa-camera-retro"></i><br>
           No posts so far<br>Let's share what you got!
         </div>
       <% end %>
-      </div>    
+     <%# </div>    
 
         </div>
         </div>

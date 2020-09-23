@@ -128,6 +128,15 @@
       border-radius: 10px;
       min-height: 100vh;
       position: relative;
+      &__title{
+        text-align: center;
+        font-size: 18px;
+        span{
+          font-weight: bold;
+          font-size: 20px;
+
+        }
+      }
       &__top{
         height: 15%;
         h1{
@@ -210,7 +219,7 @@
       padding: 40px;
       &__posts{
         width: 80%;
-        margin: 0 auto;
+        margin: 20px auto;
         overflow: scroll;
         height: 100vh;
         &__nothing{
@@ -315,27 +324,35 @@
                   text-align: left;
                   padding: 5px 20px;
   
-                  li{
-                    background-color: #0d5769;
-                    padding: 0.35em 0.7em;
-                    border-radius: 10rem;
-                    display: inline-block;
-                    font-size:10px;
-                    margin-right:10px;
+                  // li{
+                  //   background-color: #0d5769;
+                  //   padding: 0.35em 0.7em;
+                  //   border-radius: 10rem;
+                  //   display: inline-block;
+                  //   font-size:10px;
+                  //   margin-right:10px;
 
-                  }
-                  li:hover {
-                    position: relative;
-                    top: 1px;
-                    left: 1px;
-                  }
+                  // }
+                  // li:hover {
+                  //   position: relative;
+                  //   top: 1px;
+                  //   left: 1px;
+                  // }
                   &__link{
                     font-weight: bold;
                     text-decoration: none;
                     color: #eaa696;
-
+                    background-color: #0d5769;
+                    padding: 0.35em 0.7em;
+                    border-radius: 10rem;
+                    display: inline-block;
+                    font-size: 10px;
                   }
-  
+                   &__link:hover {
+                    position: relative;
+                    top: 1px;
+                    left: 1px;
+                  }
                 }
                 &__giver{
                   margin-top: 5px;

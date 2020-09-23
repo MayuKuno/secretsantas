@@ -72,6 +72,13 @@
           <% end %>
           </div>
       </div>
+      <div class="posts__containers__container__right__title"> 
+       <% if params[:tag] %>
+        Results for  <span>"<%= params[:tag] %>"</span>
+       <% else %>
+        <h1></h1>
+       <% end %>
+      </div>
       <div class="posts__containers__container__right__posts"> 
       <% if Post.any? %>
       <% @posts.each do |post| %>
@@ -115,11 +122,9 @@
             <div class="posts__containers__container__right__posts__post__bottom__caption">
               <div class="posts__containers__container__right__posts__post__bottom__caption__top">
                 <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
-                  <% post.tags.each do |tag| %>
-                  <li>
-                  <%= link_to "##{tag.name}", "/tags/#{tag.name}", class: "posts__containers__container__right__posts__post__bottom__caption__top__category__link" %>
-                  </li>
-                  <% end %>
+ 
+                  <%= raw(post.tag_list.map { |t| link_to "##{t}", tag_path(t), class: "posts__containers__container__right__posts__post__bottom__caption__top__category__link" }.join(' ')) %> <!--追加-->
+
                 </div>
             </div>
             <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
