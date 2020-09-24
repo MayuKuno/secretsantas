@@ -4,10 +4,10 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true
   mount_uploader :image, ImageUploader
   acts_as_taggable
+
   def self.search(search)
     if search
-      Post.tag_counts_on(:tags).where('name LIKE(?)', "%#{search}%")
-
+      Post.where('description LIKE(?)', "%#{search}%")
     else
       Post.all
     end

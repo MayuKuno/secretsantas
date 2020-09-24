@@ -67,12 +67,18 @@ class PostsController < ApplicationController
     redirect_to posts_path
 
   end
-  def search
-    @tags =  Post.all.search(params[:keyword])
-    @posts = Post.all
 
+
+  def search
+    @posts = Post.search(params[:keyword])
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
+  
   private
   def post_params
     params.require(:post).permit(:tag_list, :description, :image, category_ids: []).merge(user_id: current_user.id)
