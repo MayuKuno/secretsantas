@@ -76,11 +76,8 @@
                   <div class="usershow__containers__container__bottom__tab-content1__list__details__caption__top">
 
                   <div class="usershow__containers__container__bottom__tab-content1__list__details__caption__top__category">
-                    <% post.categories.each do |category| %>
-                    <li>
-                        <%= link_to category.name, category_path(category.id), class: "usershow__containers__container__bottom__tab-content1__list__details__caption__top__category__link" %>
-                    </li>
-                    <% end %>
+                  <%= raw(post.tag_list.map { |t| link_to "##{t}", tag_path(t), class: "posts__containers__container__right__posts__post__bottom__caption__top__category__small" }.join(' ')) %> <!--追加-->
+
                   </div>
                   </div>
                   <div class="usershow__containers__container__bottom__tab-content1__list__details__caption__comment">

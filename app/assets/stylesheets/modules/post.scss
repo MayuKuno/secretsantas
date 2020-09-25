@@ -362,6 +362,22 @@
                     top: 1px;
                     left: 1px;
                   }
+                  &__small{
+                    font-weight: bold;
+                    text-decoration: none;
+                    color: #eaa696;
+                    background-color: #0d5769;
+                    padding: 1px 4px;
+                    border-radius: 10rem;
+                    display: inline-block;
+                    font-size: 10px;
+                    margin-left: 6px;
+                  }
+                   &__small:hover {
+                    position: relative;
+                    top: 1px;
+                    left: 1px;
+                  }
                 }
                 &__giver{
                   margin-top: 5px;
