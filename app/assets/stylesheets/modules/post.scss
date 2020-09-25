@@ -136,6 +136,17 @@
           font-size: 20px;
 
         }
+        &__condition{
+          float: right;
+          display: inline;
+          position: absolute;
+          top:160px;
+          right: 120px;
+          a{
+            text-decoration: none;
+            color:#ca9a8f ;
+          }
+        }
       }
       &__top{
         height: 15%;
@@ -151,7 +162,6 @@
         }
           &__tag{
             height: 40%;
-            background: rgba(13, 87, 105, 0.1);
             text-align: center;
             border-radius: 10px;
             width: 90%;
@@ -163,12 +173,10 @@
             }
             li{
               background-color: #0d5769;
-              padding: 0.35em 0.7em;
-              border-radius: 10rem;
               display: inline-block;
-              font-size: 10px;
-              margin-right: 10px;
-              margin-top: 5px;
+              font-size: 4px;
+              margin-right: 9px;
+              margin-top: 10px;
             }
           }
           &__search{
@@ -180,7 +188,7 @@
         float: right;
         display: inline;
         position: absolute;
-        top:130px;
+        top:160px;
         right: 120px;
         a{
           text-decoration: none;
@@ -190,9 +198,9 @@
       
     .fa-search{
       position: absolute;
-      top: 111px;
+      top: 115px;
       left: 120px;
-      font-size: 30px;
+      font-size: 26px;
       color: #0d5769;
     }
           
@@ -236,6 +244,7 @@
         font-size: 30px;
         text-align: center;
         font-weight: bold;
+ 
         }
         // height: 100vh;
         &__post{

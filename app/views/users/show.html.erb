@@ -19,7 +19,6 @@
         <%= @user.nickname %>
         </div>
           <%= render 'layouts/stats' %>
-
         
         <% if user_signed_in? && current_user.id.to_s == params[:id]%>
         <div class ="usershow__containers__container__top__right__edit">

@@ -73,10 +73,12 @@
           </div>
       </div>
 
-
       <div class="posts__containers__container__right__title"> 
        <% if params[:tag] %>
-        Results for  <span>"<%= params[:tag] %>"</span>
+        <div class="posts__containers__container__right__title__condition"> 
+          <%= link_to "Back", posts_path %>
+        </div>
+        Results for  <span>"#<%= params[:tag] %>"</span>
        <% else %>
         <h1></h1>
        <% end %>

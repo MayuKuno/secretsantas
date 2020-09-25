@@ -1184,12 +1184,69 @@ text-align: center;
         
         &__tab-content{
           border-bottom:3px solid #ddd;
-          padding-bottom: 40px;
+          padding: 40px 0;
           display: flex;
           justify-content: space-between;
           width: 100%;
           flex-wrap: wrap;
           min-height: 500px;
+          &__box{
+            width: 60%;
+            margin:  0 auto;
+            &__each{
+              height: 150px;
+              display: flex;
+              margin-bottom: 10px;
+              background: rgba(234, 166, 150, 0.2);
+
+              &__pic{
+                line-height: 150px;
+                img{
+                  width: 130px;
+                  height: 130px;
+                  object-fit: cover;
+                  border-radius: 50%;
+                  margin: 10px 0 0 40px;
+                }
+              }
+              &__name{
+                font-size: 30px;
+                padding: 20px 0 50px 50px;
+                width: 55%;
+                float: left;
+                a{
+                  text-decoration: none;
+                  color: #494c4e;;
+                }
+                .stats__followers, .stats__following{
+                  padding: 0 10px;
+                  border-left: 1px solid gray;
+                  text-decoration: none;
+                  font-size: 16px;
+                  color: #0d5769;
+                  position: relative;
+                  display: block;
+                  box-sizing: border-box;
+                  padding: 10px;
+                  transition: .2s;
+                  font-weight: bold;
+
+                }
+
+              }
+              &__detail{
+                line-height: 150px;
+
+                a{
+                  background: rgba(139, 132, 130, 0.3);
+                  padding: 5px 15px;
+                  text-decoration: none;
+                  color: #0d5769;
+
+                }
+              }
+            }
+          }
           &__list{
             background-color: white;
             height: 250px;

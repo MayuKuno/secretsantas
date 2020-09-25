@@ -1,6 +1,7 @@
 
 $(function() {
   var search_list = $(".posts__containers__container__right__posts");
+  
 
   function appendTweet(post) {
     if(post.user_sign_in && post.user_sign_in.id == post.user_id){
@@ -61,8 +62,9 @@ $(function() {
     <div class="posts__containers__container__right__posts__post__bottom__caption">
         <div class="posts__containers__container__right__posts__post__bottom__caption__top">
         <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
- 
-        
+
+       <a href="">${post.tag_list}</a> 
+
 
       </div>
       </div>
@@ -85,8 +87,15 @@ $(function() {
     `
     search_list.append(html);
   }
-
   
+  function appendsearchclear() {
+    var html = `
+    <div class="posts__containers__container__right__condition"> 
+    <a href="/posts">Back</a> 
+    </div>
+    `
+    $(".posts__containers__container__right").append(html);
+  }
 
   $(".search-input").on("keyup", function() {
     var input = $(".search-input").val();
@@ -102,11 +111,10 @@ $(function() {
       search_list.empty();
       if (posts.length !== 0) {
         posts.forEach(function(post){
-            appendTweet(post);
+              appendTweet(post);
+              appendsearchclear("");
 
-        });
-
- 
+          });
         
       }else {
         appendErrMsgToHTML("");

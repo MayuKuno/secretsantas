@@ -63,60 +63,109 @@
       </div>
       <div class="usershow__containers__container__bottom__tab-contents">
 
-      <div class="usershow__containers__container__bottom__tab-content content1">
-        <% @user.following.each do |user| %>
-          <% if user.present? %>
-            <div class="content1__container">
-              <div class="content1__container__name">
-              <%= link_to user.nickname, user_path(user) %>
-              </div>
-              <div class="content1__container__button">
-                <% if current_user.following?(@user) %>
-                  <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %> 
-                    <%= f.submit "Unfollow", class: "btn" %> 
-                  <% end %>
-                <% else %>
-                  <%= form_for(current_user.active_relationships.build) do |f| %> 
-                    <div><%= hidden_field_tag :followed_id, @user.id %></div> 
-                    <%= f.submit "Follow", class: "btn btn-primary" %> 
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          <% else %>
-           No Following
-          <% end %>
-        <% end %>
-      </div>
-        <!-- ======================================== -->
-        <div class="usershow__containers__container__bottom__tab-content content2">
 
-          <% @user.followers.each do |user| %>
-          <% if user.present? %>
-            <div class="content2__container">
-              <div class="content2__container__name">
-              <%= link_to user.nickname, user_path(user) %>
-              </div>
-              <div class="content2__container__button">
-                <% if current_user.following?(@user) %>
-                  <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %> 
-                    <%= f.submit "Unfollow", class: "btn" %> 
+      <div class="usershow__containers__container__bottom__tab-content content1">
+        <div class="usershow__containers__container__bottom__tab-content__box">
+          <% @user.following.each do |user| %>
+          <div class="usershow__containers__container__bottom__tab-content__box__each">
+            <div class="usershow__containers__container__bottom__tab-content__box__each__pic">
+                <% if user.image.present? %>
+                  <%= link_to user_path(user.id) do %>
+                    <%= image_tag user.image %>
                   <% end %>
                 <% else %>
-                  <%= form_for(current_user.active_relationships.build) do |f| %> 
-                    <div><%= hidden_field_tag :followed_id, @user.id %></div> 
-                    <%= f.submit "Follow", class: "btn btn-primary" %> 
+                  <%= link_to  user_path(user.id)  do %>
+                    <%= image_tag "/assets/account.png" %>
                   <% end %>
                 <% end %>
+            </div>
+            <div class="usershow__containers__container__bottom__tab-content__box__each__name">
+                  <%= link_to user_path(user.id) do %>
+                    <%= user.nickname %>
+                  <% end %>
+              <div class="usershow__containers__container__bottom__tab-content__box__each__name__stat">
+                <div class="stats">
+                  <div class="stats__following">
+                      <strong id="following" class="stat">
+                        <%= user.following.count %>
+                      </strong>following
+                  </div>
+                  <div class="stats__followers">
+                      <strong id="followers" class="stat">
+                        <%= user.followers.count %>
+                      </strong>followers
+                  </div>
+                </div>
               </div>
             </div>
-          <% else %>
-           No Follower
-          <% end %>
-        <% end %>
+            <div class="usershow__containers__container__bottom__tab-content__box__each__detail">
+              <%= link_to '詳細', user_path(user) %>
+            </div>
+           </div>
+            <% end %>
+          </div>
+        </div>
+        <!-- ======================================== -->
+
+        <div class="usershow__containers__container__bottom__tab-content content2">
+        <div class="usershow__containers__container__bottom__tab-content__box">
+          <% @user.followers.each do |user| %>
+          <div class="usershow__containers__container__bottom__tab-content__box__each">
+            <div class="usershow__containers__container__bottom__tab-content__box__each__pic">
+                <% if user.image.present? %>
+                  <%= link_to user_path(user.id) do %>
+                    <%= image_tag user.image %>
+                  <% end %>
+                <% else %>
+                  <%= link_to  user_path(user.id)  do %>
+                    <%= image_tag "/assets/account.png" %>
+                  <% end %>
+                <% end %>
+            </div>
+            <div class="usershow__containers__container__bottom__tab-content__box__each__name">
+                  <%= link_to user_path(user.id) do %>
+                    <%= user.nickname %>
+                  <% end %>
+              <div class="usershow__containers__container__bottom__tab-content__box__each__name__stat">
+                <div class="stats">
+                  <div class="stats__following">
+                      <strong id="following" class="stat">
+                        <%= user.following.count %>
+                      </strong>following
+                  </div>
+                  <div class="stats__followers">
+                      <strong id="followers" class="stat">
+                        <%= user.followers.count %>
+                      </strong>followers
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="usershow__containers__container__bottom__tab-content__box__each__detail">
+              <%= link_to '詳細', user_path(user) %>
+            </div>
+           </div>
+            <% end %>
+          </div>
         </div>
 
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+  
         <!-- ======================================== -->
+        
 
     </div>
     </div>
