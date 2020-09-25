@@ -87,13 +87,13 @@
         <div class="posts__containers__container__right__posts__post">
           <div class="posts__containers__container__right__posts__post__top"> 
             <div class="posts__containers__container__right__posts__post__top__account">
-                <% if current_user.image.present? %>
+                <% if post.user.image.present? %>
                   <%= link_to user_path(post.user.id) do %>
                     <%= image_tag post.user.image %>
                   <% end %>
                 <% else %>
-                  <%= link_to  user_path(current_user.id)  do %>
-                  <%= image_tag "/assets/account.png" %>
+                  <%= link_to  user_path(post.user.id)  do %>
+                    <%= image_tag "/assets/account.png" %>
                   <% end %>
                 <% end %>
             </div>

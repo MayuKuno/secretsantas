@@ -71,7 +71,6 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:keyword])
-
     respond_to do |format|
       format.html
       format.json

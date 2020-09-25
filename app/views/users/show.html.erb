@@ -4,13 +4,13 @@
   <div class="usershow__containers__container">
     <div class="usershow__containers__container__top">
       <div class="usershow__containers__container__top__left">
-      <% if current_user.image.present? %>
-        <%= link_to  user_path(current_user.id)  do %>
+      <% if @user.image.present? %>
+        <%= link_to user_path(@user.id) do %>
           <%= image_tag @user.image %>
         <% end %>
       <% else %>
-        <%= link_to  user_path(current_user.id)  do %>
-         <%= image_tag "/assets/account.png" %>
+        <%= link_to  user_path(@user.id)  do %>
+        <%= image_tag "/assets/account.png" %>
         <% end %>
       <% end %>
       </div>

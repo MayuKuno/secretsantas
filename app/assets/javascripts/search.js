@@ -21,6 +21,20 @@ $(function() {
       var current_user = ""
     }
 
+    if(post.picture.url == null){
+      var picture =
+      ` 
+      <img src="/assets/account.png" />
+      `
+    } else {
+      var picture = 
+      ` 
+      <img src = '${post.picture.url}'/>
+      `
+    }
+
+
+
 
 
     var html = 
@@ -28,7 +42,7 @@ $(function() {
     <div class="posts__containers__container__right__posts__post">
     <div class="posts__containers__container__right__posts__post__top"> 
       <div class="posts__containers__container__right__posts__post__top__account">
-
+        ${picture}
       </div>
       <div class="posts__containers__container__right__posts__post__top__name">
         <a href="/users/${post.user_id}">
@@ -42,16 +56,18 @@ $(function() {
       </div>
     </div> 
     <div class="posts__containers__container__right__posts__post__bottom"> 
-    <img src=${post.image}  alt="サンプル">
-      <div class="posts__containers__container__right__posts__post__bottom__caption">
+    <img src = '${post.image.url}'/>
+
+    <div class="posts__containers__container__right__posts__post__bottom__caption">
         <div class="posts__containers__container__right__posts__post__bottom__caption__top">
-          <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
+        <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
+ 
+        
 
-
-          </div>
+      </div>
       </div>
       <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
-        <%= ${post.description}%>
+        ${post.description}
       </div>
     </div>
   </div>   
@@ -60,8 +76,13 @@ $(function() {
     search_list.append(html);
    }
 
-  function appendErrMsgToHTML(msg) {
-    var html = `<div class='name'>${ msg }</div>`
+  function appendErrMsgToHTML() {
+    var html = `
+    <div class="posts__containers__container__right__posts__nothing"> 
+    <i class="fas fa-camera-retro"></i><br>
+    No results<br>Let's share what you got!
+    </div>
+    `
     search_list.append(html);
   }
 
@@ -69,8 +90,8 @@ $(function() {
 
   $(".search-input").on("keyup", function() {
     var input = $(".search-input").val();
-    console.log(input);
 
+    $('.posts__containers__container__right__title').hide();
     $.ajax({
       type: 'GET',
       url: '/posts/search',
@@ -81,10 +102,14 @@ $(function() {
       search_list.empty();
       if (posts.length !== 0) {
         posts.forEach(function(post){
-          appendTweet(post);
+            appendTweet(post);
+
         });
+
+ 
+        
       }else {
-        appendErrMsgToHTML("一致するツイートがありません");
+        appendErrMsgToHTML("");
       }
     })
     .fail(function() {
