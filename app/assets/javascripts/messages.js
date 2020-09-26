@@ -3,8 +3,7 @@ $(function(){
     
     if ( message.user_id ) {
       if ( message.image ) {
-          var html =
-          `
+          var html = `
           <div class ="message__containers__main__middle__talk" data-message-id=${message.id}>
           <div class="message__containers__main__middle__talk__rightImage" >
           <div class ="message__containers__main__middle__talk__right__bottom">

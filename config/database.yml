@@ -47,8 +47,10 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
   <<: *default
   database: secretsantas_production
   username: secretsantas
   password: <%= ENV['SECRETSANTAS_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
