@@ -730,18 +730,18 @@
 }
 
 #button{
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 100px;
   background-color: #0d5769;
-  border-radius: 50%;
   text-align: center;
-  line-height: 150px;
-  color:#eaa696 ;
+  line-height: 100px;
+  color: #eaa696;
   font-weight: bold;
   font-size: 42px;
   cursor: pointer;
-  box-shadow: 0 10px 0 #0c4958;
+  margin-top: 23px;
 }
+
 #button:hover{
   opacity: 0.9;
 }
@@ -772,7 +772,6 @@
       }
     }
     &__bottom{
-      height: 100%;
       padding: 50px;
       background-color: #eaa696;
       position: relative;
@@ -786,20 +785,18 @@
       }
       &__info{
         display: flex;
-        justify-content: space-around;
-        font-size: 20px;
-        height: 40px;
+
+        height: 56px;
         line-height: 40px;
-        margin-bottom: 50px;
+
         &__title{
-          width: 40%;
+          width: 65%;
           text-align: right;
-          border-right: 7px solid #0d5769 ;
           padding-right: 50px;
           font-weight: bold;
         }
         &__content{
-          margin-left: 150px;
+          margin-left: 39px;
           width: 60%;
           a{
             text-decoration: none;
@@ -808,14 +805,37 @@
           }
         }
       }
-      .draw{
-        display: flex;
-        justify-content: space-around;
+      &__draw{
         font-size: 20px;
-        height: 150px;
-        line-height: 150px;
         margin-bottom: 20px;
+        &__title{
+          font-weight: bold;
+          text-align: center;
+          margin-top: 27px;
 
+        }
+        #button{
+          width: 130px;
+          height: 130px;
+          background-color: #0d5769;
+          text-align: center;
+          line-height: 130px;
+          color: #eaa696;
+          font-weight: bold;
+          font-size: 42px;
+          cursor: pointer;
+          margin: 30px auto 0;
+          border-radius: 50%;
+        }
+        
+        #button:hover{
+          opacity: 0.9;
+        }
+        
+        #button:active{
+          box-shadow: 0 5px 0 #0c4958;
+          margin-top: 35px;
+        }
       }
     }
   }

@@ -63,7 +63,11 @@ $(function() {
         <div class="posts__containers__container__right__posts__post__bottom__caption__top">
         <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
 
-       <a href="">${post.tag_list}</a> 
+       ${post.tag_list.map(tag => 
+        `
+       <a class="posts__containers__container__right__posts__post__bottom__caption__top__category__link" href="tags/${tag}"> #${tag} </a>
+       `
+       ).join(' ')}
 
 
       </div>
