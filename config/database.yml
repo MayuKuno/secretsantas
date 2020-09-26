@@ -51,6 +51,6 @@ test:
 production:
   <<: *default
   database: secretsantas_production
-  username: secretsantas
+  username: root
   password: <%= ENV['SECRETSANTAS_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
