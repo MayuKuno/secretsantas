@@ -69,8 +69,9 @@
             </div>
             <div class="groupsnew__containers__container__form__item">
             Budget
-            <%= form.select :budget, [["2000円", "2000円"], ["3000円", "3000円"], ["5000円", "5000円"], ["10000円", "10000円"]], class: :groupsnew__containers__container__form__description %>
-            </div>
+            <%= form.select :budget, [["¥2,000", "2000"], ["¥3,000", "3000"], ["¥5,000", "5000"], ["¥10,000", "10000"]], class: :groupsnew__containers__container__form__description %>
+
+           </div>
           
             <%= form.submit 'Create', class: :groupsnew__containers__container__form__create %>
             <%= link_to "Back", posts_path, class: "groupsnew__containers__container__form__back" %>
