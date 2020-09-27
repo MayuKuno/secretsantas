@@ -13,7 +13,9 @@
         <% end %>
       <% else %>
         <%= link_to  user_path(current_user.id)  do %>
-         <%= image_tag "/assets/account.png" %>
+         <%#= image_tag "/assets/account.png" %>
+         <%= image_tag asset_path("account.png", alt: "アカウント") %>
+
         <% end %>
       <% end %>
       </div>
@@ -75,7 +77,9 @@
                   <% end %>
                 <% else %>
                   <%= link_to  user_path(user.id)  do %>
-                    <%= image_tag "/assets/account.png" %>
+                    <%#= image_tag "/assets/account.png" %>
+                    <%= image_tag asset_path("account.png", alt: "アカウント") %>
+
                   <% end %>
                 <% end %>
             </div>
@@ -118,7 +122,9 @@
                   <% end %>
                 <% else %>
                   <%= link_to  user_path(user.id)  do %>
-                    <%= image_tag "/assets/account.png" %>
+                    <%#= image_tag "/assets/account.png" %>
+                    <%= image_tag asset_path("account.png", alt: "アカウント") %>
+
                   <% end %>
                 <% end %>
             </div>

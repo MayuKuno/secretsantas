@@ -28,7 +28,9 @@
               <% if @user.image.present? %>
                 <%= image_tag @user.image, id: :img_prev %>
               <% else %>
-              <%= image_tag "/assets/account.png", id: :img_prev %>
+              <%#= image_tag "/assets/account.png", id: :img_prev %>
+              <%= image_tag asset_path("account.png"), id: :img_prev  %>
+
               <% end %>
             </div>
             <%= f.label :image, class: 'useredit__top__main__contents__images__image' do %>

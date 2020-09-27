@@ -26,6 +26,7 @@ $(function() {
       var picture =
       ` 
       <img src="/assets/account.png" />
+      
       `
     } else {
       var picture = 
