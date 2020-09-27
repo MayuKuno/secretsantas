@@ -5,7 +5,9 @@
     <% if post.image.present? %>
       <%= image_tag post.image, id: :img_prev %>
     <% else %>
-     <%= image_tag "/assets/Insert.png", id: :img_prev %>
+     <%#= image_tag "/assets/Insert.png", id: :img_prev %>
+     <%= image_tag asset_path("Insert.png"), id: :img_prev %>
+
     <% end %>
     </div>
     <%= f.label :image, class: 'postsnew__containers__container__form__images__image' do %>
