@@ -64,7 +64,7 @@
 
             <div class="groupsnew__containers__container__form__item">
             Exchange date
-            <%= raw sprintf(form.date_select(:exchange_date, include_blank: true, use_month_numbers: true,start_year: Time.now.year, end_year: (Time.now.year + 1), date_separator: '%s'),'年 ', '月')+'日' %>
+            <%= raw sprintf(form.date_select(:exchange_date, include_blank: true, use_month_numbers: true,start_year: Time.now.year, end_year: (Time.now.year + 1), date_separator: '%s'),'/ ', '/') %>
 
             </div>
             <div class="groupsnew__containers__container__form__item">
