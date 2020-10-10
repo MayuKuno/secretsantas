@@ -61,21 +61,14 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 |<img alt="Screen Shot 2020-10-10 at 15 02 13" src="https://user-images.githubusercontent.com/44453318/95647352-b0938080-0b09-11eb-8163-98ada7150857.png">|<img alt="Screen Shot 2020-10-10 at 15 02 35" src="https://user-images.githubusercontent.com/44453318/95647350-abcecc80-0b09-11eb-9549-84fd4d89d679.png">|
 
 
-## Features
-工夫したポイント
-
-
 
 ## Authors
-
 **Mayu Kuno** 
 　- [Github](https://github.com/MayuKuno)
 　- [Portfolio](https://ninefsblog.herokuapp.com/)
 
-## 使用技術(開発環境)
 
+## Function/features to improve
+- Amazon APIやRakuten APIを使った商品表示と欲しいものリスト
 
-## Function/features to improbe  課題や今後実装したい機能
-・
-・Amazon APIやRakuten APIを使った商品表示と欲しいものリストページ
 
