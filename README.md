@@ -32,7 +32,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 
 |  　Topページ  |  
 | ---- | 
-|<img width="800" alt="Screen Shot 2020-09-28 at 19 23 04" src="https://user-images.githubusercontent.com/44453318/95646604-2f39ef00-0b05-11eb-94ef-42323559dc90.png">|
+|<img width="500" alt="Screen Shot 2020-09-28 at 19 23 04" src="https://user-images.githubusercontent.com/44453318/95646604-2f39ef00-0b05-11eb-94ef-42323559dc90.png">|
  
 
 |ログインページ（基本情報）|ログインページ（住所）|ログインページ（完了）|
@@ -41,7 +41,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 
 |  Homeページ  |  
 | ---- | 
-|<img width="800" alt="Screen Shot 2020-10-10 at 14 54 02" src="https://user-images.githubusercontent.com/44453318/95647204-81c8da80-0b08-11eb-82c0-55d16ed80bdf.png">|
+|<img width="500" alt="Screen Shot 2020-10-10 at 14 54 02" src="https://user-images.githubusercontent.com/44453318/95647204-81c8da80-0b08-11eb-82c0-55d16ed80bdf.png">|
 
 
 |  Group作成ページ  | メッセージページ  |  
@@ -50,7 +50,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 
 |  Post作成ページ |  
 | ---- | 
-|<img alt="Screen Shot 2020-10-10 at 15 02 05" src="https://user-images.githubusercontent.com/44453318/95647354-b25d4400-0b09-11eb-9827-7a0a4e3797f4.png">|
+|<img width="500" alt="Screen Shot 2020-10-10 at 15 02 05" src="https://user-images.githubusercontent.com/44453318/95647354-b25d4400-0b09-11eb-9827-7a0a4e3797f4.png">|
 
 
 |  マイページ  | 友達のページ  |  
