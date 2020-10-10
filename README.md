@@ -23,7 +23,6 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 サンタクロースに相当するプレゼントの贈り主が不明（シークレット）である、という意味を込めてシークレットサンタと言われています。
 
 ## 本番環境(デプロイ先　テストアカウント＆ID)
-## 本番環境(デプロイ先　テストアカウント＆ID)
 [サイトへ](http://www.secretsantas365.com/)
 
 ## 本番環境(デプロイ先　テストアカウント＆ID)
@@ -33,8 +32,6 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 そして、家に籠もらなければいけない中、体調を崩したりや気分が落ち込む人もいるということを知りました。
 大切な友達や家族だからこそ、その人の好みや欲しいものを知っている、私はそんな大切な人に誕生日でもなくクリスマスでもない何でもない日に、プレゼントをあげ繋がり、励まし合いたいと思いました。
 誰から送られてきたギフトかはわからないですが、あなたにとって大切な誰かが大切なあなたのことを思って選んだものです、こんな環境だからこそ、そのプレゼントが特に特別に感じるはずだと思います。
-
-
 
 ## Screenshots
 |  　Topページ  |  
@@ -65,22 +62,13 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 |<img alt="Screen Shot 2020-10-10 at 15 02 13" src="https://user-images.githubusercontent.com/44453318/95647352-b0938080-0b09-11eb-8163-98ada7150857.png">|<img alt="Screen Shot 2020-10-10 at 15 02 35" src="https://user-images.githubusercontent.com/44453318/95647350-abcecc80-0b09-11eb-9549-84fd4d89d679.png">|
 
 
-
-
-
-
-
-
-
 ## Features
 工夫したポイント
 
 ## Getting Started
-
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-
 What things you need to install the software and how to install them
 
 ```
@@ -153,125 +141,6 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## Function/features to implement later 課題や今後実装したい機能
 
+・
 ・Amazon APIやRakuten APIを使った商品表示と欲しいものリストページ
 
-## DB設計
-### usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|nickname|string|null: false,unique: true|
-|first_name|string|null: false|
-|last_name|string|null: false|
-|first_name_kana|string|null: false|
-|last_name_kana|string|null: false|
-|birthday|date|null: false|
-|image|text|null: false|
-|email|string|null: false,default: "", unique: true|
-|password|string|null: false,default: ""|
-
-#### Association
-- has_one :address
-- has_many :posts
-- has_many :groups,  through:  :groups_users
-- has_many :groups_users
-- has_many :messages
-
-
-
-### addressテーブル
-|Column|Type|Options|
-|------|----|-------|
-|zipcode|integer|null: false|
-|prefecture_code|integer|null: false|
-|city|string|null: false|
-|district|string|null: false|
-|building|string| |
-|room|date| |
-|user|references| foreign_key: true|
-
-#### Association
-- belongs_to :user, optional: true
-
-
-### postsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|description|text|null: false|
-|image|text|null: false|
-
-#### Association
-- belongs_to :user
-- has_many :posts_categories
-- has_many :categoreis,  through: :posts_categories
-
-### categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|text|null: false|
-#### Association
-- has_many :posts_categories
-- has_many  :posts,  through:  :posts_categories
-
-### groupsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|budget|integer|null: false|
-|exchange_date|date|null: false|
-
-#### Association
-- has_many :groups_users
-- has_many  :users,  through:  :groups_users
-- has_many :messages
-
-### messagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|content|text|null: false|
-|image|text|null: false｜
-|user|references| foreign_key: true|
-|group|references| foreign_key: true|
-
-#### Association
-- belongs_to :user
-- belongs_to :group
-
-<!-- ーーーーーーーーー -->
-### posts_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|post|references| foreign_key: true|
-|category|references| foreign_key: true|
-
-#### Association
-- belongs_to :post
-- belongs_to :category
-
-### groups_usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|group|references| foreign_key: true|
-|user|references| foreign_key: true|
-#### Association
-- belongs_to :user
-- belongs_to :group
-
-### posts_usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user|references| foreign_key: true|
-|category|references| foreign_key: true|
-
-#### Association
-- belongs_to :user
-- belongs_to :group
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
