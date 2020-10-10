@@ -29,7 +29,6 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 
 ## Screenshots
 特に、デプロイがまだできていない場合はDEMOをつけることで見た目を企業側に伝えることができます
-<div style="text-align: center;">
 
 |  　Topページ  |  
 | ---- | 
@@ -43,7 +42,15 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 |  Homeページ  |  
 | ---- | 
 |<img width="800" alt="Screen Shot 2020-10-10 at 14 54 02" src="https://user-images.githubusercontent.com/44453318/95647204-81c8da80-0b08-11eb-82c0-55d16ed80bdf.png">|
-</div>
+
+
+<img width="1440" alt="Screen Shot 2020-10-10 at 15 02 35" src="https://user-images.githubusercontent.com/44453318/95647350-abcecc80-0b09-11eb-9549-84fd4d89d679.png">
+<img width="1440" alt="Screen Shot 2020-10-10 at 15 02 13" src="https://user-images.githubusercontent.com/44453318/95647352-b0938080-0b09-11eb-8163-98ada7150857.png">
+<img width="1439" alt="Screen Shot 2020-10-10 at 15 02 05" src="https://user-images.githubusercontent.com/44453318/95647354-b25d4400-0b09-11eb-9827-7a0a4e3797f4.png">
+<img width="1430" alt="Screen Shot 2020-10-10 at 15 01 45" src="https://user-images.githubusercontent.com/44453318/95647355-b2f5da80-0b09-11eb-9c58-893533501ae4.png">
+<img width="1440" alt="Screen Shot 2020-10-10 at 15 00 02" src="https://user-images.githubusercontent.com/44453318/95647357-b4270780-0b09-11eb-8507-504ceae3d209.png">
+
+
 ## Features
 工夫したポイント
 
