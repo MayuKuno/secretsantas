@@ -3,19 +3,24 @@
 Secret Santa 365
 
 ## Project Overview
-This app was created based on Secret Santa, a gift exchange game that originally takes place during the Christmas season.
+Under the circumstances of Covid-19, it has become difficult for us to see our loved ones in person.
+This app provides a platform to connect and exchange gifts with friends and family in a new way.
+You will receive a gift from an unknown sender who has put their love and care into choosing a perfect gift for you.
+Get conncted with your loved ones through Secret Santa 365.
 
 What is Secret Santa?
-It's a gift exchange game where you randomly exchange gifts that you bring at a Christmas party. It is said to be a secret Santa with the meaning that the sender of the gift equivalent to Santa Claus is unknown (secret).
-It's fun to be able to predict who will give a gift until you open it.
+Secret Santa is a Christmas tradition. Members of a group of friends, family, or coworkers draw random names to become someone’s Secret Santa and give a special gift for their giftee secretly.
 
-このアプリは、シークレットサンタと言う本来クリスマスシーズンに行われるギフト交換ゲームを元に作成されました。
+コロナ禍の今、私たちは大切な人と面と向かって会うことが難しくなりました。
+しかし、大切なひとが変わらず元気で過ごしているか、気になりませんか？直接会えなくても、あたらしい形で繋がっていたいと思いませんか？
+そんな時は、このアプリを使って、プレゼント交換会をしてみましょう。
+このアプリは、友達だけではなく、家族、職場の人などを集めて、オンラインプレゼント交換のお手伝いをします。
+誰から送られてきたギフトかはわからないですが、あなたにとって大切な誰かが大切なあなたのことを思って選んだプレゼントを受け取りましょう
 
 シークレットサンタとは？
-クリスマスのパーティにおいて、持ち寄ったプレゼントを無作為に交換し合うというプレゼント交換の遊びです。サンタクロースに相当するプレゼントの贈り主が不明（シークレット）である、という意味を込めてシークレットサンタと言われています。
-プレゼントが誰から何を贈られるかはプレゼントを開封するまで予測できないという楽しみがあります。
-
-
+クリスマスシーズンに行われるプレゼント交換ゲームです。
+プレゼントをあげる相手をランダムで決め、その相手にプレゼントを用意します。
+サンタクロースに相当するプレゼントの贈り主が不明（シークレット）である、という意味を込めてシークレットサンタと言われています。
 
 ## 本番環境(デプロイ先　テストアカウント＆ID)
 
