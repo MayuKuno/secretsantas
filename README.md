@@ -41,7 +41,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 
 |  Homeページ  |  
 | ---- | 
-|<img width="1440" alt="Screen Shot 2020-10-10 at 14 54 02" src="https://user-images.githubusercontent.com/44453318/95647204-81c8da80-0b08-11eb-82c0-55d16ed80bdf.png">|
+|<img width="500" alt="Screen Shot 2020-10-10 at 14 54 02" src="https://user-images.githubusercontent.com/44453318/95647204-81c8da80-0b08-11eb-82c0-55d16ed80bdf.png">|
 
 ## Features
 工夫したポイント
