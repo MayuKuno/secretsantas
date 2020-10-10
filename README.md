@@ -29,7 +29,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 
 ## Screenshots
 特に、デプロイがまだできていない場合はDEMOをつけることで見た目を企業側に伝えることができます
-![画像の説明](images/santa.png "hero")
+![画像の説明](images/santa.jpeg "hero")
 ## Features
 工夫したポイント
 
