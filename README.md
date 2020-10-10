@@ -133,7 +133,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Mayu Kuno** - [Mayu Kuno](https://github.com/MayuKuno)
+* **Mayu Kuno** 
+- [Github](https://github.com/MayuKuno)
+- [Portfolio](https://ninefsblog.herokuapp.com/)
 
 ## 使用技術(開発環境)
 
