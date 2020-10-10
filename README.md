@@ -30,7 +30,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 ## Screenshots
 特に、デプロイがまだできていない場合はDEMOをつけることで見た目を企業側に伝えることができます
 
-|  　Topページ  |  
+|  Topページ  |  
 | ---- | 
 |<img width="500" alt="Screen Shot 2020-09-28 at 19 23 04" src="https://user-images.githubusercontent.com/44453318/95646604-2f39ef00-0b05-11eb-94ef-42323559dc90.png">|
  
@@ -56,13 +56,6 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 |  マイページ  | 友達のページ  |  
 | ---- | ---- | 
 |<img alt="Screen Shot 2020-10-10 at 15 02 13" src="https://user-images.githubusercontent.com/44453318/95647352-b0938080-0b09-11eb-8163-98ada7150857.png">|<img alt="Screen Shot 2020-10-10 at 15 02 35" src="https://user-images.githubusercontent.com/44453318/95647350-abcecc80-0b09-11eb-9549-84fd4d89d679.png">|
-
-
-
-
-
-
-
 
 
 ## Features
