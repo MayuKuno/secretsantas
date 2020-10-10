@@ -35,9 +35,9 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 |<img alt="Screen Shot 2020-09-28 at 19 23 04" src="https://user-images.githubusercontent.com/44453318/95646604-2f39ef00-0b05-11eb-94ef-42323559dc90.png">|
  
 
-|ログインページ|
-|---|---|
-|<img alt="Screen Shot 2020-10-10 at 14 35 07" src="https://user-images.githubusercontent.com/44453318/95646698-20a00780-0b06-11eb-9e6f-38f77307478f.png">|<img alt="Screen Shot 2020-10-10 at 14 36 36" src="https://user-images.githubusercontent.com/44453318/95646697-20077100-0b06-11eb-850d-8d7c59345496.png">|
+|ログインページ|---|---|
+|---|---|---|
+|<img alt="Screen Shot 2020-10-10 at 14 35 07" src="https://user-images.githubusercontent.com/44453318/95646698-20a00780-0b06-11eb-9e6f-38f77307478f.png">|<img alt="Screen Shot 2020-10-10 at 14 36 36" src="https://user-images.githubusercontent.com/44453318/95646697-20077100-0b06-11eb-850d-8d7c59345496.png">|<img alt="Screen Shot 2020-10-10 at 14 36 47" src="https://user-images.githubusercontent.com/44453318/95646694-1c73ea00-0b06-11eb-8df0-dfbb8da44be2.png">|
 
 
 
