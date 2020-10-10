@@ -133,14 +133,12 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Mayu Kuno** - [Mayu Kuno](https://github.com/MayuKuno)
 
 ## 使用技術(開発環境)
 
-## Function/features to implement later 課題や今後実装したい機能
 
+## Function/features to implement later 課題や今後実装したい機能
 ・
 ・Amazon APIやRakuten APIを使った商品表示と欲しいものリストページ
 
