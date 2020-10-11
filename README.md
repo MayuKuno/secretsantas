@@ -62,7 +62,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 
 ## Authors
 **Mayu Kuno** 
-　- [Github](https://github.com/MayuKuno)
+　- [Githubマイページ](https://github.com/MayuKuno)
 　- [Portfolio](https://ninefsblog.herokuapp.com/)
 
 
