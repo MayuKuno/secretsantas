@@ -1,6 +1,13 @@
 
 /* Optional scoped theme for tag-it which mimics the zendesk widget. */
+@media screen and (max-width: 559px){ 
 
+}
+@media screen and (min-width: 560px) and ( max-width:960px){
+}
+
+@media screen and (min-width: 960px) { 
+}
 
 ul.tagit {
     border-style: solid;
