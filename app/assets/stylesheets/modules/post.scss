@@ -410,7 +410,7 @@
     .postsnew__containers{
       background-color: #ca9a8f;
       margin-top: 120px;
-      padding:70px;
+      padding: 20px 10px;
       &__container{
       &__title{
         color: #0d5769;
@@ -451,14 +451,14 @@
     
         }
         &__images{
-          display: flex;
+          // display: flex;
           margin: auto;
           width: 60%;
           margin-top: 60px;
           &__image{
             display: block;
             height: 40px;
-            margin: 80px auto;
+            // margin: 80px auto;
             &__img{
               width: 200px;
               background-color: #eaa696;
@@ -468,6 +468,8 @@
               text-decoration: none;
               box-shadow: 0 2px 4px rgba(0,0,0,0.3);
               border-radius: 10px;
+              margin: 0px auto;
+
             }
             &__img:hover {
               position: relative;
@@ -481,11 +483,14 @@
             }
           }
           &__show{
-            width: 500px;
+            // width: 500px;
             height: 200px;
+            display: flex;
+            align-items: center;
             #img_prev{
-              width: auto;
-              height: 180px;
+              width: 250px;
+              height: auto;
+              margin: 0 auto;
             }
           }
         }
@@ -700,10 +705,10 @@
     .sns__containers{
       background-color: #ca9a8f;
       margin-top: 120px;
-      padding:40px;
+      padding:20px;
       min-height: 100vh;
       &__container{
-        width: 60%;
+        // width: 60%;
         height: 600px;
         margin: 0 auto;
         &__top{
@@ -719,17 +724,17 @@
           }
         }
         &__bottom{
-          height: 70%;
-          padding: 60px;
+          // height: 70%;s
+          padding: 20px;
           background-color: #eaa696;
           a{
             text-decoration: none;
   
           }
           &__option{
-            margin: 0 auto;
+            margin: 20px auto;
             border-radius: 4px;
-            width: 50%;
+            width: 90%;
             line-height: 60px;
             font-size: 16px;
             text-align: center;
@@ -737,10 +742,10 @@
             margin-bottom: 40px;
             background-color: floralwhite;
             i{
-              font-size: 30px;
+              font-size: 20px;
               position: absolute;
-              left: 20px;
-              top:15px;
+              left: 15px;
+              top: 21px;
             }
             span{
               font-weight: bold;
@@ -1175,7 +1180,7 @@
     .postsnew__containers{
       background-color: #ca9a8f;
       margin-top: 120px;
-      padding:70px;
+      padding:70px 30px;
       &__container{
       &__title{
         color: #0d5769;
@@ -1216,14 +1221,14 @@
     
         }
         &__images{
-          display: flex;
+          // display: flex;
           margin: auto;
           width: 60%;
           margin-top: 60px;
           &__image{
             display: block;
             height: 40px;
-            margin: 80px auto;
+            // margin: 80px auto;
             &__img{
               width: 200px;
               background-color: #eaa696;
@@ -1233,6 +1238,8 @@
               text-decoration: none;
               box-shadow: 0 2px 4px rgba(0,0,0,0.3);
               border-radius: 10px;
+              margin: 0px auto;
+
             }
             &__img:hover {
               position: relative;
@@ -1246,11 +1253,14 @@
             }
           }
           &__show{
-            width: 500px;
+            // width: 500px;
             height: 200px;
+            display: flex;
+            align-items: center;
             #img_prev{
-              width: auto;
-              height: 180px;
+              width: 250px;
+              height: auto;
+              margin: 0 auto;
             }
           }
         }
@@ -1468,7 +1478,7 @@
       padding:40px;
       min-height: 100vh;
       &__container{
-        width: 60%;
+        // width: 60%;
         height: 600px;
         margin: 0 auto;
         &__top{
@@ -1494,7 +1504,7 @@
           &__option{
             margin: 0 auto;
             border-radius: 4px;
-            width: 50%;
+            width: 85%;
             line-height: 60px;
             font-size: 16px;
             text-align: center;
@@ -2012,9 +2022,11 @@
           &__show{
             width: 500px;
             height: 200px;
+            display: flex;
+            align-items: center;
             #img_prev{
-              width: auto;
-              height: 180px;
+              width: 250px;
+              height: auto;
             }
           }
         }
@@ -2258,7 +2270,7 @@
           &__option{
             margin: 0 auto;
             border-radius: 4px;
-            width: 50%;
+            width: 80%;
             line-height: 60px;
             font-size: 16px;
             text-align: center;
