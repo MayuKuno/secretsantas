@@ -51,14 +51,17 @@
     background-color: #0d5769;
     border: 1px dashed #eaa696; 
     border-radius: 5px;
+    height: 98%;
   
     &__logo{
       text-align:center;
-      margin: 5px 0px 5px 20px;
+      margin: 5px 0px 5px 10px;
+      display: flex;
+      align-items: center;
   
       &__content{
         color: #eaa696;
-        font-size: 40px;
+        font-size: 25px;
         font-weight: bold;
         text-decoration:none;
       }
@@ -69,7 +72,7 @@
     }
   .navigation{
     display: flex;
-    padding-right: 60px;
+    padding-right: 30px;
     align-items: center;
     &__list-item{
       list-style:none;
@@ -78,7 +81,7 @@
       a{
         color:#eaa696;
         text-decoration:none;
-        font-size: 40px;
+        font-size: 30px;
       }
     }
     &__list-item:not(:first-child){
@@ -87,8 +90,8 @@
   }
   .photo{
     img{
-      width:70px;
-      height:70px;
+      width:50px;
+      height:50px;
       object-fit:cover;
       border-radius:50%;
       margin-top: 7px;
