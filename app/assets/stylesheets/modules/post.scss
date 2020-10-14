@@ -318,7 +318,8 @@
                 margin-top: 20px;
                 margin-bottom: 5px;
                 height: 70%;
-                width: 100%;
+                max-width: 100%;
+
               }
   
               &__caption{
@@ -488,7 +489,7 @@
             display: flex;
             align-items: center;
             #img_prev{
-              width: 250px;
+              width: 200px;
               height: auto;
               margin: 0 auto;
             }
@@ -1088,7 +1089,8 @@
                 margin-top: 20px;
                 margin-bottom: 5px;
                 height: 70%;
-                width: 100%;
+                max-width: 100%;
+
               }
   
               &__caption{
@@ -1857,7 +1859,8 @@
                 margin-top: 20px;
                 margin-bottom: 5px;
                 height: 70%;
-                width: 100%;
+                max-width: 100%;
+
               }
   
               &__caption{
@@ -2183,6 +2186,7 @@
         &--right {
           float: right;
           width: 70%;
+
         }
       }
     }
@@ -2190,9 +2194,10 @@
     .chat-post-form__field{
       margin: 40px 0px;
       width: 80%;
+
       input[type='text']{
         box-sizing: border-box;
-        width: 100%;
+        width:100%;
         padding: 10px;
         transition: 0.3s;
         letter-spacing: 1px;

@@ -37,46 +37,12 @@
     <div class="chat-post-form__field--left">
       <div class='chat-post-form__label'>Tags</div>
     </div>
+    
     <div class="chat-post-form__field--right">
       <%= text_field_tag 'post[tag_list]', post.tag_list.join(","), class: "form-control", :data=>{:role=>"tagsinput"}%>
    </div>
   </div>
-
-
-
-
-    <%#div class="chat-post-form__field">
-    <div class="chat-post-form__field--left">
-      <label class="chat-post-form__label" for="chat_post_addchatmember">Select Tags</label>
-    </div>
-    <div class="chat-post-form__field--right">
-      <div class="chat-post-form__search clearfix">
-        <input class="chat-post-form__input" id="category-search-field" type="text">
-      </div>
-      <div id="category-search-result"></div>
-    </div>
-  </%div>
-
-  <%#div class="chat-post-form__field clearfix">
-    <div class="chat-post-form__field--left">
-      <label class="chat-post-form__label" for="chat_post_chatmember">Tags</label>
-    </div>
-    <div class="chat-post-form__field--right">
-      <div class="js-add-category" id="chat-post-categories">
-      <% post.categories.each do |category| %>          
-      <%#  <div class="chat-post-category clearfix js-chat-member">
-          <input name="post[category_ids][]" type = "hidden" value = <%= category.id %>>
-        <%#  <p class="chat-post-category__name">
-           <%= category.name %>
-        <%#  </p>
-          <a class="category-search-remove chat-post-category__btn chat-post-category__btn--remove js-remove-btn">
-            削除
-          </a> 
-        </div>
-      <% end %>
-     <%# </div>
-    </div>
-  </div>%>
+  
   <%= f.submit class: :postsnew__containers__container__form__btn %>
   <%= link_to "Back to Home", posts_path, class: "postsnew__containers__container__form__btn" %>
   <% end %>
