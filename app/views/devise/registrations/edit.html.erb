@@ -20,6 +20,9 @@
       <div class="useredit__top__main">
         <div class="useredit__top__main__contents">
           <h1>Edit User's Information</h1>
+            <% if resource.email == 'guest@example.com'%>
+            <%="ゲストユーザーは編集できません。"%>
+            <%end%>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put })  do |f| %>
 
           <%= render "devise/shared/error_messages", resource: resource %>

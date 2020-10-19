@@ -1,7 +1,8 @@
 <%= render 'layouts/header'%>
-
 <div class="usershow__containers">
   <div class="usershow__containers__container">
+  <div class="alert"><%= flash[:alert] %></div>
+
     <div class="usershow__containers__container__top">
       <div class="usershow__containers__container__top__left">
       <% if @user.image.present? %>
