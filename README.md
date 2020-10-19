@@ -60,7 +60,16 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 | ---- | ---- | 
 |<img alt="Screen Shot 2020-10-10 at 15 02 13" src="https://user-images.githubusercontent.com/44453318/95647352-b0938080-0b09-11eb-8163-98ada7150857.png">|<img alt="Screen Shot 2020-10-10 at 15 02 35" src="https://user-images.githubusercontent.com/44453318/95647350-abcecc80-0b09-11eb-9549-84fd4d89d679.png">|
 
-
+##Tech/framework used
+Ruby
+Rails
+Javascript
+jQuery
+HTML・CSS
+AWS
+MySQL
+Mac Catalina(10.15.5)
+VSCode
 
 ## Authors
 **Mayu Kuno** 
