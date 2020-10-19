@@ -4,6 +4,7 @@ class Group < ApplicationRecord
 
   has_many :messages, dependent: :destroy
   # mount_uploader :image, ImageUploader
+  validates :name,:budget,:exchange_date,presence: true
 
   def show_last_message
     if (last_message = messages.last).present?
