@@ -22,7 +22,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 プレゼントをあげる相手をランダムで決め、その相手にプレゼントを用意します。
 サンタクロースに相当するプレゼントの贈り主が不明（シークレット）である、という意味を込めてシークレットサンタと言われています。
 
-## Production environment
+## Production environment 本番環境
 [サイトへ](http://www.secretsantas365.com/)
 
 
@@ -32,7 +32,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 大切な友達や家族だからこそ、その人の好みや欲しいものを知っている、私はそんな大切な人に誕生日でもなくクリスマスでもない何でもない日に、プレゼントをあげ繋がり、励まし合いたいと思いました。
 誰から送られてきたギフトかはわからないですが、あなたにとって大切な誰かが大切なあなたのことを思って選んだものです、こんな環境だからこそ、そのプレゼントが特に特別に感じるはずだと思います。
 
-## Screenshots
+## DEMOs
 |  Top page  |  
 | ---- | 
 |<img width="500" alt="Screen Shot 2020-09-28 at 19 23 04" src="https://user-images.githubusercontent.com/44453318/95646604-2f39ef00-0b05-11eb-94ef-42323559dc90.png">|
