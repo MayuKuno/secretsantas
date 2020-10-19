@@ -62,15 +62,15 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 
 
 ## Tech/framework used
-Ruby
-Rails
-Javascript
-jQuery
-HTML・CSS
-AWS
-MySQL
-Mac Catalina(10.15.5)
-VSCode
+ - Ruby
+ - Rails
+ - Javascript
+ - jQuery
+ - HTML・CSS
+ - AWS
+ - MySQL
+ - Mac Catalina(10.15.5)
+ - VSCode
 
 ## Authors
 **Mayu Kuno** 
