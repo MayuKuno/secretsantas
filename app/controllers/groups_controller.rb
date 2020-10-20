@@ -12,7 +12,6 @@ class GroupsController < ApplicationController
   
   def new
     @group = Group.new
-    # @group.participant << current_user
 
   end
 
@@ -20,7 +19,6 @@ class GroupsController < ApplicationController
     @group = Group.create(group_params)    
     if @group.save
       redirect_to group_messages_path(@group)
-
     else
       render action: :new
     end

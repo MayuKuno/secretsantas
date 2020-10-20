@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @tags = Post.tag_counts_on(:tags).most_used(5)    # タグ一覧表示
+    @tags = Post.tag_counts_on(:tags).most_used(5)  
     if params[:tag]
       @posts = Post.tagged_with(params[:tag])    
     else
@@ -9,19 +9,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    # @tag =  ActsAsTaggableOn::Tag.find(params[:id])
-    # @posts = Post.tagged_with(@tag.name)
-    # @tags = Post.tag_counts_on(:tags).order('count DESC')     # 全タグ(Postモデルからtagsカラムを降順で取得)
-    # if @tag = params[:tag]   # タグ検索用
-    #   @post = Post.tagged_with(params[:tag])   # タグに紐付く投稿
-    # end
+
   end
 
   def new
     @category = Category.new
     @post = Post.new
-    # @categories = Category.all
-    # @post.categories 
   end
 
   def create
@@ -34,14 +27,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
-    # @category = @post.category_ids
-    
+    @post = Post.find(params[:id])    
   end
+
   def update
     @post = Post.find(params[:id])
-    # @post.update(post_params)
-    # redirect_to posts_path
     if @post.update(post_params)
       redirect_to posts_path(@post), notice: 'グループを更新しました'
     else
