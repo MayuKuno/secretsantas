@@ -1,0 +1,2 @@
+class MatchingUser < ApplicationRecord
+end

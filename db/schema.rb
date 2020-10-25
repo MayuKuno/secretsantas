@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200923121131) do
+ActiveRecord::Schema.define(version: 20201025145636) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "zipcode",         null: false
@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(version: 20200923121131) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["name"], name: "index_groups_on_name", unique: true, using: :btree
+  end
+
+  create_table "matching_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "group_id",     null: false
+    t.integer  "from_user_id", null: false
+    t.integer  "to_user_id",   null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["from_user_id"], name: "index_matching_users_on_from_user_id", using: :btree
+    t.index ["group_id"], name: "index_matching_users_on_group_id", using: :btree
+    t.index ["to_user_id"], name: "index_matching_users_on_to_user_id", using: :btree
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -137,6 +148,9 @@ ActiveRecord::Schema.define(version: 20200923121131) do
   add_foreign_key "addresses", "users"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "matching_users", "groups"
+  add_foreign_key "matching_users", "users", column: "from_user_id"
+  add_foreign_key "matching_users", "users", column: "to_user_id"
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
   add_foreign_key "post_categories", "categories"
