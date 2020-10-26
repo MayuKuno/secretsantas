@@ -22,37 +22,9 @@
 // @switched
 // だけ表示する
 
-$(function(){
-    $('#button').one('click', function(){
-    var original = ["九野","森","佐藤","堀","小森","よう"];
-    var switched = original.slice();
-    var i = switched.length, j, temp;
-    while (--i > 0){
-      do{
-        var j = Math.floor(Math.random() * (i + 1)); 
-      } while (j == i);
-      var temp = switched[j];
-      switched[j] = switched[i]; 
-      switched[i] = temp; 
-    }
-    this.textContent = switched[0];
-    console.log(switched[0])
-    console.log(switched[1])
-    console.log(switched[2])
-    console.log(switched[3])
-    console.log(switched[4])
-    console.log(switched[5])
+// $(function(){
+//     $('#button').one('click', function(){
+//     this.textContent = '<%== JSON.dump(@arr_json) %>';
+//     })
 
-
-    // original[0].name == current_user.name
-    // switched[0];
-    // original[1] = switched[0];
-    // original[2] = switched[0];
-    // original[3] = switched[0];
-    // original[4] = switched[0];
-    // original[5] = switched[0];
-
-  
-    })
-
-});
+// });

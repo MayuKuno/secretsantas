@@ -7,6 +7,10 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @counterpart = MatchingUser.find_by(group_id: params[:id], from_user_id: current_user).to_user_id
+  
+
+    # @arr_json = @arr.to_json.html_safe
     
   end
   
@@ -15,14 +19,31 @@ class GroupsController < ApplicationController
 
   end
 
+  # def create
+  #   @group = Group.create(group_params)    
+  #   if @group.save
+  #     redirect_to group_messages_path(@group)
+  #   else
+  #     render action: :new
+  #   end
+  # end
+
+  
   def create
-    @group = Group.create(group_params)    
-    if @group.save
+    @group = Group.new(group_params)
+    if @group.valid?
+      ActiveRecord::Base.transaction do
+        @group.save
+        matching_members(@group.users.pluck(:id)).each do |pair|
+          MatchingUser.create(group_id: @group.id, from_user_id: pair[:from_user], to_user_id: pair[:to_user])
+        end
+      end
       redirect_to group_messages_path(@group)
     else
       render action: :new
     end
   end
+
 
  
 
@@ -51,5 +72,13 @@ end
   end
 end
 
-
-
+def matching_members(group_user_ids)
+  group_user_ids.shuffle!
+  matching_pairs = []
+  group_user_ids.each_with_index do |user_id, i|
+    from_user = user_id
+    to_user = group_user_ids[i + 1] ? group_user_ids[i + 1] : group_user_ids[0]
+    matching_pairs << {from_user: from_user, to_user: to_user}
+  end
+  matching_pairs
+end
