@@ -7,7 +7,6 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    # @counterpart = MatchingUser.find_by(group_id: params[:id], from_user_id: current_user).to_user_id
     to_user_id = MatchingUser.find_by(group_id: params[:id], from_user_id: current_user).to_user_id
     @to_user = User.find(to_user_id)
     gon.to_user = @to_user
@@ -20,15 +19,6 @@ class GroupsController < ApplicationController
     @group = Group.new
 
   end
-
-  # def create
-  #   @group = Group.create(group_params)    
-  #   if @group.save
-  #     redirect_to group_messages_path(@group)
-  #   else
-  #     render action: :new
-  #   end
-  # end
 
   
   def create
@@ -55,21 +45,15 @@ end
 
 def update
   @group = Group.find(params[:id])
-  # group.update(group_params)
-  # redirect_to group_messages_path(group) 
   if @group.update(group_params)
-      # matching_members(@group.users.pluck(:id)).each do |pair|
-      #   MatchingUser.update(group_id: @group.id, from_user_id: pair[:from_user], to_user_id: pair[:to_user])
-      # end
     redirect_to group_messages_path(@group)
   else
     render action: :edit
   end
 
-
-
-
 end
+
+
 
 def destroy
   group = Group.find(params[:id])
