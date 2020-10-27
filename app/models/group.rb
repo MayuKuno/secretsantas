@@ -6,6 +6,19 @@ class Group < ApplicationRecord
   has_many :messages, dependent: :destroy
   # mount_uploader :image, ImageUploader
   validates :name,:budget,:exchange_date,presence: true
+  # validate :check_number_of_user
+
+  # def check_number_of_user
+  #  if users.count < 2
+  #   errors.add(:users, "must be at least 3") 
+  # end
+  validates :users, 
+  length: { 
+      minimum: 3,
+      message: 'must be at least 3' 
+  }
+
+ 
 
   def show_last_message
     if (last_message = messages.last).present?

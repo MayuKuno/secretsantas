@@ -74,7 +74,7 @@ $(function() {
       </div>
       </div>
       <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
-        ${post.description}
+        ${post.caption}
       </div>
     </div>
   </div>   

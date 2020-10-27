@@ -492,8 +492,8 @@
             display: flex;
             align-items: center;
             #img_prev{
-              width: 200px;
-              height: auto;
+              width: auto;
+              height: 100px;
               margin: 0 auto;
             }
           }
@@ -1266,8 +1266,8 @@
             display: flex;
             align-items: center;
             #img_prev{
-              width: 250px;
-              height: auto;
+              width: auto;
+              height: 200px;
               margin: 0 auto;
             }
           }
@@ -1551,6 +1551,11 @@
 @media screen and (min-width: 960px) { 
   .alert{
     text-align: center;
+    color:#262626; 
+    // background:#FFEBE8;
+    // text-align: center;
+    // border:2px solid #990000;
+    // padding:12px; font-weight:850;
   }
   .posts__containers{
     background-color: #ca9a8f;
@@ -2037,8 +2042,8 @@
             display: flex;
             align-items: center;
             #img_prev{
-              width: 250px;
-              height: auto;
+              width: auto;
+              height: 200px;
             }
           }
         }

@@ -61,7 +61,11 @@ $(function(){
         $("#participantssearchresult").empty();
         if (users.length !== 0) {
           users.forEach(function(user) {
+            let idNum = document.getElementById(user.id);
+            if (user.id && !idNum) {
             addparticipants(user);
+            }
+
           });
         } else if (input.length == 0) {
           return false;

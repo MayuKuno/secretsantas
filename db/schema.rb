@@ -81,12 +81,12 @@ ActiveRecord::Schema.define(version: 20201027110119) do
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "description", limit: 65535, null: false
-    t.text     "image",       limit: 65535, null: false
+    t.text     "caption",    limit: 65535, null: false
+    t.text     "image",      limit: 65535, null: false
     t.integer  "user_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.index ["description"], name: "index_posts_on_description", length: { description: 32 }, using: :btree
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["caption"], name: "index_posts_on_description", length: { caption: 32 }, using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 

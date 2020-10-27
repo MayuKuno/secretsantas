@@ -59,7 +59,7 @@
         <% if @post.present? %>
          <% @post.each do |post|%>
           <%= post.user.nickname %>
-          <%= post.description%>
+          <%= post.caption%>
          <% end %>
         <% else %>
           No Post

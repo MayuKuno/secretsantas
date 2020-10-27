@@ -1,5 +1,7 @@
 <div class="postsnew__containers__container__form">
 <%= form_for post do |f| %>
+ <%= render "layouts/error_messages", model: f.object %>
+
   <div class="postsnew__containers__container__form__images">
     <div class="postsnew__containers__container__form__images__show">
     <% if post.image.present? %>
@@ -26,7 +28,7 @@
       <div class='chat-post-form__label'>Caption</div>
     </div>
     <div class="chat-post-form__field--right">
-      <%= f.text_field :description, class: 'chat__post_name chat-post-form__input'%>
+      <%= f.text_field :caption, class: 'chat__post_name chat-post-form__input'%>
     </div>
   </div>
 
