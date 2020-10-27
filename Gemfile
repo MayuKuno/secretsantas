@@ -69,7 +69,7 @@ gem 'will_paginate', '3.1.5'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem "jquery-ui-rails"
-
+gem 'gon'
 group :production do
   gem 'unicorn'
 end

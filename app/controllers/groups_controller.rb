@@ -7,8 +7,11 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @counterpart = MatchingUser.find_by(group_id: params[:id], from_user_id: current_user).to_user_id
-  
+    # @counterpart = MatchingUser.find_by(group_id: params[:id], from_user_id: current_user).to_user_id
+    to_user_id = MatchingUser.find_by(group_id: params[:id], from_user_id: current_user).to_user_id
+    @to_user = User.find(to_user_id)
+
+    gon.to_user = @to_user
 
     # @arr_json = @arr.to_json.html_safe
     

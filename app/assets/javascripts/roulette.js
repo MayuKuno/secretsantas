@@ -22,9 +22,10 @@
 // @switched
 // だけ表示する
 
-// $(function(){
-//     $('#button').one('click', function(){
-//     this.textContent = '<%== JSON.dump(@arr_json) %>';
-//     })
+$(function(){
+    $('#button').one('click', function(){
+    this.textContent = `${gon.to_user.nickname}`;
+    })
 
-// });
+});
+
