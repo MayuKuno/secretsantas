@@ -8,6 +8,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :address
   has_many :posts, dependent: :destroy
   has_many :messages, dependent: :destroy
+  validates :nickname, uniqueness: true
 
   has_many :group_users, dependent: :destroy
   has_many :groups, through: :group_users, dependent: :destroy
