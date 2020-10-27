@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :nickname,:first_name,:last_name, :first_name_kana, :last_name_kana,:birthday ,presence: true
+  validates :nickname,:first_name,:last_name,:birthday ,presence: true
   has_one :address, dependent: :destroy
   accepts_nested_attributes_for :address
   has_many :posts, dependent: :destroy
@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :group_users, dependent: :destroy
   has_many :groups, through: :group_users, dependent: :destroy
 
-  has_many :matching_users, dependent: :destroy
+  # has_many :matching_users, dependent: :destroy
 
   #dependent: :destroyを追加することで、「親モデルを削除する際に、その親モデルに紐づく「子モデル」も一緒に削除できる」ようになります。
   has_many :active_relationships, class_name:  "Relationship",
@@ -51,11 +51,13 @@ class User < ApplicationRecord
   end
 
   def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |user|
+    find_or_create_by!(nickname: 'Mx.Geust', email: 'guest@example.com',first_name: 'GuestFirst',last_name: 'GuestLast',birthday: '2020-01-01') do |user|
       user.password = SecureRandom.urlsafe_base64
-      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+
     end
   end
+
+
 
 end
 

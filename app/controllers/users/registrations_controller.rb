@@ -20,7 +20,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     unless @user.valid? #そのインスタンス変数に対してvalid?メソッドを適用することで送られてきたパラメータが指定されたバリデーションに違反しないかどうかチェック
       flash.now[:alert] = @user.errors.full_messages
       render :new and return #falseになった場合は、エラーメッセージとともにnewアクションへrender
-
     end
     #最後のページまで遷移した後に保存するという機能を達成するために、sessionという機能を用いる。sessionとは、ページが遷移しても情報が消えることが無いように、クライアント側で保持をさせておく機能
     session["devise.regist_data"] = {user: @user.attributes} #1ページ目で入力した情報のバリデーションチェックが完了したら、session["devise.regist_data"]に値を代入。この時、sessionにハッシュオブジェクトの形で情報を保持させるために、attributesメソッドを用いてデータを整形
@@ -112,7 +111,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:address).permit(:zipcode, :prefecture_code, :city,:district, :building, :room)
   end
   def update_user_params
-    params.require(:user).permit(:nickname, :first_name,:last_name, :first_name_kana, :last_name_kana,:birthday,:image, group_ids: [],post_ids: [], address_attributes: [:zipcode, :prefecture_code, :city,:district, :building, :room, :_destroy, :id])
+    params.require(:user).permit(:nickname, :first_name,:last_name,:birthday,:image, group_ids: [],post_ids: [], address_attributes: [:zipcode, :prefecture_code, :city,:district, :building, :room, :_destroy, :id])
   end
   def after_update_path_for(resource)
     posts_path

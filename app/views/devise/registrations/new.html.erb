@@ -35,24 +35,8 @@
             </ol>
           </div>
           <%= form_for(@user, url: user_registration_path) do |f| %>
-        <%#   <div class="signup__top__main__contents__images">
-            <div class="signup__top__main__contents__images__show">
-              <% if @user.image.present? %>
-              <%#  <%= image_tag @user.image, id: :img_prev %>
-            <%#  <% else %>
-            <%#    <%= image_tag "/assets/empty.png", id: :img_prev %>
-           <%#   <% end %>
-           <%# </div>
-            <%= f.label :image, class: 'signup__top__main__contents__images__image' do %>
-          <%#      <div class="signup__top__main__contents__images__image__img">
-                <%= icon('fas', 'image') %>
-          <%#        Select image
-          <%#    </div>
-              <%= f.file_field :image, class: 'signup__top__main__contents__images__image__file' %>
-              <%#= f.hidden_field :image_cache %>
+             <%= render "devise/shared/error_messages", resource: resource %>
 
-           <%#     <% end %>
-        <%#   </div> %>
               <div class="signup__top__main__contents__field">
                 <div class="signup__top__main__contents__field__username">
                   <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder:"Nickname" %>
@@ -65,14 +49,7 @@
                     <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder:"Lastname" %>
                   </div>
                 </div>
-                <div class="signup__top__main__contents__fields">
-                  <div class="signup__top__main__contents__fields__field left">
-                    <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder:"Firstname Kana" %>
-                  </div>
-                  <div class="signup__top__main__contents__fields__field right">
-                    <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder:"Lastname Kana" %>
-                  </div>
-                </div>
+
                 <div class="signup__top__main__contents__field__birthday">
                  <span>Date of Birth</span>
                   <%= raw sprintf(f.date_select(:birthday, prompt:"--", use_month_numbers: true,start_year: 1920, end_year: (Time.now.year - 10), date_separator: '%s'),'/ ', '/') %>

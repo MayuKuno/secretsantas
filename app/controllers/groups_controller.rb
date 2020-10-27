@@ -10,11 +10,10 @@ class GroupsController < ApplicationController
     # @counterpart = MatchingUser.find_by(group_id: params[:id], from_user_id: current_user).to_user_id
     to_user_id = MatchingUser.find_by(group_id: params[:id], from_user_id: current_user).to_user_id
     @to_user = User.find(to_user_id)
-
     gon.to_user = @to_user
 
-    # @arr_json = @arr.to_json.html_safe
-    
+
+
   end
   
   def new
@@ -55,9 +54,21 @@ def edit
 end
 
 def update
-  group = Group.find(params[:id])
-  group.update(group_params)
-  redirect_to group_messages_path(group) 
+  @group = Group.find(params[:id])
+  # group.update(group_params)
+  # redirect_to group_messages_path(group) 
+  if @group.update(group_params)
+      # matching_members(@group.users.pluck(:id)).each do |pair|
+      #   MatchingUser.update(group_id: @group.id, from_user_id: pair[:from_user], to_user_id: pair[:to_user])
+      # end
+    redirect_to group_messages_path(@group)
+  else
+    render action: :edit
+  end
+
+
+
+
 end
 
 def destroy
