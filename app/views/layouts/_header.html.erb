@@ -3,30 +3,30 @@
     <div class="container__logo">
       <a class="container__logo__content" href="/posts">Secret Santa<br>365</a>
     </div>
-    <ul class="navigation">
-      <li class="navigation__list-item post">
-        <%= link_to sns_posts_path do %>
-         <i class="fas fa-share-alt"></i>
-        <% end %>
-      </li>
-      <li class="navigation__list-item message">
-        <%= link_to groups_path do %>
-          <i class="fas fa-comments"></i>
-        <% end %>
-      </li>
-      <li class="navigation__list-item photo">
+    <ul class="navigation menu">
+      <li class="menu__single navigation__list-item photo">
       <% if current_user.image.present? %>
-        <%= link_to  user_path(current_user.id)  do %>
           <%= image_tag current_user.image %>
-        <% end %>
       <% else %>
-        <%= link_to  user_path(current_user.id)  do %>
-         <%#= image_tag "/assets/account.png" %>
          <%= image_tag asset_path("account.png", alt: "アカウント") %>
-
-        <% end %>
       <% end %>
-
+        <ul class="menu__second-level">
+            <li>
+              <%= link_to groups_path do %>
+                <i class="fas fa-comments"></i>My Group
+              <% end %>     
+            </li>
+            <li>
+              <%= link_to user_path(current_user.id) do %>
+                <i class="fas fa-user"></i>My Page
+              <% end %> 
+            </li>
+            <li>
+              <%= link_to sns_posts_path do %>
+                <i class="fas fa-share-alt"></i>Share
+              <% end %>        
+            </li>
+        </ul>
       </li>
     </ul>
   </div>

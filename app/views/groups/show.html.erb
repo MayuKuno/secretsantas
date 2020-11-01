@@ -8,6 +8,10 @@
       <%= link_to edit_group_path(@group.id), method: :get, class:"Groupshow__containers__container__bottom__edit" do %>
       <i class="fas fa-edit"></i> Edit
       <% end %>
+      <%= link_to group_path(@group.id), method: :delete, class:"Groupshow__containers__container__bottom__delete" do %>
+      <i class="fas fa-trash-alt"></i> Delete
+      <% end %>
+
     <div class ="Groupshow__containers__container__bottom__info">
       <div class ="Groupshow__containers__container__bottom__info__title">
       Group Name
@@ -52,7 +56,10 @@
        My draws
       </div>
        <div id="button">?</div>
-       
+       <div id="address"></div>
+
+
     </div>
 
 </div>
+

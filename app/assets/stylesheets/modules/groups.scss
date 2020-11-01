@@ -795,6 +795,14 @@
           top: 20px;
           right: 30px;
         }
+        &__delete{
+          color: #0d5769;
+          text-decoration: none;
+          font-size: 20px;
+          position: absolute;
+          top: 60px;
+          right: 60px;
+        }
         &__info{
           display: flex;
   
@@ -1649,6 +1657,14 @@
           top: 20px;
           right: 60px;
         }
+        &__delete{
+          color: #0d5769;
+          text-decoration: none;
+          font-size: 20px;
+          position: absolute;
+          top: 60px;
+          right: 60px;
+        }
         &__info{
           display: flex;
   
@@ -2500,6 +2516,14 @@
         font-size: 20px;
         position: absolute;
         top: 20px;
+        right: 60px;
+      }
+      &__delete{
+        color: #0d5769;
+        text-decoration: none;
+        font-size: 20px;
+        position: absolute;
+        top: 60px;
         right: 60px;
       }
       &__info{

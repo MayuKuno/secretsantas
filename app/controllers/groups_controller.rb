@@ -10,6 +10,9 @@ class GroupsController < ApplicationController
     to_user_id = MatchingUser.find_by(group_id: params[:id], from_user_id: current_user).to_user_id
     @to_user = User.find(to_user_id)
     gon.to_user = @to_user
+    @to_address = Address.find_by(user_id: @to_user)
+    gon.to_address = @to_address
+    gon.to_addressPrefecture = JpPrefecture::Prefecture.find(code: @to_address.prefecture_code).try(:name)
 
 
 
@@ -60,6 +63,8 @@ def destroy
   group.destroy
   redirect_to posts_path
 end
+
+
   private
   def group_params
     params.require(:group).permit(:name, :budget, :exchange_date, user_ids: [])
