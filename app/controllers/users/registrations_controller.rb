@@ -37,9 +37,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #ログインをすること
 
     @user = User.new(session["devise.regist_data"]["user"])
-
     @address = Address.new(address_params)
-
     unless @address.valid? #createアクションと同様に、valid?メソッドを用いて、バリデーションチェックを行う
       flash.now[:alert] = @address.errors.full_messages
       render :new_address and return

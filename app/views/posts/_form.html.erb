@@ -5,20 +5,23 @@
   <div class="postsnew__containers__container__form__images">
     <div class="postsnew__containers__container__form__images__show">
     <% if post.image.present? %>
-      <%= image_tag post.image, id: :img_prev %>
+          <label class="image-upload">
+          <%= f.file_field :image, class: "postsnew__containers__container__form__images__image__file", id: "upload_file" %> 
+          <span id="preview_area"></span>
+           <%= image_tag post.image, id:'preview'%>
+ 
+          </label>
     <% else %>
-     <%#= image_tag "/assets/Insert.png", id: :img_prev %>
-     <%= image_tag asset_path("Insert.png"), id: :img_prev %>
+ 
+        <label class="image-upload">
+          <%= f.file_field :image, class: "postsnew__containers__container__form__images__image__file", id: "upload_file" %> 
+          <span id="preview_area"></span> 
+           <p class="text">Click here to add a picture</p>
+          </label>
+    <% end %>
 
-    <% end %>
+
     </div>
-    <%= f.label :image, class: 'postsnew__containers__container__form__images__image' do %>
-      <div class="postsnew__containers__container__form__images__image__img">
-        <%= icon('fas', 'image') %>
-          Select image
-      </div>
-      <%= f.file_field :image, class: 'postsnew__containers__container__form__images__image__file' %>
-    <% end %>
   </div>
 
 
@@ -32,8 +35,6 @@
     </div>
   </div>
 
-
-       <%#<input id="tags" name="tags" type="text" data-role="tagsinput" >%> 
 
   <div class="chat-post-form__field">
     <div class="chat-post-form__field--left">

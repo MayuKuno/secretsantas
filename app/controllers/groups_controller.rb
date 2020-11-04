@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
     gon.to_address = @to_address
     gon.to_addressPrefecture = JpPrefecture::Prefecture.find(code: @to_address.prefecture_code).try(:name)
 
-
+ 
 
   end
   
