@@ -14,7 +14,7 @@
     <% else %>
  
         <label class="image-upload">
-          <%= f.file_field :image, class: "postsnew__containers__container__form__images__image__file", id: "upload_file" %> 
+          <%= f.file_field :image, class: "postsnew__containers__container__form__images__image__file", id: "upload_file", onChange: "photoPreview(event)" %> 
           <span id="preview_area"></span> 
            <p class="text">Click here to add a picture</p>
           </label>
