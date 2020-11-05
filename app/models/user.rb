@@ -14,6 +14,16 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users, dependent: :destroy
 
   # has_many :matching_users, dependent: :destroy
+  has_many :matching_users, class_name:  "MatchingUser",
+                                  foreign_key: "from_user_id",
+                                  dependent:   :destroy
+  has_many :matching_users, class_name:  "MatchingUser",
+                                  foreign_key: "to_user_id",
+                                  dependent:   :destroy
+  has_many :to_user, through: :matching_users, dependent: :destroy
+  has_many :from_user, through: :matching_users, dependent: :destroy
+
+
 
   #dependent: :destroyを追加することで、「親モデルを削除する際に、その親モデルに紐づく「子モデル」も一緒に削除できる」ようになります。
   has_many :active_relationships, class_name:  "Relationship",

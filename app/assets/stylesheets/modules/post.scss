@@ -267,7 +267,10 @@
                 top: 13px;
                 right: 30px;
                 &__lists{
-                  
+                  i{
+                    color: #eaa696;
+                    font-weight: bold;
+                  }
                   li{
                     display: block;
                     margin-top: 4px;
@@ -281,7 +284,9 @@
                       top: 1px;
                       left: 1px;                  
                     }
+
                   }
+
                 }
               }
               &__account{

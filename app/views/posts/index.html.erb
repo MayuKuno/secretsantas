@@ -5,11 +5,11 @@
     <div id="overlay">
       <div id="modalWindow">
         <div class="modal-message-box">
-          <div>confir</div>
-          <div>are you sure</div>
+          <%= image_tag asset_path("delete.png", alt: "delete") %>
+          <p>Are you sure?</p>
         </div>
-        <button id="modal-close-btn">cancel</button>
-        <button id="delete-comformation-btn">delete</button>
+        <button id="modal-close-btn">Cancel</button>
+        <button id="delete-comformation-btn">Delete</button>
       </div>
     </div>
   <%# ポップアップ %>
@@ -132,7 +132,7 @@
                   <%# <% <i class="fas fa-trash-alt"></i> Delete
                   <% end %> 
 
-                 <button class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</button>
+                 <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a>
                   <%= link_to "", "/posts/#{post.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%> 
 
                 </li>

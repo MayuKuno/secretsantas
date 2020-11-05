@@ -1120,6 +1120,8 @@
                   img{
                     width: 100%;
                     transition-duration: 0.5s;
+                    object-fit: cover;
+
                   }
                   img:hover{
                     transform: scale(1.2);
@@ -2946,6 +2948,8 @@
                 img{
                   width: 100%;
                   transition-duration: 0.5s;
+                  object-fit: cover;
+
                 }
                 img:hover{
                   transform: scale(1.2);
@@ -4746,6 +4750,8 @@
                 img{
                   width: 100%;
                   transition-duration: 0.5s;
+                  object-fit: cover;
+
                 }
                 img:hover{
                   transform: scale(1.2);

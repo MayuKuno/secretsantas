@@ -1,6 +1,18 @@
 <%= render 'layouts/header'%>
 <div class="usershow__containers">
   <div class="usershow__containers__container">
+    <%# ポップアップ %>
+    <div id="overlay">
+      <div id="modalWindow">
+        <div class="modal-message-box">
+          <%= image_tag asset_path("delete.png", alt: "delete") %>
+          <p>Are you sure?</p>
+        </div>
+        <button id="modal-close-btn">Cancel</button>
+        <button id="delete-comformation-btn">Delete</button>
+      </div>
+    </div>
+  <%# ポップアップ %>
   <div class="alert"><%= flash[:alert] %></div>
 
     <div class="usershow__containers__container__top">
@@ -31,7 +43,9 @@
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         </div> 
         <div class ="usershow__containers__container__top__right__delete">
-          <%= link_to "Delete", user_registration_path, method: :delete %>
+          <a class="modal-open-btn"> Delete</a>
+          <%= link_to "", user_registration_path, method: :delete, class: 'item-delete-btn', id: 'delete_button' %>
+
         </div> 
 
         <%# <div class ="usershow__containers__container__top__right__address">
