@@ -5,6 +5,7 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with(params[:tag])    
     else
       @posts = Post.all
+
     end
   end
 

@@ -1,6 +1,19 @@
 <%= render 'layouts/header'%>
 <div class ="posts__containers">
   <div class="posts__containers__container"> 
+  <%# ポップアップ %>
+    <div id="overlay">
+      <div id="modalWindow">
+        <div class="modal-message-box">
+          <div>confir</div>
+          <div>are you sure</div>
+        </div>
+        <button id="modal-close-btn">cancel</button>
+        <button id="delete-comformation-btn">delete</button>
+      </div>
+    </div>
+  <%# ポップアップ %>
+
     <div class="posts__containers__container__left"> 
       <div class="posts__containers__container__left__title"> 
         <h1>How <span><b>Secret Santa 365</b> </span>works</h1>
@@ -115,9 +128,13 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to  "/posts/#{post.id}", method: :delete do %>
-                    <i class="fas fa-trash-alt"></i> Delete
-                  <% end %>
+                  <%# <%= link_to  "/posts/#{post.id}", method: :delete do %>
+                  <%# <% <i class="fas fa-trash-alt"></i> Delete
+                  <% end %> 
+
+                 <button class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</button>
+                  <%= link_to "", "/posts/#{post.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%> 
+
                 </li>
               </ul>
             <% end %>
@@ -147,5 +164,11 @@
       <% end %>
       </div>    
     </div>  
+
+
+
+
   </div>
 </div>
+
+

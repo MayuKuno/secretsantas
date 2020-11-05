@@ -1,4 +1,5 @@
 $(function(){
+  // console.log("test1");
   function buildHTML(message){
     
     if ( message.user_id ) {

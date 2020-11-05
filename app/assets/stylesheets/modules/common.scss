@@ -353,3 +353,139 @@ ul.menu__second-level {
 
 }
 
+#overlay {
+  //モーダルウィンドウの背景を設定
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  //透過度をつける
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1;
+  }
+  
+  #modalWindow {
+  // モーダルウィンドウの画面を設定(高さ・幅は調整ください)
+    width: 500px;
+    height: 200px;
+    position: absolute;
+  //トップからの場所を指定（topをいじれば高さが調整できます）
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 2;
+  //flexboxで子要素のボタンとメッセージボックスの要素を配置する
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+    .modal-message-box {
+      width: 100%;
+  //下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
+      height: calc(100% - 60px);
+      text-align: center;
+  //flexboxで文字の配置を決める（縦方向、中央揃え）
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  
+    #modal-close-btn {
+      width: 50%;
+      height: 60px;
+    }
+  
+    #delete-comformation-btn {
+      width: 50%;
+      height: 60px;
+    }
+  }
+  
+  .item-delete-btn {
+  //削除ボタンの非表示
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+// .modal_wrap input{
+//   display: none;
+//   }
+  
+//   .modal_overlay{
+//   display: flex;
+//   justify-content: center;
+//   overflow: auto;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: 9999;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(0,0,0,0.7);
+//   opacity: 0;
+//   transition: opacity 0.5s, transform 0s 0.5s;
+//   transform: scale(0);
+//   }
+  
+//   .modal_trigger{
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   }
+  
+//   .modal_content{
+//   align-self: center;
+//   width: 60%;
+//   max-width: 800px;
+//   padding: 30px 30px 15px;
+//   box-sizing: border-box;
+//   background: #fff;
+//   line-height: 1.4em;
+//   transform: scale(0.3);
+//   transition: 0.5s;
+//   }
+  
+//   .close_button{
+//   position: absolute;
+//   top: 14px;
+//   right: 16px;
+//   font-size: 24px;
+//   cursor: pointer;
+//   }
+  
+//   .modal_wrap input:checked ~ .modal_overlay{
+//   opacity: 1;
+//   transform: scale(1);
+//   transition: opacity 0.5s;
+//   }
+  
+//   .modal_wrap input:checked ~ .modal_overlay .modal_content{
+//   transform: scale(1);
+//   }
+  
+//   .open_button{
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 200px;
+//   height: 30px;
+//   margin: auto;
+//   padding: 8px 16px;
+//   color: #444;
+//   font-weight: bold;
+//   font-family: 'Montserrat', sans-serif;
+//   box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+//   border-radius: 16px;
+//   cursor: pointer;
+//   }
