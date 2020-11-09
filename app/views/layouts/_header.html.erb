@@ -3,6 +3,19 @@
     <div class="container__logo">
       <a class="container__logo__content" href="/posts">Secret Santa<br>365</a>
     </div>
+
+    
+    <div class="container__search">
+    <%= form_tag(posts_path,:method => 'get', :class => "search-form") do %>
+      <i class="fas fa-search"></i>
+    <%= text_field_tag :keyword, nil, placeholder: 'Search people', class: "search-user-input" %>
+    <% end %>
+      <ul class="container__search__result">
+   
+      </ul>
+    </div>
+
+
     <ul class="navigation menu">
       <li class="menu__single navigation__list-item photo">
       <% if current_user.image.present? %>

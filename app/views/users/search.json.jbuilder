@@ -4,3 +4,6 @@ json.array! @users do |user|
   json.image user.image
 
 end
+
+
+

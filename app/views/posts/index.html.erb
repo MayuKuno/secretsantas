@@ -78,7 +78,7 @@
           <% end %>
         </div>
         <div class="posts__containers__container__right__top__search"> 
-          <%= form_tag(search_posts_path,:method => 'get', :class => "search-form") do %>
+          <%= form_tag(posts_path,:method => 'get', :class => "search-form") do %>
            <i class="fas fa-search"></i>
           <%= text_field_tag :keyword, nil, placeholder: 'Search by tag', class: "search-input" %>
             <%#= submit_tag 'Search', :name => nil %>

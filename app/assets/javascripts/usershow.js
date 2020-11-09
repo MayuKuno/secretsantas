@@ -1,4 +1,5 @@
 $(function(){
+  
   $('.usershow__containers__container__bottom__tab-contents>div').hide();
   $('.usershow__containers__container__bottom__tab-contents>div').first().slideDown();
     $('.usershow__containers__container__bottom__tabs__tab-buttons span').click(function(){
