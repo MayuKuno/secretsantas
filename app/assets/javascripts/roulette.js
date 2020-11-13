@@ -4,8 +4,19 @@ $(function(){
     $('#button').one('click', function(){
     this.textContent = `${gon.to_user.nickname}`;
     var address = document.getElementById('address');
+    var interests = document.getElementById('interests');
     address.innerText = `〒${gon.to_address.zipcode}${gon.to_addressPrefecture}${gon.to_address.city}${gon.to_address.district}${gon.to_address.building}${gon.to_address.room}`;
-    
+    if (`${gon.to_user.interests}` === undefined || `${gon.to_user.interests}` === null || `${gon.to_user.interests}` === "null" || ""){
+        interests.innerText = `Tips for choosing the perfect gift :\n
+        Appearently, ${gon.to_user.nickname} is not obsessing with anything.\n
+        Let's choose the gift with your own sense!
+        `
+    }else{
+        interests.innerText = `Tips for choosing the perfect gift :\n
+        ${gon.to_user.nickname} is currently obsessed with ${gon.to_user.interests} `
+    }
+
+  
     var count = 200;
     var defaults = {
     origin: { y: 0.7 }

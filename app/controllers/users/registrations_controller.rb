@@ -109,7 +109,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:address).permit(:zipcode, :prefecture_code, :city,:district, :building, :room)
   end
   def update_user_params
-    params.require(:user).permit(:nickname, :first_name,:last_name,:birthday,:image, group_ids: [],post_ids: [], address_attributes: [:zipcode, :prefecture_code, :city,:district, :building, :room, :_destroy, :id])
+    params.require(:user).permit(:nickname, :first_name,:last_name,:birthday,:image, :interests, group_ids: [],post_ids: [], address_attributes: [:zipcode, :prefecture_code, :city,:district, :building, :room, :_destroy, :id])
   end
   def after_update_path_for(resource)
     posts_path
