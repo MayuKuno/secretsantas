@@ -7,8 +7,8 @@ $(function() {
     if (user.image.url == null){
       var picture =
       ` 
-      <%= image_tag asset_path("/assets/account.png", alt: "アカウント") %>
 
+      <img src="/assets/account.png" />
 
       `
     }else {
