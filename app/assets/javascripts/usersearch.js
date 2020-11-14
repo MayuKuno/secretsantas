@@ -9,7 +9,7 @@ $(function() {
       ` 
 
       <img src="/assets/account.png" />
-\
+
       `
     }else {
       var picture = 
