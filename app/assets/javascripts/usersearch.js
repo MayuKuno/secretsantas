@@ -8,7 +8,7 @@ $(function() {
       var picture =
       ` 
 
-      <img src="/assets/account.png" />
+      <img src="/images/account.png" />
 
       `
     }else {
