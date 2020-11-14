@@ -1,6 +1,6 @@
 
 # Project Title
-Secret Santa 365
+Secret Santas 365
 
 ## Project Overview
 Under the circumstances of Covid-19, it has become difficult for us to see our loved ones in person.
