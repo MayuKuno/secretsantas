@@ -7,9 +7,13 @@ $(function(){
     var interests = document.getElementById('interests');
     address.innerText = `〒${gon.to_address.zipcode}${gon.to_addressPrefecture}${gon.to_address.city}${gon.to_address.district}${gon.to_address.building}${gon.to_address.room}`;
     if (`${gon.to_user.interests}` === undefined || `${gon.to_user.interests}` === null || `${gon.to_user.interests}` === "null" || ""){
-        interests.innerText = `Tips for choosing the perfect gift :\n
+        interests.innerHTML = `Tips for choosing the perfect gift :\n
         Appearently, ${gon.to_user.nickname} is not obsessing with anything.\n
         Let's choose the gift with your own sense!
+
+        <a href="/users/${gon.to_user.id}">
+        Ask ${gon.to_user.nickname} a question anonymously
+        </a>
         `
     }else{
         interests.innerText = `Tips for choosing the perfect gift :\n

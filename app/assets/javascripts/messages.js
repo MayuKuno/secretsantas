@@ -103,7 +103,9 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.message__containers__main__middle').append(html);
-      $('form')[0].reset();
+      // $('form')[0].reset();
+      // $('#message_content')[0].reset();
+      $("#message_content").val("");
       $('.message__containers__main__middle').animate({ scrollTop: $('.message__containers__main__middle')[0].scrollHeight});
       $('.message__containers__main__bottom__right').prop('disabled', false);
 

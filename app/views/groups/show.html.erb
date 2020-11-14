@@ -11,7 +11,9 @@
       <%= link_to group_path(@group.id), method: :delete, class:"Groupshow__containers__container__bottom__delete" do %>
       <i class="fas fa-trash-alt"></i> Delete
       <% end %>
-
+      <%= link_to group_messages_path(@group), class:"Groupshow__containers__container__bottom__back" do %>
+      <i class="fas fa-comments"></i> Group chat
+      <% end %>
     <div class ="Groupshow__containers__container__bottom__info">
       <div class ="Groupshow__containers__container__bottom__info__title">
       Group Name

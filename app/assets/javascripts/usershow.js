@@ -23,7 +23,7 @@ $(function(){
       let html = `
         <div class="chat-group-user clearfix">
           <p class="chat-group-user__nickname">${user.nickname}</p>
-          <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-nickname="${user.nickname}">追加</div>
+          <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-nickname="${user.nickname}">Add</div>
         </div>
       `;
       $("#participantssearchresult").append(html);
@@ -32,7 +32,7 @@ $(function(){
     function addNoparticipants() {
       let html = `
         <div class="chat-group-user clearfix">
-          <p class="chat-group-user__nickname">ユーザーが見つかりません</p>
+          <p class="chat-group-user__nickname">User Not Found</p>
         </div>
       `;
       $("#participantssearchresult").append(html);
@@ -41,7 +41,7 @@ $(function(){
       let html = `
       <div class="chat-group-user clearfix" id="${id}">
         <p class="chat-group-user__nickname">${nickname}</p>
-        <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-nickname="${nickname}">削除</div>
+        <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-nickname="${nickname}">Delete</div>
       </div>`;
       $(".js-add-participant").append(html);
     }
