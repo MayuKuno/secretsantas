@@ -16,8 +16,13 @@ $(function(){
         </a>
         `
     }else{
-        interests.innerText = `Tips for choosing the perfect gift :\n
-        ${gon.to_user.nickname} is currently obsessed with ${gon.to_user.interests} `
+        interests.innerHTML = `Tips for choosing the perfect gift :\n
+        ${gon.to_user.nickname} is currently obsessed with ${gon.to_user.interests} \n
+
+        <a href="/users/${gon.to_user.id}">
+        Ask ${gon.to_user.nickname} a question anonymously
+        </a>
+        `
     }
 
   
