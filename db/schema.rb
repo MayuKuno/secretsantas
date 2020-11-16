@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 20201112142134) do
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.index ["caption"], name: "index_posts_on_description", length: { caption: 32 }, using: :btree
+    t.index ["caption"], name: "index_posts_on_caption", length: { caption: 32 }, using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
