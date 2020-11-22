@@ -275,6 +275,7 @@ body{
           font-weight: bold;
           span{
             border-bottom: 2px $accent solid;
+            color: $basebackground;
           }
         }
         &.active ~ .tab-content-container,
