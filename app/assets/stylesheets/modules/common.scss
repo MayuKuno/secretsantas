@@ -1,202 +1,202 @@
 
-@media screen and (max-width: 559px){ 
-  * {
-    box-sizing: border-box;
-  }
-  html{
-    font-family: 'Lato', sans-serif;
+// @media screen and (max-width: 559px){ 
+//   * {
+//     box-sizing: border-box;
+//   }
+//   html{
+//     font-family: 'Lato', sans-serif;
     
-    color:#494c4e;
-    width: 100%;
+//     color:#494c4e;
+//     width: 100%;
     
-  }
+//   }
   
-  body{
-    margin:0;
-    height: 100%;
-    width: 100%;
-  
-  
-  }
-  .wrap{
-    padding: 5px;
-    background-color: #8b8482;
-  
-  }
-  
-  header{
-    width: 100%;
-    height: 120px;
-    background-color: #0d5769 ;
-    margin: 0;
-    padding: 5px;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-  }
-  
-  footer{
-    width: 100%;
-    height: 60px;
-    background-color: #0d5769 ;
-    margin: 0;
-    padding: 5px;
-    bottom: 0;
-  }
+//   body{
+//     margin:0;
+//     height: 100%;
+//     width: 100%;
   
   
-  .container{
-    display: flex;
-    justify-content: space-between;
-    background-color: #0d5769;
-    border: 1px dashed #eaa696; 
-    border-radius: 5px;
-    height: 98%;
+//   }
+//   .wrap{
+//     padding: 5px;
+//     background-color: #8b8482;
   
-    &__logo{
-      text-align:center;
-      margin: 5px 0px 5px 10px;
-      display: flex;
-      align-items: center;
+//   }
   
-      &__content{
-        color: #eaa696;
-        font-size: 25px;
-        font-weight: bold;
-        text-decoration:none;
-      }
-    }
-  }
-  .container:hover{
-    border-style: solid;
-    }
-  .navigation{
-    display: flex;
-    padding-right: 30px;
-    align-items: center;
-    &__list-item{
-      list-style:none;
-      font-weight: bold;
-      font-size: 17px;
-      a{
-        color:#eaa696;
-        text-decoration:none;
-        font-size: 30px;
-      }
-    }
-    &__list-item:not(:first-child){
-      margin-left:2em;
-    }
-  }
-  .photo{
-    img{
-      width:50px;
-      height:50px;
-      object-fit:cover;
-      border-radius:50%;
-      margin-top: 7px;
-    }
-  }
-
-}
-@media screen and (min-width: 560px) and ( max-width:959px){
-
-* {
-  box-sizing: border-box;
-}
-html{
-  font-family: 'Lato', sans-serif;
+//   header{
+//     width: 100%;
+//     height: 120px;
+//     background-color: #0d5769 ;
+//     margin: 0;
+//     padding: 5px;
+//     position: fixed;
+//     top: 0;
+//     z-index: 1;
+//   }
   
-  color:#494c4e;
-  width: 100%;
+//   footer{
+//     width: 100%;
+//     height: 60px;
+//     background-color: #0d5769 ;
+//     margin: 0;
+//     padding: 5px;
+//     bottom: 0;
+//   }
   
-}
+  
+//   .container{
+//     display: flex;
+//     justify-content: space-between;
+//     background-color: #0d5769;
+//     border: 1px dashed #eaa696; 
+//     border-radius: 5px;
+//     height: 98%;
+  
+//     &__logo{
+//       text-align:center;
+//       margin: 5px 0px 5px 10px;
+//       display: flex;
+//       align-items: center;
+  
+//       &__content{
+//         color: #eaa696;
+//         font-size: 25px;
+//         font-weight: bold;
+//         text-decoration:none;
+//       }
+//     }
+//   }
+//   .container:hover{
+//     border-style: solid;
+//     }
+//   .navigation{
+//     display: flex;
+//     padding-right: 30px;
+//     align-items: center;
+//     &__list-item{
+//       list-style:none;
+//       font-weight: bold;
+//       font-size: 17px;
+//       a{
+//         color:#eaa696;
+//         text-decoration:none;
+//         font-size: 30px;
+//       }
+//     }
+//     &__list-item:not(:first-child){
+//       margin-left:2em;
+//     }
+//   }
+//   .photo{
+//     img{
+//       width:50px;
+//       height:50px;
+//       object-fit:cover;
+//       border-radius:50%;
+//       margin-top: 7px;
+//     }
+//   }
 
-body{
-  margin:0;
-  height: 100%;
-  width: 100%;
+// }
+// @media screen and (min-width: 560px) and ( max-width:959px){
+
+// * {
+//   box-sizing: border-box;
+// }
+// html{
+//   font-family: 'Lato', sans-serif;
+  
+//   color:#494c4e;
+//   width: 100%;
+  
+// }
+
+// body{
+//   margin:0;
+//   height: 100%;
+//   width: 100%;
 
 
-}
-.wrap{
-  padding: 40px;
-  background-color: #8b8482;
+// }
+// .wrap{
+//   padding: 40px;
+//   background-color: #8b8482;
 
-}
+// }
 
-header{
-  width: 100%;
-  height: 120px;
-  background-color: #0d5769 ;
-  margin: 0;
-  padding: 5px;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-}
+// header{
+//   width: 100%;
+//   height: 120px;
+//   background-color: #0d5769 ;
+//   margin: 0;
+//   padding: 5px;
+//   position: fixed;
+//   top: 0;
+//   z-index: 1;
+// }
 
-footer{
-  width: 100%;
-  height: 60px;
-  background-color: #0d5769 ;
-  margin: 0;
-  padding: 5px;
-  bottom: 0;
-}
+// footer{
+//   width: 100%;
+//   height: 60px;
+//   background-color: #0d5769 ;
+//   margin: 0;
+//   padding: 5px;
+//   bottom: 0;
+// }
 
 
-.container{
-  display: flex;
-  justify-content: space-between;
-  background-color: #0d5769;
-  border: 1px dashed #eaa696; 
-  border-radius: 5px;
+// .container{
+//   display: flex;
+//   justify-content: space-between;
+//   background-color: #0d5769;
+//   border: 1px dashed #eaa696; 
+//   border-radius: 5px;
 
-  &__logo{
-    text-align:center;
-    margin: 5px 0px 5px 20px;
+//   &__logo{
+//     text-align:center;
+//     margin: 5px 0px 5px 20px;
 
-    &__content{
-      color: #eaa696;
-      font-size: 40px;
-      font-weight: bold;
-      text-decoration:none;
-    }
-  }
-}
-.container:hover{
-  border-style: solid;
-  }
-.navigation{
-  display: flex;
-  padding-right: 60px;
-  align-items: center;
-  &__list-item{
-    list-style:none;
-    font-weight: bold;
-    font-size: 17px;
-    a{
-      color:#eaa696;
-      text-decoration:none;
-      font-size: 40px;
-    }
-  }
-  &__list-item:not(:first-child){
-    margin-left:2em;
-  }
-}
-.photo{
-  img{
-    width:70px;
-    height:70px;
-    object-fit:cover;
-    border-radius:50%;
-    margin-top: 7px;
-  }
-}
+//     &__content{
+//       color: #eaa696;
+//       font-size: 40px;
+//       font-weight: bold;
+//       text-decoration:none;
+//     }
+//   }
+// }
+// .container:hover{
+//   border-style: solid;
+//   }
+// .navigation{
+//   display: flex;
+//   padding-right: 60px;
+//   align-items: center;
+//   &__list-item{
+//     list-style:none;
+//     font-weight: bold;
+//     font-size: 17px;
+//     a{
+//       color:#eaa696;
+//       text-decoration:none;
+//       font-size: 40px;
+//     }
+//   }
+//   &__list-item:not(:first-child){
+//     margin-left:2em;
+//   }
+// }
+// .photo{
+//   img{
+//     width:70px;
+//     height:70px;
+//     object-fit:cover;
+//     border-radius:50%;
+//     margin-top: 7px;
+//   }
+// }
 
-}
+// }
 
 @media screen and (min-width: 960px) { 
 
@@ -336,7 +336,6 @@ footer{
       object-fit:cover;
       border-radius:50%;
       vertical-align: middle;
-
       }
   }
 
@@ -417,99 +416,5 @@ ul.menu__second-level {
 button:focus {
 	outline:0;
 }
-
-#overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.7);
-    display: none;
-    z-index: 1;
-
-  }
-
-
-  #modalWindow {
-  // モーダルウィンドウの画面を設定(高さ・幅は調整ください)
-    width: 500px;
-    height: 400px;
-    position: absolute;
-  //トップからの場所を指定（topをいじれば高さが調整できます）
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    z-index: 2;
-  //flexboxで子要素のボタンとメッセージボックスの要素を配置する
-    display: flex;
-    flex-wrap: wrap;
-    // justify-content: center;
-  
-    .modal-message-box {
-      width: 100%;
-  //下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
-      height: calc(100% - 60px);
-      text-align: center;
-  //flexboxで文字の配置を決める（縦方向、中央揃え）
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      p{
-        font-size: 30px;
-        font-weight: bold;
-        margin-top: -100px;
-      }
-      img{
-        width: 30%;
-        margin: 0 auto;
-      }
-    }
-  
-    #modal-close-btn {
-      width: 30%;
-      height: 60px;
-      position: absolute;
-      bottom: 10%;
-      left: 15%;
-      cursor: pointer;
-      border-radius: 10px;
-      border: none;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #494c4e;
-      &:hover{
-        opacity: 0.8; 
-      }
-    }
-
-    #delete-comformation-btn {
-      width: 30%;
-      height: 60px;
-      background-color: rgb(234, 53, 45);
-      cursor: pointer;
-      position: absolute;
-      bottom: 10%;
-      right: 15%;
-      border-radius: 10px;
-      border: none;
-      font-size: 1.2em;
-      font-weight: bold;
-      color: white;
-      &:hover{
-        opacity: 0.8; 
-      }
-    }
-  }
-  
-  .item-delete-btn {
-  //削除ボタンの非表示
-    width: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
 
 

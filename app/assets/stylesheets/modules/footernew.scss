@@ -1,0 +1,63 @@
+footer{
+  background-color: $dark;
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 40px;
+
+  .conteiner{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    margin: 0px auto;
+    
+    .logo{
+      display: flex;
+      align-items: center;
+      width: 20%;
+      width: 12%;
+      height: 90%;
+      a{
+        color: $basebackground;
+        font-size: $fontLargest;
+        font-weight: bold;
+        text-decoration: none;
+        p{
+          height: 50px;
+          width: 81%;
+          margin: 0 auto;
+        }
+      }
+    }
+
+
+
+    .list{
+      color: $basebackground;
+      display: flex;
+      align-items: center;
+
+      ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a{
+          text-decoration: none;
+
+        }
+        li{
+          margin-right: 50px;
+          color: $subcard;
+        
+        }
+      }
+    }
+  }
+  .copyright{
+    text-align: center;
+    color: $basebackground;
+  }
+}

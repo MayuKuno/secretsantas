@@ -1,4 +1,11 @@
 $(function() {
+    $('#nav-toggle').on('click', function() {
+    $('header').toggleClass('open');
+    });
+  });
+
+  
+$(function() {
   function readURL(input) {
       if (input.files && input.files[0]) {
       var reader = new FileReader();

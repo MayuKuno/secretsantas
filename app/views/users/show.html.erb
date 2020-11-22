@@ -1,20 +1,8 @@
-<%= render 'layouts/header'%>
+<div class="containers">
+
 <div class="usershow__containers">
   <div class="usershow__containers__container">
-    <%# ポップアップ %>
-    <div id="overlay">
-      <div id="modalWindow">
-        <div class="modal-message-box">
-          <%= image_tag asset_path("delete.png", alt: "delete") %>
-          <p>Are you sure?</p>
-        </div>
-        <button id="modal-close-btn">Cancel</button>
-        <button id="delete-comformation-btn">Delete</button>
-      </div>
-    </div>
-  <%# ポップアップ %>
   <div class="alert"><%= flash[:alert] %></div>
-
     <div class="usershow__containers__container__top">
       <div class="usershow__containers__container__top__left">
       <% if @user.image.present? %>
@@ -112,3 +100,4 @@
 
 </div>
 
+</div>
