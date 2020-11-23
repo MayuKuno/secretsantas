@@ -7,10 +7,19 @@
   <div class ="Groupshow__containers__container__bottom">
     <div class ="Groupshow__containers__container__bottom__left">
       <h1><%= @group.name %></h1>
+         <%= link_to "/groups/#{@group.id}/edit", method: :get do %> 
+      <i class="fas fa-edit"></i> Edit 
+    <% end %> 
+    <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
+    <%= link_to "", "/groups/#{@group.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
+
     </div>
     <div class ="Groupshow__containers__container__bottom__right">
         <div class ="Groupshow__containers__container__bottom__right__title">
         <h2>Participants</h2>
+        <%= link_to group_messages_path(@group), method: :get do %> 
+        <p>Talk to your group members</p>
+      <% end %>
         </div>
         <div class ="Groupshow__containers__container__bottom__right__details">
           <% @group.users.each do |user| %>
@@ -39,9 +48,11 @@
             <div id="address"></div>
             <div id="interests"></div>
         </div>
+
     </div>
   </div>
   </div>
     </div>
       </div>
-   
+
+ 

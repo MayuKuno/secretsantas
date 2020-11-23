@@ -1,0 +1,378 @@
+.chat-group-form {
+  width: 980px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: $subtext;
+  border: 1px solid $cardparagraph;
+  border-radius: 5px;
+  box-sizing: border-box;
+  &__errors {
+    margin: 30px 0;
+    padding: 20px 40px;
+    border: 1px solid $cardparagraph;
+    border-radius: 2px;
+    text-align: center;
+  }
+  &__label {
+    display: block;
+    line-height: 50px;
+    font-weight: bold;
+    color:$dark;
+  }
+  &__input {
+    float: left;
+    width: 100%;
+    line-height: 30px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+  &__action-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    color: $subtext;
+    background-color: $accent;
+    border: 0;
+  }
+  &__field {
+    margin-top: 30px;
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+    &--left {
+      float: left;
+      width: 30%;
+      box-sizing: border-box;
+    }
+    &--right {
+      float: right;
+      width: 100%;
+    }
+  }
+}
+.chat-group-form__field{
+  margin: 40px 0px;
+  width: 60%;
+  margin:30px auto;
+  input[type='text']{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    color:$cardparagraph;
+    border: none;
+    border-bottom: 2px solid $cardparagraph;
+    background: transparent;
+  }
+  input[type='text']:focus {
+    border-bottom: 2px solid $basetext;
+    outline: none;
+  }
+
+}
+
+.chat-group-user {
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: $fontSmallest;
+  border-bottom: 1px solid $subbackground;
+  width: 80%;
+  float: right;
+  &:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  &__nickname {
+    float: left;
+    color:$basetext;
+  }
+  &__btn {
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+    &--add {
+      color: $dark;
+    }
+    &--remove {
+      color: $accent;
+    }
+  }
+}
+
+.groupsnew__containers{
+  background-color: $basebackground;
+  padding:70px;
+  &__container{
+  &__title{
+    color: $basebackground;
+    height: 100px;
+    line-height: 100px;
+    padding-left: 20px;
+    font-size: $fontSmall;
+    background-color: $basetext;
+    padding: 5px;
+    font-weight: bold;
+    &__content{
+      // background-color: $basetext;
+      border: 1px dashed $dark;
+      border-radius: 5px;
+      height: 90px;
+      padding-left: 20px;
+      line-height: 95px;
+    }
+  }
+  &__form{
+    background-color: $subcard;
+    width: 100%;
+    padding: 20px 0;;
+    &__error{
+      color: $accent;
+      text-align: center;
+      line-height: 20px;
+    }
+
+
+    &__item{
+    margin: 50px auto;
+    width: 60%;
+    font-weight: bold;
+    color: $dark;
+    #group_exchange_date_1i{
+      margin-right: 20px;
+      margin-left: 20px;
+      box-sizing: border-box;
+      width: 20%;
+      padding: 10px;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      color: $cardparagraph;
+      border: none;
+      border-bottom: 2px solid $cardparagraph;
+      background: transparent;
+    }
+    #group_exchange_date_1i:focus {
+      border-bottom: 2px solid $basetext;
+      outline: none;
+    }
+    #group_exchange_date_2i{
+      margin-right: 20px;
+      margin-left: 20px;
+      box-sizing: border-box;
+      width: 15%;
+      padding: 10px;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      color: $cardparagraph;
+      border: none;
+      border-bottom: 2px solid $cardparagraph;
+      background: transparent;
+    }
+    #group_exchange_date_2i:focus {
+      border-bottom: 2px solid $basetext;
+      outline: none;
+    }
+    #group_exchange_date_3i{
+      margin-left: 20px;
+      margin-right: 10px;
+
+      box-sizing: border-box;
+      width: 15%;
+      padding: 10px;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      color: $cardparagraph;
+      border: none;
+      border-bottom: 2px solid $cardparagraph;
+      background: transparent;
+    }
+    #group_exchange_date_3i:focus {
+      border-bottom: 2px solid $basetext;
+      outline: none;
+    }
+    input[type='text']{
+      box-sizing: border-box;
+      font-weight: normal;
+      width: 100%;
+      padding: 10px;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      color: $basetext;
+      border: none;
+      border-bottom: 2px solid $cardparagraph;
+      background: transparent;
+    }
+    input[type='text']:focus {
+      border-bottom: 2px solid $basetext;
+      outline: none;
+    }
+    #group_budget{
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      color: $dark;
+      border: none;
+      border-bottom: 2px solid $cardparagraph;
+      background: transparent;
+      margin-top: 20px;
+      font-weight: normal;
+
+    }
+    #group_budget:focus {
+      border-bottom: 2px solid $basetext;
+      outline: none;
+    }
+
+    }
+    &__title{
+      display: block;
+      width: 60%;
+      height: 40px;
+      margin: 20px auto;
+
+    }
+    // &__images{
+    //   display: flex;
+    //   margin: auto;
+    //   width: 60%;
+    //   margin-top: 60px;
+    //   &__image{
+    //     display: block;
+    //     width: 60%;
+    //     height: 40px;
+    //     margin: 80px auto;
+    //     &__img{
+    //       width: 200px; ;
+    //       margin-right: 20px;
+    //       background-color: beige;
+    //       color: black;
+    //       padding: 10px;
+    //       text-decoration: none;
+    //       box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    //       border-radius: 10px;
+    //     }
+    //     &__img:hover {
+    //       position: relative;
+    //       top: 1px;
+    //       left: 1px;
+    //       box-shadow: 0 0 2px rgba(0,0,0,0.2);
+    //    }
+    //     &__file{
+    //       display: none;
+          
+
+    //     }
+    //   }
+    //   &__show{
+    //     width: 500px;
+    //     height: 200px;
+    //     #img_prev{
+    //       width: auto;
+    //       height: 180px;
+    //     }
+    //   }
+    // }
+    &__description{
+      display: block;
+      width: 60%;
+      height: 30px;
+      margin: 20px auto;
+    }
+    &__content{
+      display: block;
+      width: 60%;
+      height: 300px;
+      margin: 20px auto;
+    }
+    &__category{
+      display: block;
+      width: 60%;
+      height: 40px;
+      margin: 20px auto;
+      padding-top: 20px;
+    }
+    input[type="checkbox"] { 
+      display: none; 
+
+    }
+
+    input[type="checkbox"] + label {
+      display: inline-block;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 20px;
+      margin-right: 41px;
+      color: $dark;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] + label:before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $cardparagraph;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all .12s, border-color .08s;
+    }
+
+    input[type="checkbox"]:checked + label:before {
+      width: 10px;
+      top: -5px;
+      left: 5px;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      transform: rotate(45deg);
+    }
+    &__create{
+      background-color:$dark ;
+      border: double 4px $subtext;
+      padding: 5px 30px;
+      margin: 50px auto;
+      color:$subtext ;
+      display: block;
+      width: 40%;
+      height: 40px;
+
+    }
+    &__create:hover {
+      position: relative;
+      top: 1px;
+      left: 1px;
+      background-color:$subtext ;
+      color:$dark ;
+      border: double 4px $dark;
+
+
+  }
+  &__back{
+    background-color:$dark ;
+    border: double 4px $subtext;
+    padding: 5px 30px;
+    margin: 10px auto;
+    color:$subtext ;
+    display: block;
+    width: 20%;
+    text-decoration: none;
+    text-align: center;
+
+  }
+  &__back:hover {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    background-color:$subtext ;
+    color:$dark ;
+    border: double 4px $dark;
+}
+
+  }
+  }
+
+}

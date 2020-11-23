@@ -5,7 +5,6 @@ footer{
   position: absolute;
   bottom: 0;
   padding-bottom: 40px;
-
   .conteiner{
     width: 75%;
     margin: 0 auto;
@@ -13,7 +12,6 @@ footer{
     height: 100%;
     justify-content: space-between;
     margin: 0px auto;
-    
     .logo{
       display: flex;
       align-items: center;
@@ -33,25 +31,20 @@ footer{
       }
     }
 
-
-
     .list{
       color: $basebackground;
       display: flex;
       align-items: center;
-
       ul{
         display: flex;
         align-items: center;
         justify-content: space-between;
         a{
           text-decoration: none;
-
         }
         li{
           margin-right: 50px;
           color: $subcard;
-        
         }
       }
     }
