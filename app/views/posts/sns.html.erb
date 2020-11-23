@@ -1,20 +1,46 @@
-<%= render 'layouts/header'%>
+<div class="containers">
 <div class ="sns__containers">
  <div class ="sns__containers__container">
  <div class ="sns__containers__container__top">
  <h1>SHARE</h1>
  </div>
  <div class ="sns__containers__container__bottom">
-      <%= link_to new_post_path do %>
-        <div class="sns__containers__container__bottom__option secretsanta"><i class="fas fa-share-alt"></i>Share on <span>Secret Santas 365</span></div>
+
+  
+
+      <div class="sns_button secretsanta">
+      <%= link_to new_post_path  do %>
+        <div class="sns__containers__container__bottom__option secretsanta">
+          <div class="logo">
+              <p>Secret</p>
+              <p>Santa</p>
+              <p>365</p>
+          </div>
+        </div>
       <% end %>
+      </div>
+
+
+      <div class="sns_button twitter">
       <%= link_to "https://twitter.com/share?url=#{ request.url }&text=My gift from Secret Santa!",target: '_blank'  do %>
-        <div class="sns__containers__container__bottom__option twitter"><i class="fab fa-twitter"></i>Share on <span>Twitter</span></div>
+        <div class="sns__containers__container__bottom__option twitter">
+          <i class="fab fa-twitter"></i><br>
+        </div>
       <% end %>
+      </div>
+
+      <div class="sns_button facebook">
       <%= link_to "http://www.facebook.com/share.php?u=https%3A%2F%2Fsaruwakakun.com%2F&layout=button_count&size=small&appId=943273476184757&width=92&height=20" do %>
-        <div class="sns__containers__container__bottom__option facebook"><i class="fab fa-facebook-f"></i>(仮)Share on <span>Facebook</span></div>
+        <div class="sns__containers__container__bottom__option facebook">
+          <i class="fab fa-facebook-f"></i><br>
+        </div>
       <% end %> 
+      </div>
+
+
   </div>
  </div>
+
+</div>
 
 </div>

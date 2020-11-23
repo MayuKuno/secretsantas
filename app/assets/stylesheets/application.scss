@@ -1,9 +1,46 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "reset";
-@import "modules/common";
-@import "modules/home";
-@import "modules/user";
-@import "modules/post";
-@import "modules/groups";
-@import "tagsinput";
+
+// vendors
+@import "vendors/reset";
+@import "vendors/jquery.tagit";
+@import "vendors/tagit.ui-zendesk";
+@import "vendors/tagsinput";
+
+//config
+@import "config/color";
+@import "config/font";
+
+// common
+@import "modules/common/common";
+@import "modules/common/header";
+@import "modules/common/footer";
+
+//top
+@import "modules/top/index";
+
+//user
+@import "modules/user/show";
+@import "modules/user/edit";
+@import "modules/user/signup";
+@import "modules/user/login";
+
+
+// groups
+@import "modules/groups/index";
+@import "modules/groups/newedit";
+@import "modules/groups/show";
+
+
+//message
+@import "modules/message/index";
+
+//post
+@import "modules/post/index";
+@import "modules/post/newedit";
+
+
+
+
+// @import "modules/home";
+// @import "tagsinput";

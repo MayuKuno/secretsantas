@@ -33,7 +33,7 @@ class GroupsController < ApplicationController
           MatchingUser.create(group_id: @group.id, from_user_id: pair[:from_user], to_user_id: pair[:to_user])
         end
       end
-      redirect_to group_messages_path(@group)
+      redirect_to group_path(@group.id)
     else
       render action: :new
     end
@@ -49,7 +49,7 @@ end
 def update
   @group = Group.find(params[:id])
   if @group.update(group_params)
-    redirect_to group_messages_path(@group)
+    redirect_to group_path(@group.id)
   else
     render action: :edit
   end

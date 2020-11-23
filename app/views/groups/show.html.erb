@@ -1,78 +1,58 @@
-<%= render 'layouts/header'%>
+<div class="containers">
 <div class ="Groupshow__containers">
 <div class ="Groupshow__containers__container">
   <div class ="Groupshow__containers__container__top">
    <h1>Group Details</h1>
   </div>
   <div class ="Groupshow__containers__container__bottom">
-      <%= link_to edit_group_path(@group.id), method: :get, class:"Groupshow__containers__container__bottom__edit" do %>
-      <i class="fas fa-edit"></i> Edit
+    <div class ="Groupshow__containers__container__bottom__left">
+      <h1><%= @group.name %></h1>
+         <%= link_to "/groups/#{@group.id}/edit", method: :get do %> 
+      <i class="fas fa-edit"></i> Edit 
+    <% end %> 
+    <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
+    <%= link_to "", "/groups/#{@group.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
+
+    </div>
+    <div class ="Groupshow__containers__container__bottom__right">
+        <div class ="Groupshow__containers__container__bottom__right__title">
+        <h2>Participants</h2>
+        <%= link_to group_messages_path(@group), method: :get do %> 
+        <p>Talk to your group members</p>
       <% end %>
-      <%= link_to group_path(@group.id), method: :delete, class:"Groupshow__containers__container__bottom__delete" do %>
-      <i class="fas fa-trash-alt"></i> Delete
-      <% end %>
-      <%= link_to group_messages_path(@group), class:"Groupshow__containers__container__bottom__back" do %>
-      <i class="fas fa-comments"></i> Group chat
-      <% end %>
-    <div class ="Groupshow__containers__container__bottom__info">
-      <div class ="Groupshow__containers__container__bottom__info__title">
-      Group Name
-      </div>
-      <div class ="Groupshow__containers__container__bottom__info__content">
-        <%= @group.name %>
-      </div>
-    </div>
-
-    <div class ="Groupshow__containers__container__bottom__info">
-      <div class ="Groupshow__containers__container__bottom__info__title">
-       Budget
-      </div>
-      <div class ="Groupshow__containers__container__bottom__info__content">
-       ¥<%= @group.budget %>
-      </div>
-    </div>
-    <div class ="Groupshow__containers__container__bottom__info">
-      <div class ="Groupshow__containers__container__bottom__info__title">
-       Exchange Date
-      </div>
-      <div class ="Groupshow__containers__container__bottom__info__content">
-       <%= @group.exchange_date %>
-      </div>
-    </div>
-
-    <div class ="Groupshow__containers__container__bottom__info">
-      <div class ="Groupshow__containers__container__bottom__info__title">
-       Participants
-      </div>
-      <div class ="Groupshow__containers__container__bottom__info__content">
-       <% @group.users.each do |user| %>
-        <a href="/users/<%= user.id %>">
-          <%= user.nickname %>
-        </a>
-       <% end %>
-      </div>
-    </div>
-
-    <div class ="Groupshow__containers__container__bottom__draw">
-      <div class ="Groupshow__containers__container__bottom__draw__title">
-       My draws
-      </div>
-       <div id="button">?</div>
-       <div id="address"></div>
-       
-      <div id="interests"></div>
-
-
-
-
-
-
-
-
-		</div>
+        </div>
+        <div class ="Groupshow__containers__container__bottom__right__details">
+          <% @group.users.each do |user| %>
+            <a href="/users/<%= user.id %>">
+              <p><%= user.nickname %></p>
+            </a>
+          <% end %>
+        </div>
+        <div class ="Groupshow__containers__container__bottom__right__title">
+        <h2>Budget</h2>
+        </div>
+        <div class ="Groupshow__containers__container__bottom__right__details">
+          <p>¥<%= @group.budget %></p>
+        </div>
+        <div class ="Groupshow__containers__container__bottom__right__title">
+        <h2>Exchange Date</h2>
+        </div>
+        <div class ="Groupshow__containers__container__bottom__right__details">
+          <p><%= @group.exchange_date %></p>
+        </div>
+        <div class ="Groupshow__containers__container__bottom__right__title">
+        <h2>My draw</h2>
+        </div>
+        <div class ="Groupshow__containers__container__bottom__right__details">
+            <div id="button">?</div>
+            <div id="address"></div>
+            <div id="interests"></div>
+        </div>
 
     </div>
+  </div>
+  </div>
+    </div>
+      </div>
 
-</div>
-
-
+ 

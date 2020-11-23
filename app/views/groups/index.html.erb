@@ -1,7 +1,25 @@
-<%= render 'layouts/header'%>
-<div class ="message__containers">
-  <%= render 'messages/side_bar'%>
-  <div class ="message__containers__all">
-   <i class="fas fa-gifts"></i>
-  </div>
+<div class="containers">
+ <div class ="group__containers">
+    <div class ="group__containers__side">
+    <div class ="group__containers__side__title">
+      My Groups
+    </div>
+      <div class ="group__containers__side__posts">
+        <% current_user.groups.each do |group| %>
+        <%= link_to group_messages_path(group) do %>
+         <div class="group__containers__side__posts__post">
+          <div class="group__containers__side__posts__post__title">
+           <%= group.name %>
+          </div>
+          <div class="group__containers__side__posts__post__message">
+            <span><%= group.show_last_message %></span>
+          </div>
+          <%= link_to "Show Group Details", group_path(group.id), class: 'group__containers__side__posts__post__link' %>
+         </div>
+         <% end %>
+        <% end %>
+      </div>
+    </div>
+</div> 
 </div>
+

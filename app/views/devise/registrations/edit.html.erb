@@ -1,22 +1,8 @@
-  <div class="wrap">
+<div class="containers">
 
   <div class="useredit">
     <div class="useredit__top">
-      <div class="useredit__top__side">
-        <div class="useredit__top__side__box">
 
-        <%= link_to posts_path do %>
-          <div class="useredit__top__side__box__icon">
-            <i class="fas fa-gift"></i><br>
-          </div>
-          <div class="useredit__top__side__box__name">
-            <p>Secret</p>
-            <p>Santa</p>
-            <p>365</p>
-          </div>
-          <% end %>
-        </div>
-      </div>
       <div class="useredit__top__main">
         <div class="useredit__top__main__contents">
           <h1>Edit User's Information</h1>
@@ -108,7 +94,7 @@
               </div>    
              <% end %>
               <div class="useredit__top__main__contents__field__right__address">
-                <%= f.text_field :interests, autofocus: true, autocomplete: "interests", placeholder:"What are you currently obsessed with?" %>
+                <%= f.text_field :interests, autofocus: true, autocomplete: "interests", placeholder:"What are you into?" %>
               </div>   
             </div>
 
