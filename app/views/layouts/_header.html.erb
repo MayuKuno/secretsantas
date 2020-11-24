@@ -123,7 +123,7 @@
         <%= link_to new_user_session_path do %>
           <i class="fas fa-sign-in-alt"></i> LOGIN
         <% end %>
-        <%= link_to users_guest_sign_in_path do %>
+        <%= link_to users_guest_sign_in_path, method: :post do %>
           LOGIN as GUEST
         <% end %>
       </div>

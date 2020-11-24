@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
-
   end
 
   resources :posts do

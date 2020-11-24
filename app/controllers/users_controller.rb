@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    
     @categories = Category.all
   end
 

@@ -10,7 +10,7 @@
           <%= image_tag @user.image %>
         <% end %>
       <% else %>
-        <%= link_to  user_path(@user.id)  do %>
+        <%= link_to user_path(@user.id)  do %>
         <%#= image_tag "/assets/account.png" %>
         <%= image_tag asset_path("account.png", alt: "アカウント") %>
 
