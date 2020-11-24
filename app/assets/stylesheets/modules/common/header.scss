@@ -2,7 +2,8 @@ header{
   display: flex;
   justify-content: space-between;
   position: fixed;
-  width: 100%;
+  width: 100vw;
+  
   height: 120px;
   background-color: $basebackground;
   align-items: center;
@@ -267,7 +268,7 @@ transition: transform 1s ease, opacity .9s ease, -webkit-transform 1s ease;
 
 // 
 
-.container{
+.search__container{
   &__search{
     position: absolute;
     top: 25%;

@@ -1,6 +1,6 @@
 
 $(function() {
-  var search_user_list = $(".container__search__result");
+  var search_user_list = $(".search__container__search__result");
   
 
   function appendUser(user) {
@@ -23,10 +23,10 @@ $(function() {
     ` 
     <a href="/users/${user.id}">
 
-    <li class="container__search__result__each"> 
+    <li class="search__container__search__result__each"> 
     ${picture}
  
-    <div class="container__search__result__each__name">${user.nickname} </div>
+    <div class="search__container__search__result__each__name">${user.nickname} </div>
     </li>
     </a>
     `
@@ -35,7 +35,7 @@ $(function() {
 
   function appendErrMsgToHTML() {
     var html = `
-    <li class="container__search__result__each noresult"> 
+    <li class="search__container__search__result__each noresult"> 
     No results
     </li>
     `

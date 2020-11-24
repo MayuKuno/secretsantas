@@ -1,6 +1,67 @@
+@media screen and (max-width: 479px){ 
+  //header↓
+  header{
+    height: 90px;
+    
+    .logo{
+      width: 12%;
+      height: 90%;
+      margin-left: 3%;
+      a{
+        font-size: $fontSmall;
+        p{
+          height: 25px;
+        }
+      }
+    }
+    .startButton{
+      width: 23%;
+      margin-right: 3%;
+      a{
+        font-size: $fontSmallestMB;
+
+        
+      }
+    }
+  }
+// header↑
+
+
+// footer↓
+footer{
+  height: 200px;
+  padding-bottom: 40px;
+  .footer__conteiner{
+    width: 90%;
+    .logo{
+      a{
+        font-size: $fontLarge;
+        p{
+          height: 33px;
+        }
+      }
+    }
+
+    .list{
+      ul{
+        display: block;
+        li{
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
+// footer↑
+
+  
 
 
 
+
+
+
+// top#index
 #overlay {
   width: 100%;
   height: 100%;
@@ -112,149 +173,95 @@
 
 
 .container{
-  height: 70%;
-  width: 75%;
-  margin: 0 auto;
+  width: 90%;
 }
 .topFirst{
-  height: 700px;
-  background-color: $basebackground;
-  padding-top: 125px;
-  width: 100%;
-  display: flex;
-  align-items: center;
+  padding-top: 90px;
   .container{
-    display: flex;
-    background-color: $subcard;
+    display: block;
   }
   .giftPic{
-    width: 40%;
+    width: 100%;
     img{
       width: 100%;
-      height: 100%;
+      height: 100px;
       object-fit: cover;
     }
   }
   .definition{
-    width: 60%;
-    padding: 5% 5%;
+    width: 100%;
     h1{
-      font-size: $fontMedium;
+      font-size: $fontSmall;
     }
     p{
-      padding-top: 50px;
-      font-size: $fontSmall;
-
+      padding-top: 20px;
+      font-size: $fontSmallest;
     }
   }
-  
-
-
 }
 
 .topSecond{
   width: 100%;
-  height: 1000px;
+  height: 600px;
   padding-bottom: 300px;
   background-color: $subbackground;
 
   .title{
-    margin-top: 20px;
     height: 10%;
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 50px;
-    text-align: center;
-    font-size: $fontMedium;
-    color: $subtext;
-    margin-bottom: 60px;
+    width: 90%;
+    padding-top: 30px;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 
     .tab-container {
-      list-style-type: none;
-      position: relative;
-
-      ul { 
-        list-style-type: none; 
-        padding: 0; 
-      }
+      margin-top: 48px;
       .arrows { 
-        display: block;
-        font-size: 90px; 
+        display: none;
+
+    
   
-        label { 
-          display: inline-block; 
-          cursor: pointer; 
-          color: $subtext;    
-          user-select: none;  
-          &:hover { 
-            color:$dark; 
-          }
-        }
+    
       }
-      .back{
-        bottom: 220px;
-        left: -80px;
-        position: absolute;
-      }
-      .next{
-        bottom: 220px;
-        right: -80px;
-        position: absolute;
-      }
+
       .tab-content-container { 
-        height:100%;
-        opacity: 0;
-        line-height: 22px;
+
+        padding: 10px 10px;
         position: absolute;
-        top: 42px;
-        padding: 20px 40px;
-        background-color: $basebackground;
-        display: flex;
-        align-items: center;
+        top: 52px;
         .tab-content {
-          opacity: 0;
-          padding: 15px 0;
-          transition: opacity 0.1s ease-in;  
-          margin: 0 auto;
           display: flex;
-          width: 100%;
-          height: 100%;
+          align-items: center;
+      
           .image{
+            width: 30%;
+            padding: 3%;
             img{
-              width: 70%;
+              width: 100%;
             }  
 
-            padding: 2% 3% 0% 6%;
           }
           .description{
             padding: 8% 0;
 
-            width: 60%;
+            width: 70%;
             h1{
-              font-size: $fontMedium;
+              font-size: $fontSmall;
             }
             p{
-              padding-top: 50px;
-              font-size: $fontSmall;
-
+              padding-top: 20px;
+              font-size: $fontSmallestMB;
+              
             }
           }
 
         }
       }
       .tab {
-        outline: 0;
-        float: left;
-        cursor: pointer;    
-        opacity: 1;
-        width: 20%;
-        line-height: 40px;
-        display: block;
-        margin: 0;
-        position: relative;
-        text-align: center; 
 
+        line-height: 13px;
+
+        font-size: $fontSmallest;
       }
       .tab-toggle {
         display: none;
@@ -268,7 +275,7 @@
         }
         &.active ~ .tab-content-container,
         &:checked ~ .tab-content-container { 
-          height: 400px;
+          height: 250px;
           opacity: 1;
           .tab-content { 
             opacity: 1; 
@@ -284,3 +291,10 @@
 }
 
 
+
+
+
+
+
+
+}
