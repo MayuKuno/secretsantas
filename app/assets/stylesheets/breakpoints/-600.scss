@@ -1,7 +1,23 @@
 
 @media screen and (max-width:599px){
   //header↓
- 
-
+  header{
+  .search{
+    position: absolute;
+    top: 25%;
+    right: 15%;
+    i{
+      margin-right: -23px;
+      color: $basetext;
+    }
+    
+    input{
+      width: 85%;
+      padding: 10px 10px 10px 40px;
+    }
+  
+  
+  }
+}
 
 }

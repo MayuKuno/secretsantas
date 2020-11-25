@@ -59,7 +59,7 @@ header{
   .search{
     position: absolute;
     top: 25%;
-    right: 20%;
+    right: 25%;
     i{
       margin-right: -23px;
       color: $basetext;
@@ -67,14 +67,13 @@ header{
     
     input{
       box-sizing: border-box;
-      padding: 10px;
       transition: 0.3s;
       letter-spacing: 1px;
       color: $dark;
       border: none;
       border-bottom: 2px solid $basetext;
       background: transparent;
-      padding-left: 70px;
+      padding: 10px 10px 10px 70px;
     }
     input:focus {
       border-bottom: 2px solid $dark;
@@ -111,6 +110,8 @@ header{
     }
   }
 }
+
+
 #nav-toggle {
 
   img{

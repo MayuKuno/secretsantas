@@ -1,15 +1,14 @@
 
-@media screen and (min-width: 960px) { 
   .containers{
     width: 100%;
-    padding-top:120px;
-    padding-bottom:300px;
+    padding-top:90px;
+    padding-bottom:200px;
   }
     .title{
       font-size: $fontLarge;
     }
     .first{
-      padding:50px 150px;
+      padding:50px 100px;
       background-color: $subcard;
       height: 600px;
       .content{
@@ -381,5 +380,5 @@
     // }
   
 
-  }
+  
 // }
