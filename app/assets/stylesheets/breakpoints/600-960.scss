@@ -3,5 +3,202 @@
 Stylesheet: 600px以上のタブレットやモニタで適用
 
 ******************************************************************/
-@media screen and (min-width: 600px) and ( max-width:959px){
+@media screen and ( max-width:959px){
+  //header↓
+  header{
+    height: 90px;
+    
+    .logo{
+      width: 12%;
+      height: 90%;
+      margin-left: 3%;
+      a{
+        font-size: $fontSmall;
+        p{
+          height: 25px;
+        }
+      }
+    }
+    .startButton{
+      width: 23%;
+      margin-right: 3%;
+      a{
+        font-size: $fontSmallestMB;
+
+        
+      }
+    }
+  }
+// header↑
+
+
+// footer↓
+footer{
+  height: 200px;
+  padding-bottom: 40px;
+  .footer__conteiner{
+    width: 90%;
+    .logo{
+      a{
+        font-size: $fontLarge;
+        p{
+          height: 33px;
+        }
+      }
+    }
+
+    .list{
+      ul{
+        display: block;
+        li{
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+}
+// footer↑
+
+  
+
+
+
+
+
+
+// top#index
+#overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  z-index: 3;
+
+}
+
+.container{
+  width: 90%;
+}
+.topFirst{
+  height: 600px;
+  padding-top: 40px;
+  .container{
+    display: block;
+  }
+  .giftPic{
+    width: 100%;
+    img{
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+    }
+  }
+  .definition{
+    width: 100%;
+    h1{
+      font-size: $fontSmall;
+    }
+    p{
+      padding-top: 20px;
+      font-size: $fontSmallest;
+    }
+  }
+}
+
+.topSecond{
+  width: 100%;
+  height: 600px;
+  padding-bottom: 300px;
+
+  .title{
+    height: 10%;
+    width: 90%;
+    padding-top: 30px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+    .tab-container {
+      margin-top: 48px;
+      .arrows { 
+        display: none;
+
+    
+  
+    
+      }
+
+      .tab-content-container { 
+
+        padding: 10px 10px;
+        position: absolute;
+        top: 52px;
+        .tab-content {
+          display: flex;
+          align-items: center;
+      
+          .image{
+            width: 30%;
+            padding: 3%;
+            img{
+              width: 100%;
+            }  
+
+          }
+          .description{
+            padding: 8% 0;
+            height:100%;
+            width: 70%;
+            h1{
+              font-size: $fontSmall;
+            }
+            p{
+              padding-top: 20px;
+              font-size: $fontSmallestMB;
+              
+            }
+          }
+
+        }
+      }
+      .tab {
+
+        line-height: 13px;
+
+        font-size: $fontSmallest;
+      }
+      .tab-toggle {
+        display: none;
+        &.active + .tab,
+        &:checked + .tab { 
+          font-weight: bold;
+          span{
+            border-bottom: 2px $accent solid;
+            color: $basebackground;
+          }
+        }
+        &.active ~ .tab-content-container,
+        &:checked ~ .tab-content-container { 
+          height: 250px;
+          opacity: 1;
+          .tab-content { 
+            opacity: 1; 
+            label { 
+              opacity: 1; 
+            }
+          }
+        }
+      }
+    }
+
+  
+}
+
+
+
+
+
 }

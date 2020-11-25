@@ -1,6 +1,5 @@
 
 
-
 #overlay {
   width: 100%;
   height: 100%;
@@ -112,7 +111,7 @@
 
 
 .container{
-  height: 70%;
+  height: 80%;
   width: 75%;
   margin: 0 auto;
 }
@@ -142,7 +141,7 @@
       font-size: $fontMedium;
     }
     p{
-      padding-top: 50px;
+      padding-top: 20px;
       font-size: $fontSmall;
 
     }
@@ -220,22 +219,26 @@
           display: flex;
           width: 100%;
           height: 100%;
+          align-items: center;
           .image{
+            width:40%;
+
             img{
-              width: 70%;
+              width: 80%;
             }  
 
-            padding: 2% 3% 0% 6%;
           }
           .description{
-            padding: 8% 0;
-
+            // position:absolute;
+            // bottom:0;
+            padding-top:40px;
             width: 60%;
+            height:100%;
             h1{
               font-size: $fontMedium;
             }
             p{
-              padding-top: 50px;
+              padding-top: 20px;
               font-size: $fontSmall;
 
             }
@@ -254,7 +257,7 @@
         margin: 0;
         position: relative;
         text-align: center; 
-
+        z-index:1;
       }
       .tab-toggle {
         display: none;
