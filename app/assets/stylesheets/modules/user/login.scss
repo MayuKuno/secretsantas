@@ -49,10 +49,11 @@
     align-items: center;
     padding: 40px;
     color: $dark;
+    padding-bottom: 200px;
 
     &__contents{
       text-align: center;
-
+      width:80%;
       h1{
         margin-bottom: 30px;
         font-weight: bold;
@@ -120,8 +121,8 @@
         //   }
         // }
         &__email{
-          margin: 40px 0px;
-          width: 500px;
+          margin: 40px auto;
+          width: 80%;
 
           input[type='email']{
             box-sizing: border-box;
@@ -165,8 +166,8 @@
         // }
     
         &__password{
-          margin: 40px 0px;
-          width: 500px;
+          margin: 40px auto;
+          width: 80%;
 
           input[type='password']{
             box-sizing: border-box;
