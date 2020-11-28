@@ -501,4 +501,32 @@ footer{
 
   }
 
+
+
+
+  // post#index
+  .second{
+    padding:10px 20px;
+    .posts{
+      display: block;
+      
+      .post {
+        width:			100%;
+        margin: 20px auto;
+        // height:			50%;
+        overflow:		hidden;
+        position:		relative;	/* 相対位置指定 */
+        img{
+           height:			100%;
+          width: 100%;
+          object-fit:cover;
+    
+        }
+  
+    
+      }
+  
+    }
+  
+  }
 }

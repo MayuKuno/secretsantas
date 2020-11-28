@@ -1,6 +1,33 @@
 <div class="containers">
   <div class="second">
-    <div class="title">Posts</div>
+    <div class="title">
+        <% if params[:tag] %> 
+         <h1>Posts for  <span>#<%= params[:tag] %></span></h1>
+        <% else %>
+         <h1>Posts</h1>
+       <% end %> 
+    </div>
+    <h2>Trending Tags</h2>
+
+      <div class="tag">
+        <% @tags.each do |tag|%>
+        <ul>
+          <li>
+          <%= link_to "##{tag.name}(#{tag.taggings_count})", tag_path(tag.name), class: "link" %>
+          </li>
+          </ul>
+        <% end %>
+      </div>
+
+      <div class="search">
+        <%= form_tag(posts_path,:method => 'get', :class => "search-form") do %>
+          <i class="fas fa-search"></i>
+          <%= text_field_tag :keyword, nil, class: "search-input" %> 
+          <%#= submit_tag 'Search', :name => nil %>
+        <% end %>
+      </div>
+
+
     <div class="posts">
        <% if Post.any? %>
         <% @posts.each do |post| %>

@@ -1,6 +1,6 @@
 
 $(function() {
-  var search_list = $(".posts__containers__container__right__posts");
+  var search_list = $(".posts");
   
 
   function appendTweet(post) {
@@ -41,53 +41,58 @@ $(function() {
 
     var html = 
     `
-    <div class="posts__containers__container__right__posts__post">
-    <div class="posts__containers__container__right__posts__post__top"> 
-      <div class="posts__containers__container__right__posts__post__top__account">
-        ${picture}
-      </div>
-      <div class="posts__containers__container__right__posts__post__top__name">
-        <a href="/users/${post.user_id}">
-          ${post.nickname} 
-        </a>
-      </div>
-      <div class="posts__containers__container__right__posts__post__top__manage">
-        <ul class="posts__containers__container__right__posts__post__top__manage__lists">
-         ${current_user}
-        </ul>
-      </div>
-    </div> 
-    <div class="posts__containers__container__right__posts__post__bottom"> 
+
+   <div class="post">
     <img src = '${post.image.url}'/>
 
-    <div class="posts__containers__container__right__posts__post__bottom__caption">
-        <div class="posts__containers__container__right__posts__post__bottom__caption__top">
-        <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
+     <div class="mask">
+       <div class="inside">
+         <div class="account">
+         ${picture}
+         </div>
+         <div class="name">
+          <a href="/users/${post.user_id}">
+           ${post.nickname} 
+          </a>
+         </div>
+         <div class="manage">
+           <ul class="manage__lists">
+           ${current_user}
+           </ul>
+         </div>
+         <div class="caption">
+           <div class="category">
+           ${post.tag_list.map(tag => 
+            `
+           <a class="link" href="tags/${tag}"> #${tag} </a>
+           `
+           ).join(' ')}
 
-       ${post.tag_list.map(tag => 
-        `
-       <a class="posts__containers__container__right__posts__post__bottom__caption__top__category__link" href="tags/${tag}"> #${tag} </a>
-       `
-       ).join(' ')}
-
+           </div>
+           <div class="comment">
+            ${post.caption}
+           </div>
+         </div>
 
       </div>
-      </div>
-      <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
-        ${post.caption}
-      </div>
-    </div>
-  </div>   
-    
+     </div>
+   </div>
+</div>
+
+
+
+
+
+
     `
     search_list.append(html);
    }
 
   function appendErrMsgToHTML() {
     var html = `
-    <div class="posts__containers__container__right__posts__nothing"> 
+    <div class="posts__nothing"> 
     <i class="fas fa-camera-retro"></i><br>
-    No results<br>Let's share what you got!
+      No results<br>Let's share what you got!
     </div>
     `
     search_list.append(html);
@@ -104,8 +109,7 @@ $(function() {
 
   $(".search-input").on("keyup", function() {
     var input = $(".search-input").val();
-
-    $('.posts__containers__container__right__title').hide();
+    // $('.posts__containers__container__right__title').hide();
     $.ajax({
       type: 'GET',
       url: '/posts/search',
@@ -138,3 +142,44 @@ $(function() {
 
 
 
+
+// <div class="posts__containers__container__right__posts__post">
+// <div class="posts__containers__container__right__posts__post__top"> 
+//   <div class="posts__containers__container__right__posts__post__top__account">
+//     ${picture}
+//   </div>
+//   <div class="posts__containers__container__right__posts__post__top__name">
+//     <a href="/users/${post.user_id}">
+//       ${post.nickname} 
+//     </a>
+//   </div>
+//   <div class="posts__containers__container__right__posts__post__top__manage">
+//     <ul class="posts__containers__container__right__posts__post__top__manage__lists">
+//      ${current_user}
+//     </ul>
+//   </div>
+// </div> 
+// <div class="posts__containers__container__right__posts__post__bottom"> 
+// <img src = '${post.image.url}'/>
+
+// <div class="posts__containers__container__right__posts__post__bottom__caption">
+//     <div class="posts__containers__container__right__posts__post__bottom__caption__top">
+//     <div class="posts__containers__container__right__posts__post__bottom__caption__top__category">
+
+//    ${post.tag_list.map(tag => 
+//     `
+//    <a class="posts__containers__container__right__posts__post__bottom__caption__top__category__link" href="tags/${tag}"> #${tag} </a>
+//    `
+//    ).join(' ')}
+
+
+//   </div>
+//   </div>
+//   <div class="posts__containers__container__right__posts__post__bottom__caption__comment">
+//     ${post.caption}
+//   </div>
+// </div>
+// </div>   
+
+
+// --
