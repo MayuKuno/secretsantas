@@ -23,7 +23,7 @@
 .Groupshow__containers{
   background-color: $subcard;
   padding:40px;
-  min-height: 1300px;
+  min-height: 1200px;
   width: 100%;
   &__container{
     width: 80%;
@@ -64,7 +64,7 @@
           padding: 5px;
           position: absolute;
           top: 30%;
-          right: 5%;
+          right: 50px;
           text-decoration: none;
           color: $subcard;
           cursor: pointer;
@@ -78,7 +78,7 @@
       
         .edit{
           position: absolute;
-          right: 15%;
+          right: 150px;
         }
       }
       &__content{
@@ -158,7 +158,11 @@
             box-shadow: 0 5px 0 $dark;
             margin-top: 35px;
           }
-
+          #interests{
+            h1{
+              font-size: $fontMedium;
+            }
+          }
           }
           .none{
             border-bottom: none;

@@ -13,7 +13,8 @@ $(function(){
     // </a>
     // `;
     if (`${gon.to_user.interests}` === undefined || `${gon.to_user.interests}` === null || `${gon.to_user.interests}` === "null" || ""){
-        interests.innerHTML = `Tips for choosing the perfect gift :<br>
+        interests.innerHTML = `
+        <h1>Tips for choosing the perfect gift :<br></h1>
         Appearently, ${gon.to_user.nickname} has nothing into.<br>
         Let's choose the gift with your own sense!
         `
@@ -24,7 +25,8 @@ $(function(){
         </a>
         `
     }else{
-        interests.innerHTML = `Tips for choosing the perfect gift :<br>
+        interests.innerHTML = `
+        <h1>Tips for choosing the perfect gift :<br></h1>
         ${gon.to_user.nickname} is currently obsessed with ${gon.to_user.interests} <br>
         `
         anonymous.innerHTML = 
