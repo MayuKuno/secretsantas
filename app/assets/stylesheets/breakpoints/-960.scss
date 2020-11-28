@@ -1,8 +1,3 @@
-/******************************************************************
-
-Stylesheet: 600px以上のタブレットやモニタで適用
-
-******************************************************************/
 @media screen and ( max-width:959px){
   //header↓
   header{
@@ -213,7 +208,30 @@ footer{
 
 
 
+// post#index
+.containers{
 
+  padding-bottom:200px;
+}
+
+.createButton{
+  font-size: $fontLarge;
+  background-color: $accent;
+  color: $dark;
+  padding: 2px 7px;
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  font-size: $fontSmall;
+  text-decoration: none;
+  &:hover{
+    background-color: $dark;
+    color: $accent;
+
+  }
+}
 
 
 .first{
@@ -240,6 +258,7 @@ footer{
   }
 }
 
+// group#new, edit
 
 
 

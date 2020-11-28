@@ -10,7 +10,32 @@ body{
   box-sizing: border-box;
 }
 
-
+.temporary{
+  background-color: $subcard;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  &__content{
+    margin: 0 auto;
+    height: 40%;
+    width: 70%;
+    position: relative;
+    h1{
+      font-size: 100px;
+    }
+    p{
+      font-size: 70px;
+    }
+    img{
+      position: absolute;
+      top: 0;
+      right: 0px;
+      width: 30%;
+      
+    }
+  }
+}
 // @media screen and (min-width: 960px) { 
 //   * {
 //     box-sizing: border-box;

@@ -3,7 +3,7 @@
         <div class ="groupsnew__containers">
       <div class ="groupsnew__containers__container">
         <div class="groupsnew__containers__container__title">
-          <div class="postsnew__containers__container__title__content">
+          <div class="groupsnew__containers__container__title__content">
           Edit Group
            </div>
         </div>
@@ -63,8 +63,10 @@
 </div>
 
             <div class="groupsnew__containers__container__form__item">
-            Exchange date
+            <span>Exchange date</span>
+            <div class="groupsnew__containers__container__form__item__date">
             <%= raw sprintf(form.date_select(:exchange_date, include_blank: true, use_month_numbers: true,start_year: Time.now.year, end_year: (Time.now.year + 1), date_separator: '%s'),'/ ', '/') %>
+            </div>
 
             </div>
             <div class="groupsnew__containers__container__form__item">
@@ -74,7 +76,7 @@
            </div>
           
             <%= form.submit 'Edit', class: :groupsnew__containers__container__form__create %>
-            <%= link_to "Back", posts_path, class: "groupsnew__containers__container__form__back" %>
+            <%= link_to "Back", tops_path, class: "groupsnew__containers__container__form__back" %>
           <% end %>
         </div>
       </div>

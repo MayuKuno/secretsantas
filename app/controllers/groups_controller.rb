@@ -61,9 +61,11 @@ end
 def destroy
   group = Group.find(params[:id])
   group.destroy
-  redirect_to posts_path
+  redirect_to tops_path
 end
 
+def anonymous
+end
 
   private
   def group_params

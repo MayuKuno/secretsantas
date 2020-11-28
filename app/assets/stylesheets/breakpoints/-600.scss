@@ -33,4 +33,36 @@
 
 }
 
+
+//group#new,edit
+.chat-group-form__field{
+  width: 90%;
+}
+.groupsnew__containers{
+  &__container{
+    &__title{
+      height: 60px;
+      line-height: 60px;
+      padding-left: 20px;
+      padding: 2px;
+      &__content{
+        height: 55px;
+        padding-left: 20px;
+        line-height: 55px;
+      }
+    }
+  &__form{
+    &__error{
+    }
+    &__item{
+    margin: 30px auto;
+    width: 90%;
+    }
+    
+
+  }
+  }
+
+}
+
 }

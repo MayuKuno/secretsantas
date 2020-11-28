@@ -2,12 +2,32 @@
   .containers{
     width: 100%;
     padding-top:90px;
-    padding-bottom:200px;
+    padding-bottom:300px;
   }
     .title{
       font-size: $fontLarge;
     }
+    .createButton{
+      font-size: $fontLarge;
+      background-color: $accent;
+      color: $dark;
+      padding: 5px 10px;
+      border-radius: 10px;
+      display: block;
+      position: absolute;
+      top: 60px;
+      right: 120px;
+      font-size: $fontMedium;
+      text-decoration: none;
+      &:hover{
+        background-color: $dark;
+        color: $accent;
+
+      }
+    }
+    
     .first{
+      position: relative;
       padding:50px 100px;
       background-color: $subcard;
       height: 600px;
@@ -39,6 +59,8 @@
               color: $basebackground;
             }
           }
+          
+          
         }
 
 

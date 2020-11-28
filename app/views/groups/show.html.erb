@@ -1,58 +1,70 @@
 <div class="containers">
-<div class ="Groupshow__containers">
-<div class ="Groupshow__containers__container">
-  <div class ="Groupshow__containers__container__top">
-   <h1>Group Details</h1>
-  </div>
-  <div class ="Groupshow__containers__container__bottom">
-    <div class ="Groupshow__containers__container__bottom__left">
-      <h1><%= @group.name %></h1>
-         <%= link_to "/groups/#{@group.id}/edit", method: :get do %> 
-      <i class="fas fa-edit"></i> Edit 
-    <% end %> 
-    <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
-    <%= link_to "", "/groups/#{@group.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
-
-    </div>
-    <div class ="Groupshow__containers__container__bottom__right">
-        <div class ="Groupshow__containers__container__bottom__right__title">
-        <h2>Participants</h2>
-        <%= link_to group_messages_path(@group), method: :get do %> 
-        <p>Talk to your group members</p>
-      <% end %>
-        </div>
-        <div class ="Groupshow__containers__container__bottom__right__details">
-          <% @group.users.each do |user| %>
-            <a href="/users/<%= user.id %>">
-              <p><%= user.nickname %></p>
-            </a>
-          <% end %>
-        </div>
-        <div class ="Groupshow__containers__container__bottom__right__title">
-        <h2>Budget</h2>
-        </div>
-        <div class ="Groupshow__containers__container__bottom__right__details">
-          <p>¥<%= @group.budget %></p>
-        </div>
-        <div class ="Groupshow__containers__container__bottom__right__title">
-        <h2>Exchange Date</h2>
-        </div>
-        <div class ="Groupshow__containers__container__bottom__right__details">
-          <p><%= @group.exchange_date %></p>
-        </div>
-        <div class ="Groupshow__containers__container__bottom__right__title">
-        <h2>My draw</h2>
-        </div>
-        <div class ="Groupshow__containers__container__bottom__right__details">
-            <div id="button">?</div>
-            <div id="address"></div>
-            <div id="interests"></div>
-        </div>
-
-    </div>
-  </div>
-  </div>
-    </div>
+  <div class ="Groupshow__containers">
+    <div class ="Groupshow__containers__container">
+      <div class ="Groupshow__containers__container__top">
+        <h1>Group Details</h1>
       </div>
+      <div class ="Groupshow__containers__container__bottom">
+        <div class ="Groupshow__containers__container__bottom__name">
+          <h1><%= @group.name %></h1>
+          <%= link_to "/groups/#{@group.id}/edit", method: :get, class: "button edit" do %> 
+            <i class="fas fa-edit"></i> Edit 
+          <% end %> 
+          <a class="modal-open-btn button delete"><i class="fas fa-trash-alt"></i> Delete</a> 
+          <%= link_to "", "/groups/#{@group.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
+        </div>
+        <div class ="Groupshow__containers__container__bottom__content">
+          <div class="box">
+            <div class="box__name">
+              <h2>Participants</h2>
+              <%= link_to group_messages_path(@group), method: :get do %> 
+                <p><i class="fas fa-comments"></i>Talk to your group members</p>
+              <% end %>
+            </div>
+            <div class="box__details">
+              <% @group.users.each do |user| %>
+                <a href="/users/<%= user.id %>">
+                  <% if user.image.present? %>
+                    <%= image_tag user.image %>
+                  <% else %>
+                    <%= image_tag asset_path("account.png", alt: "アカウント") %>
+                  <% end %>
+                  <p><%= user.nickname %></p>
+                </a>
+              <% end %>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box__name">
+              <h2>Budget</h2>
+            </div>
+            <div class="box__details">
+              <p>¥<%= @group.budget %></p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box__name">
+              <h2>Exchange Date</h2>
+            </div>
+            <div class="box__details">
+                <p><%= @group.exchange_date %></p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box__name">
+              <h2>My draw</h2>
+              <div id="anonymous"></div>
 
- 
+            </div>
+            <div class="box__details none">
+              <div id="button">?</div>
+              <div id="address"></div>
+              <div id="interests"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

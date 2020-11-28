@@ -5,22 +5,32 @@ $(function(){
     this.textContent = `${gon.to_user.nickname}`;
     var address = document.getElementById('address');
     var interests = document.getElementById('interests');
-    address.innerText = `〒${gon.to_address.zipcode}${gon.to_addressPrefecture}${gon.to_address.city}${gon.to_address.district}${gon.to_address.building}${gon.to_address.room}`;
-    if (`${gon.to_user.interests}` === undefined || `${gon.to_user.interests}` === null || `${gon.to_user.interests}` === "null" || ""){
-        interests.innerHTML = `Tips for choosing the perfect gift :\n
-        Appearently, ${gon.to_user.nickname} is not obsessing with anything.\n
-        Let's choose the gift with your own sense!
+    var anonymous = document.getElementById('anonymous');
 
+    // address.innerHTML = `
+    // <a href="/users/${gon.to_user.id}">
+    // 〒${gon.to_address.zipcode}${gon.to_addressPrefecture}${gon.to_address.city}${gon.to_address.district}${gon.to_address.building}${gon.to_address.room}
+    // </a>
+    // `;
+    if (`${gon.to_user.interests}` === undefined || `${gon.to_user.interests}` === null || `${gon.to_user.interests}` === "null" || ""){
+        interests.innerHTML = `Tips for choosing the perfect gift :<br>
+        Appearently, ${gon.to_user.nickname} has nothing into.<br>
+        Let's choose the gift with your own sense!
+        `
+        anonymous.innerHTML = 
+        `
         <a href="/users/${gon.to_user.id}">
-        Ask ${gon.to_user.nickname} a question anonymously
+        <i class="fas fa-mask"></i>Ask ${gon.to_user.nickname} questions anonymously
         </a>
         `
     }else{
-        interests.innerHTML = `Tips for choosing the perfect gift :\n
-        ${gon.to_user.nickname} is currently obsessed with ${gon.to_user.interests} \n
-
+        interests.innerHTML = `Tips for choosing the perfect gift :<br>
+        ${gon.to_user.nickname} is currently obsessed with ${gon.to_user.interests} <br>
+        `
+        anonymous.innerHTML = 
+        `
         <a href="/users/${gon.to_user.id}">
-        Ask ${gon.to_user.nickname} a question anonymously
+        <i class="fas fa-mask"></i>Ask ${gon.to_user.nickname} questions anonymously
         </a>
         `
     }

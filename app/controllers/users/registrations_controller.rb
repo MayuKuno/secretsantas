@@ -57,7 +57,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update
     @user.update(update_user_params)
-    posts_path 
+    tops_path 
     super
    
   end
@@ -112,7 +112,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:nickname, :first_name,:last_name,:birthday,:image, :interests, group_ids: [],post_ids: [], address_attributes: [:zipcode, :prefecture_code, :city,:district, :building, :room, :_destroy, :id])
   end
   def after_update_path_for(resource)
-    posts_path
+    tops_path
   end
 
 end
