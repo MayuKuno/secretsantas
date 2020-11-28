@@ -186,7 +186,7 @@
               &__details{
                 width: 100%;
                 height: 100px;
-                background-color: #eaa696;
+                background-color: $subcard;
                 text-align: center;
                 padding: 5px 10px;
   
@@ -239,6 +239,22 @@
                   }
                 }
               }
+            }
+            .link{
+              a{
+                margin:0 5px;
+                text-decoration: none;
+                color: $dark;
+                background-color: $accent;
+                border-radius: 5px;
+                padding: 3px 5px;
+                font-size: $fontSmallestMB;
+                &:hover{
+                  color: $accent;
+                  background-color: $dark;
+                }
+              }
+
             }
           }
         
@@ -367,7 +383,7 @@
               &__details{
                 width: 100%;
                 height: 100px;
-                background-color: #eaa696;
+                background-color: $subcard;
                 text-align: center;
                 padding: 5px 10px;
     
@@ -384,7 +400,7 @@
                       text-align: left;
       
                       li{
-                        background-color: #0d5769;
+                        background-color: $subcard;
                         padding: 0.35em 0.7em;
                         border-radius: 10rem;
                         display: inline-block;
@@ -460,8 +476,8 @@
   
           input{
   
-            background-color: #eaa696;
-            color: #0d5769;
+            background-color: $basetext;
+            color: $accent;
             width: 150px;
             height: 60px;
             font-size: 24px;
@@ -497,8 +513,8 @@
   
           input{
   
-            background-color: #eaa696;
-            color: #0d5769;
+            background-color: $basetext;
+            color: $accent;
             width: 150px;
             height: 60px;
             font-size: 24px;
@@ -539,8 +555,8 @@
       right: 33px;
   
       input{
-        background-color: #eaa696;
-        color: #0d5769;
+        background-color: $basetext;
+        color: $accent;
         width: 100px;
         height: 30px;
         font-size: 16px;
