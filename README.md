@@ -38,9 +38,6 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 |[![Image from Gyazo](https://i.gyazo.com/30185f9858856fcd4a7dde2a97eb835d.gif)](https://gyazo.com/30185f9858856fcd4a7dde2a97eb835d)|
  
 
-|login page（Basic info）|login page（Address）|login page（Confirmation）|
-|---|---|---|
-|<img alt="Screen Shot 2020-10-10 at 14 35 07" src="https://user-images.githubusercontent.com/44453318/95646698-20a00780-0b06-11eb-9e6f-38f77307478f.png">|<img alt="Screen Shot 2020-10-10 at 14 36 36" src="https://user-images.githubusercontent.com/44453318/95646697-20077100-0b06-11eb-850d-8d7c59345496.png">|<img alt="Screen Shot 2020-10-10 at 14 36 47" src="https://user-images.githubusercontent.com/44453318/95646694-1c73ea00-0b06-11eb-8df0-dfbb8da44be2.png">|
 
 |  Home page |  
 | ---- | 
