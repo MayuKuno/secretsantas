@@ -49,7 +49,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 
 |  Group creation page  | Messaging page  |  
 | ---- | ---- | 
-|<img alt="Screen Shot 2020-10-10 at 15 00 02" src="https://user-images.githubusercontent.com/44453318/95647357-b4270780-0b09-11eb-8507-504ceae3d209.png">|<img alt="Screen Shot 2020-10-10 at 15 01 45" src="https://user-images.githubusercontent.com/44453318/95647355-b2f5da80-0b09-11eb-9c58-893533501ae4.png">|
+|[![Image from Gyazo](https://i.gyazo.com/87bfa59dffbfc72a2f7ca143c5ad1029.png)](https://gyazo.com/87bfa59dffbfc72a2f7ca143c5ad1029)|[![Image from Gyazo](https://i.gyazo.com/81651fdd317a6c12a32f0750976637d8.png)](https://gyazo.com/81651fdd317a6c12a32f0750976637d8)|
 
 |  Post creation page |  
 | ---- | 
