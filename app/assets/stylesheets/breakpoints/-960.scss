@@ -433,4 +433,72 @@ footer{
     }
   }
 }
+
+// user#show
+.usershow__containers{
+  &__container{
+    width: 90%;
+    &__top{
+      &__left{
+        margin-left: 20px;
+        img{
+          width:80px;
+          height:80px;
+        }
+      }
+      &__right{
+        padding-left: 20px;
+        font-size: $fontSmall;
+        &__name{
+        }
+        &__edit{
+          width: 50px;
+          height: 20px;
+          font-size: $fontSmallestMB;
+          line-height: 20px;
+          position: absolute;
+          top: 15px;
+          right: 20px;
+        }
+        &__delete{
+          width: 50px;
+          height: 20px;
+          font-size: $fontSmallestMB;
+          line-height: 20px;
+          position: absolute;
+          top: 45px;
+          right: 20px;
+        }
+        &__logout{
+          width: 50px;
+          height: 20px;
+          font-size: $fontSmallestMB;
+          line-height: 20px;
+          position: absolute;
+          top: 75px;
+          right: 20px;
+        }
+
+
+
+        &__address{
+          font-size: 16px;
+          margin-top: 10px;
+          color: white;
+        }
+
+      }
+    }
+    }
+}
+  .stats{
+
+    a {
+      padding: 0 5px;
+      font-size: $fontSmallestMB;
+      transition: .2s;
+    }
+
+  }
+
 }

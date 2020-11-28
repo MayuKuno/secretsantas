@@ -65,4 +65,61 @@
 
 }
 
+
+
+
+  // group#index
+  .group__containers{
+    padding:20px 0;
+    &__side{
+      width: 90%;
+      &__title{
+        font-size: $fontSmall;
+        height: 40px;
+        line-height: 40px;
+      }
+      &__posts{
+
+        &__post{
+
+          &__title{
+            font-size: $fontSmall;
+            color: $dark;
+          }
+          &__message{
+            span{
+              font-size: $fontSmallestMB;
+              color: black;
+            }
+          }
+          &__link{
+            background: rgba(139, 132, 130,0.3);
+          
+            padding: 5px 10px;
+            font-size: $fontSmallestMB;
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+            color:$subcard;
+          }   
+          &__link:hover{
+            background: rgba(139, 132, 130,0.6);
+          }
+        }         
+        &__post:hover{
+          background-color: $basebackground;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
 }

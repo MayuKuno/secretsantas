@@ -1,100 +1,122 @@
-
-
- <%#= <div class="second">
+<div class="containers">
+  <div class="second">
     <div class="title">Posts</div>
-          <%= link_to "Show all posts", posts_path %>
+    <div class="posts">
+       <% if Post.any? %>
+        <% @posts.each do |post| %>
+          <div class="post">
+            <%= image_tag post.image %>
+            <div class="mask">
+              <div class="inside">
+                <div class="account">
+                  <% if post.user.image.present? %> 
+                    <%= link_to user_path(post.user.id) do %>
+                    <%= image_tag post.user.image %>
+                    <% end %> 
+                  <% else %> 
+                    <%= link_to  user_path(post.user.id)  do %> 
+                      <%= image_tag asset_path("account.png", alt: "アカウント") %>
+                    <% end %>
+                  <% end %> 
+                </div>
+                <div class="name">
+                  <a href="/users/<%= post.user.id %>">
+                    <%= post.user.nickname %> 
+                  </a>
+                </div>
+                <div class="manage">
+                <% if user_signed_in? && current_user.id == post.user_id %> 
+                  <ul class="manage__lists">
+                    <li>  
+                      <%= link_to "/posts/#{post.id}/edit", method: :get do %> 
+                        <i class="fas fa-edit"></i> Edit 
+                      <% end %> 
+                    </li> 
+                    <li> 
+                      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
+                      <%= link_to "", "/posts/#{post.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
+                    </li>
+                  </ul>
+                <% end %>
+                </div>
+                <div class="caption">
+                  <div class="category">
+                    <%= raw(post.tag_list.map { |t| link_to "##{t}", tag_path(t), class: "link" }.join(' ')) %> <!--追加--> 
+                  </div>
+                  <div class="comment">
+                    <%= post.caption%>
+                  </div>
+                </div>
 
-  <%#=  <div class="posts">
- <div class="posts__containers__container__right__posts"> 
-      <% if Post.any? %>
-     <%#=  <% @posts.each do |post| %>
-     <%#=    <div class="posts__post">
+             </div>
+            </div>
+          </div>
+        <% end %> 
+      </div>
+ 
+       <% else %>
+        <div class="posts__nothing"> 
+          <i class="fas fa-camera-retro"></i><br>
+            No posts so far<br>Let's share what you got!
+        </div>
+       <% end %> 
+          
+       
+  </div>
+</div>
+    <%#  <div class="posts__post">
           <div class="posts__post__top"> 
             <div class="posts__post__top__account">
-                <% if post.user.image.present? %> 
-          <%#=         <%= link_to user_path(post.user.id) do %>
-           <%#=          <%= image_tag post.user.image %>
-            <%#=       <% end %> 
-            <%#=     <% else %> 
-              <%#=     <%= link_to  user_path(post.user.id)  do %> 
-                    <%#= image_tag "/assets/account.png" %>
-             <%#=      <%= image_tag asset_path("account.png", alt: "アカウント") %>
-            <%#=     <% end %>
-            <%#=     <% end %> 
-          <%#=   </div>
-            <div class="posts__post__top__name">
-              <a href="/users/<%= post.user.id %><%#">
-           <%#=      <%= post.user.nickname %> 
-            <%#=   </a>
+              <% if post.user.image.present? %> 
+        <%#        <%= link_to user_path(post.user.id) do %>
+       <%#           <%= image_tag post.user.image %>
+       <%#         <% end %> 
+          <%#    <% else %> 
+             <%#   <%= link_to  user_path(post.user.id)  do %> 
+                <%#  <%= image_tag asset_path("account.png", alt: "アカウント") %>
+               <%# <% end %>
+  <%#            <% end %> 
+     <%#       </div>
+              <a href="/users/<%= post.user.id %><%#">%>
+        <%#    <div class="posts__post__top__name">
+                 <%= post.user.nickname %> 
+    <%#        </a>
             </div> 
              <div class="posts__post__top__manage">
              <% if user_signed_in? && current_user.id == post.user_id %> 
-          <%#=     <ul class="posts__post__top__manage__lists">
+    <%#           <ul class="posts__post__top__manage__lists">
                 <li>  
                  <%= link_to "/posts/#{post.id}/edit", method: :get do %> 
-                <%#=   <i class="fas fa-edit"></i> Edit 
-                   <% end %> 
-               <%#=  </li> 
-                 <li> 
-                 <%# <%= link_to  "/posts/#{post.id}", method: :delete do %>
-                   <%# <i class="fas fa-trash-alt"></i> Delete
-                   <% end %>  
-
-            <%#=      <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
-                   <%= link_to "", "/posts/#{post.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
-
-          <%#=       </li>
-              </ul>
-            <% end %>
-         <%#=    </div>
-          </div> 
+     <%#              <i class="fas fa-edit"></i> Edit 
+                  <% end %> 
+     <%#           </li> 
+                <li> 
+                  <a class="modal-open-btn"><i class="fas fa-trash-alt"></i> Delete</a> 
+                  <%= link_to "", "/posts/#{post.id}", method: :DELETE, class: 'item-delete-btn', id: 'delete_button'%>  
+     <%#            </li>
+                </ul>
+              <% end %>
+    <%#          </div>
+              </div> 
           <div class="posts__post__bottom"> 
-          <%= image_tag post.image %>
-         <%#=   <div class="posts__post__bottom__caption">
+            <%= image_tag post.image %>
+    <%#        <div class="posts__post__bottom__caption">
               <div class="posts__post__bottom__caption__top">
                 <div class="posts__post__bottom__caption__top__category">
- 
                   <%= raw(post.tag_list.map { |t| link_to "##{t}", tag_path(t), class: "posts__post__bottom__caption__top__category__link" }.join(' ')) %> <!--追加--> 
-
-        <%#=       </div>
+   <%#             </div>
             </div>
             <div class="posts__post__bottom__caption__comment">
               <%= post.caption%>
-          <%#=   </div>
+   <%#          </div>
           </div>
-        </div> 
-       <% end %>  
-      <%#= <% else %>
-       <%#=  <div class="posts__nothing"> 
-          <i class="fas fa-camera-retro"></i><br>
-           No posts so far<br>Let's share what you got!
-        </div>
-      <% end %> 
-   <%#  </div>    
-   </div>    
+        </div> %>
 
 
-
-   </div>
-</div> %> 
-
-
-<%# <%= render 'layouts/footer'%> 
 
 <%# <div class ="posts__containers">
   <div class="posts__containers__container">  %>
-  <%# ポップアップ %>
-     <%# <div id="overlay">
-      <div id="modalWindow">
-        <div class="modal-message-box">
-          <%= image_tag asset_path("delete.png", alt: "delete") %>
-           <%# <p>Are you sure?</p>
-        </div>
-        <button id="modal-close-btn">Cancel</button>
-        <button id="delete-comformation-btn">Delete</button>
-      </div>
-    </div>  %> 
-  <%# ポップアップ %>
+
 
     <%# <div class="posts__containers__container__left"> 
       <div class="posts__containers__container__left__title"> 

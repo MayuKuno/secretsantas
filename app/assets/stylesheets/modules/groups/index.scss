@@ -1,18 +1,17 @@
 
-@media screen and (min-width: 960px) { 
   // group#index
   .group__containers{
-    background-color: $subcard;
+    background-color: $basebackground;
     padding:40px 0;
     &__side{
       width: 80%;
       margin: 0px auto;
-      background-color: $basetext;
       border-radius:10px;
       overflow: scroll;
       &__title{
         text-align: center;
-        color: $dark;
+        color: $basebackground;
+        background-color: $basetext;
         font-weight: bold;
         font-size: $fontSmall;
         height: 60px;
@@ -21,7 +20,6 @@
       &__posts{
         width: 100%;
         overflow: scroll;
-        height: calc(100vh - 40px);
         margin: 0px auto;
         &__post{
           width: 100%;
@@ -29,21 +27,25 @@
           font-weight: bold;
           padding: 10px 30px;
           position: relative;
+          background-color: $subcard;
           a{
             text-decoration: none;
+            color: $accent;
+
           }
           &__title{
             font-size: $fontSmall;
-            color: $basebackground;
+            color: $dark;
           }
           &__message{
             span{
               font-size: $fontSmallest;
-              color: $subcard;
+              color: black;
             }
           }
           &__link{
             background: rgba(139, 132, 130,0.3);
+          
             padding: 5px 10px;
             font-size: $fontSmallest;
             display: block;
@@ -57,7 +59,7 @@
           }
         }         
         &__post:hover{
-          background-color: $subbackground;
+          background-color: $basebackground;
         }
       }
     }
@@ -67,5 +69,5 @@
 
 
 
-}
+
 

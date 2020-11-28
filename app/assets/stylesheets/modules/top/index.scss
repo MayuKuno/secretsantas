@@ -1,289 +1,264 @@
 
-
-#overlay {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  z-index: 3;
-
-}
-
-
-#modalWindow {
-// モーダルウィンドウの画面を設定(高さ・幅は調整ください)
-  width: 500px;
-  height: 400px;
-  position: absolute;
-//トップからの場所を指定（topをいじれば高さが調整できます）
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  z-index: 2;
-//flexboxで子要素のボタンとメッセージボックスの要素を配置する
-  display: flex;
-  flex-wrap: wrap;
-  // justify-content: center;
-
-  .modal-message-box {
+  .containers{
     width: 100%;
-//下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
-    height: calc(100% - 60px);
-    text-align: center;
-//flexboxで文字の配置を決める（縦方向、中央揃え）
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    p{
-      font-size: 30px;
-      font-weight: bold;
-      margin-top: -100px;
-    }
-    img{
-      width: 30%;
-      margin: 0 auto;
-    }
+    padding-top:90px;
+    padding-bottom:300px;
   }
-
-  #modal-close-btn {
-    width: 30%;
-    height: 60px;
-    position: absolute;
-    bottom: 10%;
-    left: 15%;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #494c4e;
-    &:hover{
-      opacity: 0.8; 
+    .title{
+      font-size: $fontLarge;
     }
-  }
-
-  #delete-comformation-btn {
-    width: 30%;
-    height: 60px;
-    background-color: rgb(234, 53, 45);
-    cursor: pointer;
-    position: absolute;
-    bottom: 10%;
-    right: 15%;
-    border-radius: 10px;
-    border: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: white;
-    &:hover{
-      opacity: 0.8; 
-    }
-  }
-}
-
-.item-delete-btn {
-//削除ボタンの非表示
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.container{
-  height: 80%;
-  width: 75%;
-  margin: 0 auto;
-}
-.topFirst{
-  height: 700px;
-  background-color: $basebackground;
-  padding-top: 125px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  .container{
-    display: flex;
-    background-color: $subcard;
-  }
-  .giftPic{
-    width: 40%;
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .definition{
-    width: 60%;
-    padding: 5% 5%;
-    h1{
+    .createButton{
+      font-size: $fontLarge;
+      background-color: $accent;
+      color: $dark;
+      padding: 5px 10px;
+      border-radius: 10px;
+      display: block;
+      position: absolute;
+      top: 60px;
+      right: 120px;
       font-size: $fontMedium;
+      text-decoration: none;
+      &:hover{
+        background-color: $dark;
+        color: $accent;
+
+      }
     }
-    p{
-      padding-top: 20px;
-      font-size: $fontSmall;
-
-    }
-  }
-  
-
-
-}
-
-.topSecond{
-  width: 100%;
-  height: 1000px;
-  padding-bottom: 300px;
-  background-color: $subbackground;
-
-  .title{
-    margin-top: 20px;
-    height: 10%;
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 50px;
-    text-align: center;
-    font-size: $fontMedium;
-    color: $subtext;
-    margin-bottom: 60px;
-  }
-
-    .tab-container {
-      list-style-type: none;
+    
+    .first{
       position: relative;
-
-      ul { 
-        list-style-type: none; 
-        padding: 0; 
-      }
-      .arrows { 
-        display: block;
-        font-size: 90px; 
-  
-        label { 
-          display: inline-block; 
-          cursor: pointer; 
-          color: $subtext;    
-          user-select: none;  
-          &:hover { 
-            color:$dark; 
-          }
-        }
-      }
-      .back{
-        bottom: 220px;
-        left: -80px;
-        position: absolute;
-      }
-      .next{
-        bottom: 220px;
-        right: -80px;
-        position: absolute;
-      }
-      .tab-content-container { 
-        height:100%;
-        opacity: 0;
-        line-height: 22px;
-        position: absolute;
-        top: 42px;
-        padding: 20px 40px;
-        background-color: $basebackground;
+      padding:50px 100px;
+      background-color: $subcard;
+      .content{
         display: flex;
-        align-items: center;
-        .tab-content {
-          opacity: 0;
-          padding: 15px 0;
-          transition: opacity 0.1s ease-in;  
-          margin: 0 auto;
-          display: flex;
-          width: 100%;
-          height: 100%;
-          align-items: center;
-          .image{
-            width:40%;
-
-            img{
-              width: 80%;
-            }  
-
-          }
-          .description{
-            // position:absolute;
-            // bottom:0;
-            padding-top:40px;
-            width: 60%;
-            height:100%;
-            h1{
-              font-size: $fontMedium;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        margin-top: 40px;
+        a{
+          text-decoration: none;
+          width: 30%;
+          display: block;
+          .group{
+            background-color: $dark;
+            margin-bottom: 20px;
+            height: 200px;
+            border-radius: 25px;
+            padding: 10px 20px;
+  
+            &__name{
+              font-size: $fontLarge;
+              color: $basebackground;
             }
-            p{
-              padding-top: 20px;
+            &__date{
               font-size: $fontSmall;
-
+              color: $basebackground;
             }
           }
+          
+          
+        }
+
+
+      }
+      .all{
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 5px 0;
+        background-color: $accent;
+        a{
+          text-decoration: none;
+          color: $dark;
+        }
+        &:hover{
+          background-color: $dark;
+          a{
+            color: $accent;
+
+          }
+
 
         }
       }
-      .tab {
-        outline: 0;
-        float: left;
-        cursor: pointer;    
-        opacity: 1;
-        width: 20%;
-        line-height: 40px;
-        display: block;
-        margin: 0;
-        position: relative;
-        text-align: center; 
-        z-index:1;
-      }
-      .tab-toggle {
-        display: none;
-        &.active + .tab,
-        &:checked + .tab { 
-          font-weight: bold;
-          span{
-            border-bottom: 2px $accent solid;
-            color: $basebackground;
-          }
-        }
-        &.active ~ .tab-content-container,
-        &:checked ~ .tab-content-container { 
-          height: 400px;
-          opacity: 1;
-          .tab-content { 
-            opacity: 1; 
-            label { 
-              opacity: 1; 
-            }
-          }
-        }
-      }
+      
+
     }
 
+
   
-}
+  // .alert{
+  //   text-align: center;
+  //   color:#262626; 
+  //   // background:#FFEBE8;
+  //   // text-align: center;
+  //   // border:2px solid #990000;
+  //   // padding:12px; font-weight:850;
+  // }
+  // .posts__containers{
+  //     &__right{
+  //       width: 55%;
+  //       background-color: #8b8482;
+  //       border-radius: 10px;
+  //       min-height: 100vh;
+  //       position: relative;
+  //       &__title{
+  //         text-align: center;
+  //         font-size: 18px;
+  //         span{
+  //           font-weight: bold;
+  //           font-size: 20px;
+  
+  //         }
+  //         &__condition{
+  //           float: right;
+  //           display: inline;
+  //           position: absolute;
+  //           top:160px;
+  //           right: 120px;
+  //           a{
+  //             text-decoration: none;
+  //             color:#ca9a8f ;
+  //           }
+  //         }
+  //       }
+  //       &__top{
+  //         height: 15%;
+  //         h1{
+  //           text-align: center;
+  //           font-size: 18px;
+  //           color: #ca9a8f;
+  //           span{
+  //             font-weight: bold;
+  //             color: #0d5769;
+  //             font-size: 20px;
+  //           }
+  //         }
+  //           &__tag{
+  //             height: 40%;
+  //             text-align: center;
+  //             border-radius: 10px;
+  //             width: 90%;
+  //             font-weight: bold;
+  //             margin: 0 auto;
+  //             h1{
+  //               font-weight: bold;
+  //               color: #0d5769;
+  //             }
+  //             li{
+  //               display: inline-block;
+  //               margin-right: 9px;
+  //               margin-top: 10px;
+  //             }
+  //           }
+  //           &__search{
+  //             height: 60%;
+  //           }
+          
+  //       }
+  //       &__condition{
+  //         float: right;
+  //         display: inline;
+  //         position: absolute;
+  //         top:160px;
+  //         right: 120px;
+  //         a{
+  //           text-decoration: none;
+  //           color:#ca9a8f ;
+  //         }
+  //       }
+        
+  //     .fa-search{
+  //       position: absolute;
+  //       top: 115px;
+  //       left: 120px;
+  //       font-size: 26px;
+  //       color: #0d5769;
+  //     }
+            
+  
+  //     input[type='text']{
+  //       margin-left: 70px;
+  //       margin-top: 10px;
+  //       box-sizing: border-box;
+  //       width: 80%;
+  //       padding: 10px;
+  //       transition: 0.3s;
+  //       letter-spacing: 1px;
+  //       color: #ca9a8f;
+  //       border: none;
+  //       border-bottom: 2px solid #0d5769;
+  //       background: transparent;
+  //       padding-left: 70px;
+  //       margin-bottom: 30px;
+  //     }
+  //     input[type='text']:focus {
+  //       border-bottom: 2px solid #ca9a8f;
+  //       outline: none;
+  //     }
+  //       padding: 40px;
+  //       &__posts{
+  //         // width: 80%;
+  //         margin: 20px auto;
+  //         overflow: scroll;
+  //         height: 100vh;
+  //         &__nothing{
+  //           text-align: center;
+  //           font-size: 25px;
+  //           font-weight: bold;
+  //           margin-top: 200px;
+  //           .fa-camera-retro{
+  //             text-align: center;
+  //             font-size: 40px;
+  //           }
+  //         }
+  //         &__title{
+  //         font-size: 30px;
+  //         text-align: center;
+  //         font-weight: bold;
+   
+  //         }
+  //         // height: 100vh;
 
+  //       }
+  //     }
+  
+  //     }
+    
 
+    // .chat-post-form__field--right{
+    //   height: 40px;
+    // }
+    // .chat-post-category {
+    //   padding: 0 15px;
+    //   line-height: 50px;
+    //   font-size: 14px;
+    
+    //   color: #ca9a8f;
+    
+    //   // border-bottom: 1px solid #ddd;
+    //   &:after {
+    //     content: "";
+    //     clear: both;
+    //     display: block;
+    //   }
+    //   &__name {
+    //     float: left;
+    //   }
+    //   &__btn {
+    //     float: right;
+    //     display: inline-block;
+    //     cursor: pointer;
+    //     &--add {
+    //       color: #38aef0;
+    //     }
+    //     &--remove {
+    //       color: #f05050;
+    //     }
+    //   }
+    // }
+  
+
+  
+// }
