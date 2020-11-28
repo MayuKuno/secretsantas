@@ -32,7 +32,7 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 大切な友達や家族だからこそ、その人の好みや欲しいものを知っている、私はそんな大切な人に誕生日でもなくクリスマスでもない何でもない日に、プレゼントをあげ繋がり、励まし合いたいと思いました。
 誰から送られてきたギフトかはわからないですが、あなたにとって大切な誰かが大切なあなたのことを思って選んだものです、こんな環境だからこそ、そのプレゼントが特に特別に感じるはずだと思います。
 
-## DEMO
+## DEMO(Some parts一部)
 |  Top page  |  
 | ---- | 
 |[![Image from Gyazo](https://i.gyazo.com/30185f9858856fcd4a7dde2a97eb835d.gif)](https://gyazo.com/30185f9858856fcd4a7dde2a97eb835d)|
