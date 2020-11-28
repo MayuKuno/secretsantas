@@ -51,14 +51,14 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 | ---- | ---- | 
 |[![Image from Gyazo](https://i.gyazo.com/87bfa59dffbfc72a2f7ca143c5ad1029.png)](https://gyazo.com/87bfa59dffbfc72a2f7ca143c5ad1029)|[![Image from Gyazo](https://i.gyazo.com/81651fdd317a6c12a32f0750976637d8.png)](https://gyazo.com/81651fdd317a6c12a32f0750976637d8)|
 
-|  Post creation page |  
-| ---- | 
-|<img width="500" alt="Screen Shot 2020-10-10 at 15 02 05" src="https://user-images.githubusercontent.com/44453318/95647354-b25d4400-0b09-11eb-9827-7a0a4e3797f4.png">|
-
-
-|  My page  | friend's page  |  
+|  Post creation page |  Feed page  |  
 | ---- | ---- | 
-|<img alt="Screen Shot 2020-10-10 at 15 02 13" src="https://user-images.githubusercontent.com/44453318/95647352-b0938080-0b09-11eb-8163-98ada7150857.png">|<img alt="Screen Shot 2020-10-10 at 15 02 35" src="https://user-images.githubusercontent.com/44453318/95647350-abcecc80-0b09-11eb-9549-84fd4d89d679.png">|
+|[![Image from Gyazo](https://i.gyazo.com/c16ac382e1e7f9b565be8c575a0e8402.png)](https://gyazo.com/c16ac382e1e7f9b565be8c575a0e8402)|[![Image from Gyazo](https://i.gyazo.com/4285863a76474734f1ad54d09398fbfd.jpg)](https://gyazo.com/4285863a76474734f1ad54d09398fbfd)|
+
+
+|  User page  | 
+| ---- |
+|[![Image from Gyazo](https://i.gyazo.com/eabaa266214ce9701bb5732a053f9e49.png)](https://gyazo.com/eabaa266214ce9701bb5732a053f9e49)|
 
 
 ## Tech/framework used
