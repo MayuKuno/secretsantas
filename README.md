@@ -32,33 +32,30 @@ Secret Santa is a Christmas tradition. Members of a group of friends, family, or
 大切な友達や家族だからこそ、その人の好みや欲しいものを知っている、私はそんな大切な人に誕生日でもなくクリスマスでもない何でもない日に、プレゼントをあげ繋がり、励まし合いたいと思いました。
 誰から送られてきたギフトかはわからないですが、あなたにとって大切な誰かが大切なあなたのことを思って選んだものです、こんな環境だからこそ、そのプレゼントが特に特別に感じるはずだと思います。
 
-## DEMO
+## DEMO(Some parts一部)
 |  Top page  |  
 | ---- | 
-|<img width="500" alt="Screen Shot 2020-09-28 at 19 23 04" src="https://user-images.githubusercontent.com/44453318/95646604-2f39ef00-0b05-11eb-94ef-42323559dc90.png">|
+|[![Image from Gyazo](https://i.gyazo.com/30185f9858856fcd4a7dde2a97eb835d.gif)](https://gyazo.com/30185f9858856fcd4a7dde2a97eb835d)|
  
 
-|login page（Basic info）|login page（Address）|login page（Confirmation）|
-|---|---|---|
-|<img alt="Screen Shot 2020-10-10 at 14 35 07" src="https://user-images.githubusercontent.com/44453318/95646698-20a00780-0b06-11eb-9e6f-38f77307478f.png">|<img alt="Screen Shot 2020-10-10 at 14 36 36" src="https://user-images.githubusercontent.com/44453318/95646697-20077100-0b06-11eb-850d-8d7c59345496.png">|<img alt="Screen Shot 2020-10-10 at 14 36 47" src="https://user-images.githubusercontent.com/44453318/95646694-1c73ea00-0b06-11eb-8df0-dfbb8da44be2.png">|
 
 |  Home page |  
 | ---- | 
-|<img width="500" alt="Screen Shot 2020-10-10 at 14 54 02" src="https://user-images.githubusercontent.com/44453318/95647204-81c8da80-0b08-11eb-82c0-55d16ed80bdf.png">|
-
+|[![Image from Gyazo](https://i.gyazo.com/d2f7a508a457d16b33f71e3f18a39bd2.png)](https://gyazo.com/d2f7a508a457d16b33f71e3f18a39bd2)
+|
 
 |  Group creation page  | Messaging page  |  
 | ---- | ---- | 
-|<img alt="Screen Shot 2020-10-10 at 15 00 02" src="https://user-images.githubusercontent.com/44453318/95647357-b4270780-0b09-11eb-8507-504ceae3d209.png">|<img alt="Screen Shot 2020-10-10 at 15 01 45" src="https://user-images.githubusercontent.com/44453318/95647355-b2f5da80-0b09-11eb-9c58-893533501ae4.png">|
+|[![Image from Gyazo](https://i.gyazo.com/87bfa59dffbfc72a2f7ca143c5ad1029.png)](https://gyazo.com/87bfa59dffbfc72a2f7ca143c5ad1029)|[![Image from Gyazo](https://i.gyazo.com/81651fdd317a6c12a32f0750976637d8.png)](https://gyazo.com/81651fdd317a6c12a32f0750976637d8)|
 
-|  Post creation page |  
-| ---- | 
-|<img width="500" alt="Screen Shot 2020-10-10 at 15 02 05" src="https://user-images.githubusercontent.com/44453318/95647354-b25d4400-0b09-11eb-9827-7a0a4e3797f4.png">|
-
-
-|  My page  | friend's page  |  
+|  Post creation page |  Feed page  |  
 | ---- | ---- | 
-|<img alt="Screen Shot 2020-10-10 at 15 02 13" src="https://user-images.githubusercontent.com/44453318/95647352-b0938080-0b09-11eb-8163-98ada7150857.png">|<img alt="Screen Shot 2020-10-10 at 15 02 35" src="https://user-images.githubusercontent.com/44453318/95647350-abcecc80-0b09-11eb-9549-84fd4d89d679.png">|
+|[![Image from Gyazo](https://i.gyazo.com/c16ac382e1e7f9b565be8c575a0e8402.png)](https://gyazo.com/c16ac382e1e7f9b565be8c575a0e8402)|[![Image from Gyazo](https://i.gyazo.com/4285863a76474734f1ad54d09398fbfd.jpg)](https://gyazo.com/4285863a76474734f1ad54d09398fbfd)|
+
+
+|  User page  | 
+| ---- |
+|[![Image from Gyazo](https://i.gyazo.com/eabaa266214ce9701bb5732a053f9e49.png)](https://gyazo.com/eabaa266214ce9701bb5732a053f9e49)|
 
 
 ## Tech/framework used
