@@ -114,7 +114,35 @@
     }
   }
 
+// post#index
+.second{
+.nothing{
+  width: 100%;
+  height: 100vh;
+  p{
+    margin-top: 100px;
+    text-align: center;
+    font-size: $fontMedium;
+  }
+  a{
+    margin:20px auto;
+    width: 50%;
+    text-align: center;
+    font-size: $fontLarge;
+    background-color: $accent;
+    color: $dark;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: block;
+    font-size: $fontSmall;
+    text-decoration: none;
+    &:hover{
+      background-color: $dark;
+      color: $accent;
 
-
+    }
+  }
+}
+}
 
 }

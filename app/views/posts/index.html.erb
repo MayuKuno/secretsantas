@@ -26,7 +26,7 @@
       <div class="search">
         <%= form_tag(posts_path,:method => 'get', :class => "search-form") do %>
           <i class="fas fa-search"></i>
-          <%= text_field_tag :keyword, nil, class: "search-input" %> 
+          <%= text_field_tag :keyword, nil,placeholder:"Search posts", class: "search-input" %> 
           <%#= submit_tag 'Search', :name => nil %>
         <% end %>
       </div>

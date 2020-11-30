@@ -44,7 +44,7 @@
       color: $dark;
     }
     input{
-      width: 70%;
+      width: 90%;
       box-sizing: border-box;
       padding: 10px;
       transition: 0.3s;
@@ -53,7 +53,7 @@
       border: none;
       border-bottom: 2px solid $dark;
       background: transparent;
-      padding-left: 70px;
+      padding-left: 40px;
     }
     input:focus {
       border-bottom: 2px solid $accent;
