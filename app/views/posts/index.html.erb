@@ -7,8 +7,9 @@
          <h1>Posts</h1>
        <% end %> 
     </div>
-    <h2>Trending Tags</h2>
 
+    <% if @tags.any? %>
+    <h2>Trending Tags</h2>
       <div class="tag">
         <% @tags.each do |tag|%>
         <ul>
@@ -18,6 +19,9 @@
           </ul>
         <% end %>
       </div>
+
+    <% end %>
+
 
       <div class="search">
         <%= form_tag(posts_path,:method => 'get', :class => "search-form") do %>
