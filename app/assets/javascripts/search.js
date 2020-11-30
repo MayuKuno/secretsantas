@@ -90,9 +90,10 @@ $(function() {
 
   function appendErrMsgToHTML() {
     var html = `
-    <div class="posts__nothing"> 
-    <i class="fas fa-camera-retro"></i><br>
-      No results<br>Let's share what you got!
+    <div class="nothing"> 
+    <p>No posts so far<br>Let's share what you got!</pNo>
+    <br>
+    <a href="/posts/new">New Post</a> 
     </div>
     `
     search_list.append(html);

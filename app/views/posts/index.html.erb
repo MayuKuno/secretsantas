@@ -82,9 +82,9 @@
       </div>
  
        <% else %>
-        <div class="posts__nothing"> 
-          <i class="fas fa-camera-retro"></i><br>
-            No posts so far<br>Let's share what you got!
+        <div class="nothing"> 
+          <p>No posts so far<br>Let's share what you got!</p>
+          <%= link_to 'New Post', new_post_path %>
         </div>
        <% end %> 
           
