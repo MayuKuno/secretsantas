@@ -33,7 +33,7 @@
 
 
     <div class="posts">
-       <% if Post.any? %>
+      <% if Post.any? %>
         <% @posts.each do |post| %>
           <div class="post">
             <%= image_tag post.image %>
@@ -44,7 +44,7 @@
                     <%= link_to user_path(post.user.id) do %>
                     <%= image_tag post.user.image %>
                     <% end %> 
-                  <% else %> 
+                 <% else %> 
                     <%= link_to  user_path(post.user.id)  do %> 
                       <%= image_tag asset_path("account.png", alt: "アカウント") %>
                     <% end %>
@@ -83,7 +83,7 @@
             </div>
           </div>
         <% end %> 
-      </div>
+     </div>
  
        <% else %>
         <div class="nothing"> 
@@ -92,7 +92,7 @@
         </div>
        <% end %> 
           
-       
+       </div>  
   </div>
 </div>
     <%#  <div class="posts__post">

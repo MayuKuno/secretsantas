@@ -4,7 +4,7 @@ $(function() {
     $('#nav-toggle').on('click', function() {
     $('header').toggleClass('open');
     });
-  });
+});
 
   
 $(function() {

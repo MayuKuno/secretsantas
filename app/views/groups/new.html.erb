@@ -34,32 +34,34 @@
             </div>
           </div>
 
-<div class="chat-group-form__field clearfix">
-  <div class="chat-group-form__field--left">
-    <label class="chat-group-form__label" for="chat_group_chatmember">Group members</label>
-  </div>
-  <div class="chat-group-form__field--right">
-    <div class="js-add-participant" id="chat-group-users">
-      <div class="chat-group-user clearfix js-chat-member">
-        <input name="group[user_ids][]" type="hidden" value="<%= current_user.id %>">
-        <p class="chat-group-user__nickname">
-          <%= current_user.nickname %>
-        </p>
-      </div>
-      <% @group.users.each do |user| %>
-        <% if current_user.nickname != user.nickname %>
-          <div class="chat-group-user clearfix js-chat-member">
-            <input name="group[user_ids][]" type="hidden" value="<%= user.id %>">
-            <p class="chat-group-user__nickname">
-              <%= user.nickname  %>
-            </p>
-            <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn"></a>
+          <div class="chat-group-form__field clearfix">
+            <div class="chat-group-form__field--left">
+              <label class="chat-group-form__label" for="chat_group_chatmember">Group members</label>
+            </div>
+            <div class="chat-group-form__field--right">
+              <div class="js-add-participant" id="chat-group-users">
+                <div class="chat-group-user clearfix js-chat-member">
+                  <input name="group[user_ids][]" type="hidden" value="<%= current_user.id %>">
+                  <p class="chat-group-user__nickname">
+                    <%= current_user.nickname %>
+                  </p>
+                </div>
+
+                
+                <% @group.users.each do |user| %>
+                  <% if current_user.nickname != user.nickname %>
+                    <div class="chat-group-user clearfix js-chat-member">
+                      <input name="group[user_ids][]" type="hidden" value="<%= user.id %>">
+                      <p class="chat-group-user__nickname">
+                        <%= user.nickname  %>
+                      </p>
+                      <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn"></a>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
           </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
 
             <div class="groupsnew__containers__container__form__item">
             <span>Exchange date</span>
