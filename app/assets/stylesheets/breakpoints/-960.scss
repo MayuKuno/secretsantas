@@ -1,33 +1,34 @@
 @media screen and ( max-width:959px){
-  //header↓
-  header{
-    height: 90px;
-    
-    .logo{
-      width: 12%;
-      height: 90%;
-      margin-left: 3%;
-      a{
-        font-size: $fontSmall;
-        p{
-          height: 25px;
-        }
-      }
-    }
-    .startButton{
-      width: 23%;
-      margin-right: 3%;
-      a{
-        font-size: $fontSmallestMB;
-
-        
+header{
+  height: 90px;
+  .logo{
+    width: 12%;
+    height: 90%;
+    margin-left: 3%;
+    a{
+      font-size: $fontSmall;
+      p{
+        height: 25px;
       }
     }
   }
-// header↑
+  .startButton{
+    width: 23%;
+    margin-right: 3%;
+    a{
+      font-size: $fontSmallestMB;
+    }
+  }
+  #nav-toggle {
+    position: absolute;
+    right: 0%;
+    img{
+      width:60px;
+      height:60px;
+    }
+  }
+}
 
-
-// footer↓
 footer{
   height: 200px;
   padding-bottom: 40px;
@@ -41,7 +42,6 @@ footer{
         }
       }
     }
-
     .list{
       ul{
         display: block;
@@ -52,7 +52,6 @@ footer{
     }
   }
 }
-// footer↑
 
   
 
