@@ -1,136 +1,77 @@
-<%# <header>
-  <div class="container">
-    <div class="container__logo">
-      <a class="container__logo__content" href="/posts">Secret Santas<br>365</a>
-    </div>
-
-    
-    <div class="container__search">
-    <%= form_tag(posts_path,:method => 'get', :class => "search-form") do %>
-      <%# <i class="fas fa-search"></i>
-    <%= text_field_tag :keyword, nil, placeholder: 'Search people', class: "search-user-input" %>
-    <%# <% end %>
-      <%# <ul class="container__search__result">
-      </ul>
-    </div>
-
-
-    <ul class="navigation menu">
-      <li class="menu__single navigation__list-item photo">
-      <% if current_user.image.present? %>
-          <%# <%= image_tag current_user.image %>
-      <%# <% else %>
-         <%# <%= image_tag asset_path("account.png", alt: "アカウント") %>
-      <%# <% end %>
-        <%# <ul class="menu__second-level">
-            <li>
-              <%= link_to groups_path do %>
-                <%# <i class="fas fa-comments"></i>My Group
-              <% end %>     
-            <%# </li>
-            <li>
-              <%= link_to user_path(current_user.id) do %>
-                <%# <i class="fas fa-user"></i>My Page
-              <% end %> 
-            <%# </li>
-            <li>
-              <%= link_to sns_posts_path do %>
-                <%# <i class="fas fa-share-alt"></i>Share
-              <% end %>        
-            <%# </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</header> %>
-
-
-
-
-  <header>
-    <div class="logo">
-     <a href="/" class="logo__content">
+<header>
+  <div class="logo">
+    <a href="/" class="logo__content">
       <p>Secret</p>
       <p>Santa</p>
       <p>365</p>
-     </a>
+    </a>
+  </div>
+  <% if user_signed_in? %>
+    <div class="search">
+      <%= form_tag(posts_path,:method => 'get', :class => "search-form") do %>
+        <i class="fas fa-search"></i>
+        <%= text_field_tag :keyword, nil, placeholder: 'Search people', class: "search-user-input" %>
+      <% end %>
+      <ul class="search__container__search__result">
+      </ul>
     </div>
-    <% if user_signed_in? %>
-      <div class="search">
-        <%= form_tag(posts_path,:method => 'get', :class => "search-form") do %>
-          <i class="fas fa-search"></i>
-          <%= text_field_tag :keyword, nil, placeholder: 'Search people', class: "search-user-input" %>
-        <% end %>
-        <ul class="search__container__search__result">
+    <% if current_user.image.present? %>
+      <%= image_tag current_user.image %>
+    <% else %>
+      <div id="nav-toggle">
+        <%= image_tag asset_path("account.png", alt: "アカウント") %>
+      </div>
+      <div id="gloval-nav">
+        <ul class="navigation">
+          <li class="navigation__list-item about-nav">
+            <%= link_to tops_path do %>
+                HOME
+              <% end %> 
+          </li>
+          <li class="navigation__list-item about-nav">
+            <%= link_to groups_path do %>
+                MY GROUPS
+              <% end %> 
+          </li>
+          <li class="navigation__list-item ">
+            <%= link_to user_path(current_user.id) do %>
+                MY PAGE
+              <% end %> 
+          </li>
+          <li class="navigation__list-item ">
+            <%= link_to posts_path do %>
+                Feed
+              <% end %> 
+          </li>
+          <li class="navigation__list-item ">
+            <%= link_to sns_posts_path do %>
+                NEW POSTS
+              <% end %> 
+          </li>
+          <li class="navigation__list-item ">
+            <%= link_to new_group_path do %>
+                NEW GROUP
+              <% end %> 
+          </li>
+          <li class="navigation__list-item ">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+                LOGOUT
+              <% end %> 
+          </li>
         </ul>
       </div>
-      <% if current_user.image.present? %>
-          <%= image_tag current_user.image %>
-      <% else %>
-        <div id="nav-toggle">
-              <%= image_tag asset_path("account.png", alt: "アカウント") %>
-        </div>
-        
-        <div id="gloval-nav">
-          <ul class="navigation">
-            <li class="navigation__list-item about-nav">
-                <%= link_to tops_path do %>
-                 HOME
-               <% end %> 
-              </li>
-            <li class="navigation__list-item about-nav">
-                <%= link_to groups_path do %>
-                 MY GROUPS
-               <% end %> 
-              </li>
-            <li class="navigation__list-item ">
-                <%= link_to user_path(current_user.id) do %>
-                 MY PAGE
-               <% end %> 
-            </li>
-            <li class="navigation__list-item ">
-                <%= link_to posts_path do %>
-                 Feed
-               <% end %> 
-            </li>
-            <li class="navigation__list-item ">
-                <%= link_to sns_posts_path do %>
-                 NEW POSTS
-               <% end %> 
-            </li>
-            <li class="navigation__list-item ">
-                <%= link_to new_group_path do %>
-                 NEW GROUP
-               <% end %> 
-            </li>
-            <li class="navigation__list-item ">
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                 LOGOUT
-               <% end %> 
-            </li>
-
-          </ul>
-        </div>
-
-      <% end %>
-
-
-
-    <% else %>
-      <div class="startButton">
-        <%= link_to new_user_registration_path do %>
-          <i class="fas fa-user-plus"></i> SIGNUP
-        <% end %>
-        <%= link_to new_user_session_path do %>
-          <i class="fas fa-sign-in-alt"></i> LOGIN
-        <% end %>
-        <%= link_to users_guest_sign_in_path, method: :post do %>
-          LOGIN as GUEST
-        <% end %>
-      </div>
     <% end %>
-
-
-
-
-  </header>
+  <% else %>
+    <div class="startButton">
+      <%= link_to new_user_registration_path do %>
+        <i class="fas fa-user-plus"></i> SIGNUP
+      <% end %>
+      <%= link_to new_user_session_path do %>
+        <i class="fas fa-sign-in-alt"></i> LOGIN
+      <% end %>
+      <%= link_to users_guest_sign_in_path, method: :post do %>
+        LOGIN as GUEST
+      <% end %>
+    </div>
+  <% end %>
+</header>

@@ -1,25 +1,25 @@
-
-  <div class="topFirst">
-   <div class="container">
+<div class="topFirst">
+  <div class="container">
     <div class="giftPic">
-   <%= image_tag asset_path("gift.jpg") %>
-   </div>
+      <%= image_tag asset_path("gift.jpg") %>
+    </div>
     <div class="definition">
-    <h1>What is Secret Santa 365?</h1>
-    <p>Under the circumstances of Covid-19, it has become difficult for us to see our loved ones in person.<br>
-    This app provides a platform to connect and exchange gifts with friends and family in a new way.<br>
-    You will receive a gift from an unknown sender who has put their love and care into choosing a perfect gift for you. <br>
-    Get conncted with your loved ones through Secret Santa 365.
-    </p>
+      <h1>What is <span>Secret Santa 365 </span>?</h1>
+      <p>
+        Under the circumstances of Covid-19, it has become difficult for us to see our loved ones in person.<br>
+        This app provides a platform to connect and exchange gifts with friends and family in a new way.<br>
+        You will receive a gift from an unknown sender who has put their love and care into choosing a perfect gift for you. <br>
+        Get conncted with your loved ones through Secret Santa 365.
+      </p>
     </div>
   </div>
+</div>
+<div class="topSecond" id="jump">
+  <div class="title">
+    How Secret Santa 365 works
   </div>
-  <div class="topSecond" id="jump">
-    <div class="title">
-      How Secret Santa 365 works
-    </div>
-    <div class="container">
-      <ul class="tab-container">
+  <div class="container">
+    <ul class="tab-container">
       <li>
         <input class="tab-toggle" id="tab-1" type="radio" name="toggle" checked /> 
         <label data-title="Tab 1" class="tab l-b" for="tab-1">
@@ -29,13 +29,11 @@
           <li class="tab-content">
             <div class="image">
               <%= image_tag asset_path("team.png") %> 
-
             </div>
             <div class="description">
               <h1>1. Create a group with friends</h1>
               <p>The organizer creates a group and decide the group name, the group members, the exchange date and the budget</p>
             </div>
-
             <div class="arrows">
               <label class="back" for="tab-5">&#8249;</label>
               <label class="next" for="tab-2">&#8250;	</label>   
@@ -52,13 +50,11 @@
           <li class="tab-content">
             <div class="image">
               <%= image_tag asset_path("lottery.png") %> 
-
             </div>
             <div class="description">
               <h1>2. Check your draw</h1>
               <p>After the group was created, you will get to see the person to send a gift for. (Your person doesn't know that you are their santa)</p>
             </div>
-
             <div class="arrows">
               <label class="back" for="tab-1">&#8249;</label>
               <label class="next" for="tab-3">&#8250;	</label>   
@@ -75,7 +71,6 @@
           <li class="tab-content">
             <div class="image">
               <%= image_tag asset_path("chat.png") %> 
-
             </div>
             <div class="description">
               <h1>3. Talk and figure out what your person wants</h1>
@@ -132,9 +127,7 @@
           </li>
         </ul>    
       </li>
-      </ul>
-    </div>
-
+    </ul>
   </div>
+</div>
 
-<%# <%= render 'layouts/footer'%> 
