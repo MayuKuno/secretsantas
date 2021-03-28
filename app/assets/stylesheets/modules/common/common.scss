@@ -35,4 +35,22 @@ body{
       
     }
   }
+
 }
+
+  /* open */
+  .open {
+    overflow: hidden;
+    }
+    .open #gloval-nav {
+    visibility: visible;
+    opacity: 1;
+    }
+    .open #gloval-nav li {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    transition: opacity .9s ease, -webkit-transform 1s ease;
+    transition: transform 1s ease, opacity .9s ease;
+    transition: transform 1s ease, opacity .9s ease, -webkit-transform 1s ease;
+    }
