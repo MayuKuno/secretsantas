@@ -1,177 +1,52 @@
-
-
-#overlay {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  z-index: 3;
-
-}
-
-
-#modalWindow {
-// モーダルウィンドウの画面を設定(高さ・幅は調整ください)
-  width: 500px;
-  height: 400px;
-  position: absolute;
-//トップからの場所を指定（topをいじれば高さが調整できます）
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  z-index: 2;
-//flexboxで子要素のボタンとメッセージボックスの要素を配置する
-  display: flex;
-  flex-wrap: wrap;
-  // justify-content: center;
-
-  .modal-message-box {
-    width: 100%;
-//下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
-    height: calc(100% - 60px);
-    text-align: center;
-//flexboxで文字の配置を決める（縦方向、中央揃え）
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    p{
-      font-size: 30px;
-      font-weight: bold;
-      margin-top: -100px;
-    }
-    img{
-      width: 30%;
-      margin: 0 auto;
-    }
-  }
-
-  #modal-close-btn {
-    width: 30%;
-    height: 60px;
-    position: absolute;
-    bottom: 10%;
-    left: 15%;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #494c4e;
-    &:hover{
-      opacity: 0.8; 
-    }
-  }
-
-  #delete-comformation-btn {
-    width: 30%;
-    height: 60px;
-    background-color: rgb(234, 53, 45);
-    cursor: pointer;
-    position: absolute;
-    bottom: 10%;
-    right: 15%;
-    border-radius: 10px;
-    border: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: white;
-    &:hover{
-      opacity: 0.8; 
-    }
-  }
-}
-
-.item-delete-btn {
-//削除ボタンの非表示
-  width: 0;
-  height: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-#container {
-  z-index: 900;
-  }
-
-.container{
-  height: 80%;
-  width: 75%;
-  margin: 0 auto;
-}
-.topFirst{
-  height: 1000px;
-  background-color: $basebackground;
-  padding-top: 125px;
+section{
   width: 100%;
   display: flex;
   align-items: center;
   .container{
+    width: 75%;
+    height: 75%;
+    margin: 0 auto;
     display: flex;
     background-color: $subcard;
-  }
-  .giftPic{
-    width: 40%;
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .definition{
-    width: 60%;
-    padding: 5% 5%;
     h1{
       font-size: $fontMedium;
       font-weight: bold;
+      color: black;
       span{
         font-family: 'Racing Sans One', cursive;
+        color:#716040 ;
       }
     }
-    p{
-      padding-top: 80px;
-      font-size: $fontSmall;
-      line-height: 40px;
-      font-family: 'Roboto', sans-serif;
+    .gift-pic{
+      width: 40%;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
-  }
-  
+    .definition{
+      width: 60%;
+      padding: 8% 5%;
 
-
-}
-
-.topSecond{
-  width: 100%;
-  height: 1000px;
-  padding-bottom: 300px;
-  background-color: $subbackground;
-
-  .title{
-    margin-top: 20px;
-    height: 10%;
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 50px;
-    text-align: center;
-    font-size: $fontMedium;
-    color: $subtext;
-    margin-bottom: 60px;
-  }
-
+      p{
+        padding-top: 80px;
+        font-size: $fontSmall;
+        line-height: 40px;
+        font-family: 'Roboto', sans-serif;
+      }
+    }
+    .title{
+      margin-top: 20px;
+      height: 10%;
+      width: 70%;
+      margin: 0 auto;
+      padding-top: 50px;
+      text-align: center;
+      font-size: $fontMedium;
+      color: $subtext;
+      margin-bottom: 60px;
+    }
     .tab-container {
       list-style-type: none;
       position: relative;
@@ -286,96 +161,249 @@
       }
     }
 
-  
+  }
+}
+.first-view{
+  background-color: $basebackground;
+  padding-top: 125px;
+  height: 1000px;
+}
+.second-view{
+  background-color: $subbackground;
+  padding-bottom: 300px;
+  height: 1200px;
+  .container-second{
+    display: block;
+  }
+}
+
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  z-index: 3;
+}
+
+
+#modalWindow {
+// モーダルウィンドウの画面を設定(高さ・幅は調整ください)
+  width: 500px;
+  height: 400px;
+  position: absolute;
+//トップからの場所を指定（topをいじれば高さが調整できます）
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 2;
+//flexboxで子要素のボタンとメッセージボックスの要素を配置する
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: center;
+
+  .modal-message-box {
+    width: 100%;
+//下記heightの60pxはボタンの高さで、それを画面の大きさから引いています。
+    height: calc(100% - 60px);
+    text-align: center;
+//flexboxで文字の配置を決める（縦方向、中央揃え）
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    p{
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: -100px;
+    }
+    img{
+      width: 30%;
+      margin: 0 auto;
+    }
+  }
+
+  #modal-close-btn {
+    width: 30%;
+    height: 60px;
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #494c4e;
+    &:hover{
+      opacity: 0.8; 
+    }
+  }
+
+  #delete-comformation-btn {
+    width: 30%;
+    height: 60px;
+    background-color: rgb(234, 53, 45);
+    cursor: pointer;
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    &:hover{
+      opacity: 0.8; 
+    }
+  }
+}
+
+.item-delete-btn {
+//削除ボタンの非表示
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 
 
 
-  .containers{
-    width: 100%;
-    padding-top:90px;
-    padding-bottom:300px;
-  }
-    .title{
-      font-size: $fontLarge;
-    }
-    .createButton{
-      font-size: $fontLarge;
-      background-color: $accent;
-      color: $dark;
-      padding: 5px 10px;
-      border-radius: 10px;
-      display: block;
-      position: absolute;
-      top: 60px;
-      right: 120px;
-      font-size: $fontMedium;
-      text-decoration: none;
-      &:hover{
-        background-color: $dark;
-        color: $accent;
 
-      }
-    }
-    
-    .first{
-      height: 100vh;
-      position: relative;
-      padding:50px 100px;
-      background-color: $subcard;
-      .content{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        height: 100%;
-        margin-top: 100px;
-        a{
-          text-decoration: none;
-          width: 30%;
-          display: block;
-          .group{
-            background-color: $dark;
-            margin-bottom: 20px;
-            height: 200px;
-            border-radius: 25px;
-            padding: 10px 20px;
+
+
+
+
+
+
+// #container {
+//   z-index: 900;
+//   }
+
+//   .container{
+//     height: 80%;
+//     width: 75%;
+//     margin: 0 auto;
+//   }
+// #first{
   
-            &__name{
-              font-size: $fontLarge;
-              color: $basebackground;
-            }
-            &__date{
-              font-size: $fontSmall;
-              color: $basebackground;
-            }
-          }
+//   height: 1000px;
+//   background-color: $basebackground;
+//   padding-top: 125px;
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   .container{
+//     display: flex;
+//     background-color: $subcard;
+    
+//   }
+
+  
+
+
+// }
+
+
+
+
+
+
+  
+// }
+
+
+
+
+//   .containers{
+//     width: 100%;
+//     padding-top:90px;
+//     padding-bottom:300px;
+//   }
+//     .title{
+//       font-size: $fontLarge;
+//     }
+//     .createButton{
+//       font-size: $fontLarge;
+//       background-color: $accent;
+//       color: $dark;
+//       padding: 5px 10px;
+//       border-radius: 10px;
+//       display: block;
+//       position: absolute;
+//       top: 60px;
+//       right: 120px;
+//       font-size: $fontMedium;
+//       text-decoration: none;
+//       &:hover{
+//         background-color: $dark;
+//         color: $accent;
+
+//       }
+//     }
+    
+//     .first{
+//       height: 100vh;
+//       position: relative;
+//       padding:50px 100px;
+//       background-color: $subcard;
+//       .content{
+//         display: flex;
+//         justify-content: space-between;
+//         width: 100%;
+//         height: 100%;
+//         margin-top: 100px;
+//         a{
+//           text-decoration: none;
+//           width: 30%;
+//           display: block;
+//           .group{
+//             background-color: $dark;
+//             margin-bottom: 20px;
+//             height: 200px;
+//             border-radius: 25px;
+//             padding: 10px 20px;
+  
+//             &__name{
+//               font-size: $fontLarge;
+//               color: $basebackground;
+//             }
+//             &__date{
+//               font-size: $fontSmall;
+//               color: $basebackground;
+//             }
+//           }
           
           
-        }
+//         }
 
 
-      }
-      .all{
-        width: 30%;
-        margin: 0 auto;
-        text-align: center;
-        padding: 5px 0;
-        background-color: $accent;
-        a{
-          text-decoration: none;
-          color: $dark;
-        }
-        &:hover{
-          background-color: $dark;
-          a{
-            color: $accent;
+//       }
+//       .all{
+//         width: 30%;
+//         margin: 0 auto;
+//         text-align: center;
+//         padding: 5px 0;
+//         background-color: $accent;
+//         a{
+//           text-decoration: none;
+//           color: $dark;
+//         }
+//         &:hover{
+//           background-color: $dark;
+//           a{
+//             color: $accent;
 
-          }
+//           }
 
 
-        }
-      }
+//         }
+//       }
       
 
-    }
+//     }
