@@ -84,11 +84,12 @@ section{
         opacity: 0;
         line-height: 22px;
         position: absolute;
-        top: 42px;
-        padding: 20px 40px;
+        top: 62px;
+        padding: 20px 100px;
         background-color: $basebackground;
         display: flex;
-        align-items: center;
+        // align-items: center;
+
         .tab-content {
           opacity: 0;
           padding: 15px 0;
@@ -99,7 +100,7 @@ section{
           height: 100%;
           align-items: center;
           .image{
-            width:40%;
+            width:30%;
 
             img{
               width: 80%;
@@ -107,18 +108,13 @@ section{
 
           }
           .description{
-            // position:absolute;
-            // bottom:0;
-            padding-top:40px;
-            width: 60%;
-            height:100%;
+            width: 70%;
             h1{
               font-size: $fontMedium;
             }
             p{
               padding-top: 20px;
               font-size: $fontSmall;
-
             }
           }
 
@@ -144,7 +140,7 @@ section{
           font-weight: bold;
           span{
             border-bottom: 2px $accent solid;
-            color: $basebackground;
+            color: $dark;
           }
         }
         &.active ~ .tab-content-container,
