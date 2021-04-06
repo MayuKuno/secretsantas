@@ -1,25 +1,42 @@
 <div class="containers">
-  <div class="first">
+  <div class="main">
     <div class="title">My groups</div>
       <%= link_to new_group_path, class:"createButton" do %>
       New Group
       <% end %>          
     <div class="content">
-      <% current_user.groups.first(3).each do |group| %>
-      <%= link_to group_path(group.id) do %>
-      <div class="group">
-        <div class="group__name">
-          <%= group.name %>
-        </div>
-          <div class="group__date">
-          <%= group.exchange_date %>
-        </div>
-        </div>
-      <% end %>
-      <% end %>
-    </div>
-    <div class="all">
-      <%= link_to "Show all groups", groups_path %>
+      <table class="groups">
+        <thead>
+          <tr>
+            <th>Group Name</th>
+            <th>Members</th>
+            <th>Exchange Date</th>
+            <th>Created</th>
+            <th>Manage</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% current_user.groups.each do |group| %>
+          <tr>
+            <td>
+              <%= group.name %>
+            </td>
+            <td>
+              <%= group.users.count %>
+            </td>
+            <td><%= group.exchange_date.strftime('%Y/%m/%d') %></td>
+            <td><%= group.created_at.strftime('%Y/%m/%d') %></td>
+            <td>
+              <%= link_to 'Edit', edit_group_path(group), class: "btn" %>
+              <%= link_to 'Detail', group_path(group.id), class: "btn" %>
+              <a class="modal-open-btn btn accent delete"> Delete</a> 
+              <%= link_to '', group_path(group.id), method: :delete, class: 'item-delete-btn' %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
     </div>
     </div>
   </div>

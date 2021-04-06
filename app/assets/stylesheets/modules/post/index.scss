@@ -1,8 +1,4 @@
 
-.second{
-  padding:50px 75px;
-  background-color: $subcard;
-  position: relative;
   h1{
     font-size: $fontLarge;
   }
@@ -74,18 +70,18 @@
       margin:20px auto;
       width: 15%;
       text-align: center;
-      font-size: $fontLarge;
+      font-size: $fontSmall;
       background-color: $accent;
       color: $dark;
       padding: 5px 10px;
-      border-radius: 10px;
+      border-radius: 4px;
       display: block;
       font-size: $fontMedium;
       text-decoration: none;
+
       &:hover{
         background-color: $dark;
         color: $accent;
-
       }
     }
   }
@@ -198,6 +194,5 @@
 
   }
 
-}
 
 
